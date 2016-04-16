@@ -20,10 +20,10 @@ class Database {
         } else {
             throw new Exception("Error: Not connected!");
         }
-        $this->db_host = $host;
-        $this->db_name = $database;
-        $this->db_user = $user;
-        $this->db_pass = $password;
+        $this->db_host = $db_host;
+        $this->db_name = $db_name;
+        $this->db_user = $db_user;
+        $this->db_pass = $db_pass;
         $this->connect();
     }
 
