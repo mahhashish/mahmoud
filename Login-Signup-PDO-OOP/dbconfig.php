@@ -3,9 +3,9 @@
 class Database {
 
     private $host = "localhost";
-    private $db_name = "dblogin";
+    private $db_name = "Login-Signup-PDO";
     private $username = "root";
-    private $password = "";
+    private $password = "LOflower";
     public $conn;
 
     public function dbConnection() {
