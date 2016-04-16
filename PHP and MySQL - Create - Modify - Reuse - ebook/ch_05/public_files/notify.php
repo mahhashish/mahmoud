@@ -3,11 +3,10 @@ include '../lib/common.php';
 include '../lib/db.php';
 
 // the email address that will receive reminders
-define('EMAIL_ADDR', 'tboronczyk@gmail.com);
+define('EMAIL_ADDR', 'tboronczyk@gmail.com');
 
 // determine the current date and time values
-list($month, $day, $year, $hour, $minute, $am) = explode('/',
-    date('m/d/Y/G/i/A'));
+list($month, $day, $year, $hour, $minute, $am) = explode('/',date('m/d/Y/G/i/A'));
 
 // retrieve upcoming events
 $query = sprintf('SELECT EVENT_NAME, UNIX_TIMESTAMP(EVENT_TSTAMP) AS ' . 

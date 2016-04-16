@@ -64,7 +64,7 @@ function format_bbcode($string)
                 case 'url':
                     $replace = sprintf('<a href="%s">%s</a>', 
                         (!empty($part[2][0])) ? $part[2][0] : $part[3][0],
-                        $part[3][0]));
+                        $part[3][0]);
                     break;
 
                 // process bulleted lists

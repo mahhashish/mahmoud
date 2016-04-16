@@ -8,7 +8,7 @@ include '../lib/POP3Client.php';
 // establish a connection to the POP3 server
 $pop = new POP3Client();
 $pop->connect(POP3_SERVER, POP3_PORT);
-$pop->user(MANAGE_USER)
+$pop->user(MANAGE_USER);
 $pop->pass(MANAGE_PASSWORD);
 
 // process each message in inbox
