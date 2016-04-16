@@ -1,7 +1,7 @@
 <?php
 // include the init file 
-include 'includes/init.php';
-include 'includes/autoloader.php';
+require 'includes/init.php';
+require 'includes/autoloader.php';
 // display the main stie info
 try {
        $data = new Display("main_settings");

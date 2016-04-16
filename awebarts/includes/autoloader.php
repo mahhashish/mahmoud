@@ -9,7 +9,7 @@ function autoloader($classname) {
             $path = $dir.sprintf($format, $classname);
             if(file_exists($path))
             {                
-                include $path;
+                require $path;
                 return;
             }
         }
