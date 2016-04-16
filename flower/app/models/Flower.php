@@ -15,7 +15,7 @@ class Flower {
 
     function connectToDb() {
         //require_once MODELS.'Database.php';
-        $vars = "includes/vars.php";
+        $vars = "./app/includes/vars.php";
         $this->cxn = new Database($vars);
     }
 }
