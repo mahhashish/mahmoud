@@ -1,7 +1,7 @@
 <?php
 // include the init file 
-include 'includes/init.php';
-include 'includes/autoloader.php';
+include 'init.php';
+include 'autoloader.php';
 // display the main stie info
 try {
        $data = new Display('content');
