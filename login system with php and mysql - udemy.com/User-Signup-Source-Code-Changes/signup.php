@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Redirect to signup success page
   //header('Location: http://' . $_SERVER['HTTP_HOST'] . '/signup_success.php');
-  header($_SERVER['HTTP_HOST'] . '/signup_success.php');
+  header($_SERVER['SERVER_NAME'] . '/mahmoud/login system with php and mysql - udemy.com/User-Signup-Source-Code-Changes/signup_success.php');
   exit;
 }
 
