@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   User::signup($_POST);
 
   // Redirect to signup success page
-  header('Location: http://' . $_SERVER['HTTP_HOST'] . '/signup_success.php');
+  //header('Location: http://' . $_SERVER['HTTP_HOST'] . '/signup_success.php');
+  header($_SERVER['HTTP_HOST'] . '/signup_success.php');
   exit;
 }
 
