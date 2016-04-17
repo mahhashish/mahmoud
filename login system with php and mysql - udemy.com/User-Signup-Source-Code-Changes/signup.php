@@ -9,12 +9,14 @@ require_once('includes/init.php');
 
 // Process the submitted form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    echo 'wow';
   User::signup($_POST);
 
   // Redirect to signup success page
   //header('Location: http://' . $_SERVER['HTTP_HOST'] . '/signup_success.php');
-  header($_SERVER['SERVER_NAME'] . '/mahmoud/login system with php and mysql - udemy.com/User-Signup-Source-Code-Changes/signup_success.php');
+  header('Location: http://'
+          . $_SERVER['SERVER_NAME']
+          . '/mahmoud/login system with php and mysql - udemy.com/User-Signup-Source-Code-Changes/signup_success.php');
   exit;
 }
 
@@ -27,7 +29,7 @@ include('includes/header.php');
 
 <h1>Sign Up</h1>
 
-<form method="post">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
   <div>
     <label for="name">Name</label>
     <input id="name" name="name" />
