@@ -1,5 +1,5 @@
 <?php 
-require './app/includes/functions.php';
+require_once './app/includes/functions.php';
 ?>
 <!doctype html>
 <html>
