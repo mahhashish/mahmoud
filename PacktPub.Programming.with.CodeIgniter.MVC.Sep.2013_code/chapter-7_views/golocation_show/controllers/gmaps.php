@@ -177,7 +177,7 @@ class Gmaps extends CI_Controller
 	$this->googlemaps->add_marker($marker);
 	}
    
-}<?php
+}
 /**
 * Operate The Google Maps CI Library Wrapper 
 */
@@ -356,7 +356,7 @@ class Gmaps extends CI_Controller
 	$this->googlemaps->add_marker($marker);
 	}
    
-}<?php
+}
 /**
 * Operate The Google Maps CI Library Wrapper 
 */
@@ -535,7 +535,7 @@ class Gmaps extends CI_Controller
 	$this->googlemaps->add_marker($marker);
 	}
    
-}<?php
+}
 /**
 * Operate The Google Maps CI Library Wrapper 
 */
@@ -714,7 +714,7 @@ class Gmaps extends CI_Controller
 	$this->googlemaps->add_marker($marker);
 	}
    
-}<?php
+}
 /**
 * Operate The Google Maps CI Library Wrapper 
 */
