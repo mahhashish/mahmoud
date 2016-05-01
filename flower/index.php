@@ -4,4 +4,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once 'flower/site/index.php';
+echo phpinfo();
+/*include_once 'site/index.php';*/
+?>
