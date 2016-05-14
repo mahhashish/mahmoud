@@ -76,10 +76,10 @@ class Auth extends CI_Controller {
         return $ret;
     }
 
-    /* function logout() {
-      $this->session->sess_destroy();
-      redirect('auth');
-      } */
+    function logout() {
+        $this->session->sess_destroy();
+        redirect('auth');
+    }
 
     function admin_main_menu() {
 
