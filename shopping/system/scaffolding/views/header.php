@@ -5,7 +5,7 @@
 <title><?php echo $title; ?></title>
 
 <style type='text/css'>
-<?php $this->file(BASEPATH.'scaffolding/views/stylesheet.css'); ?>
+<?php $this->file(BASEPATH.'scaffolding/views/stylesheet.php'); ?>
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
