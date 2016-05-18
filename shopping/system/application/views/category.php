@@ -14,7 +14,6 @@
 			
 			case "2":
 			echo anchor('welcome/product/'.$list['id'],$list['name']);
-			echo ;
 			break;
 		}
     echo "</h4>\n";
