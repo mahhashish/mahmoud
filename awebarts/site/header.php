@@ -49,7 +49,7 @@ require_once 'includes/functions.php';
         <div id="menu">
          	   		 		 	      		
             <ul>
-            	<li><a href="http://localhost/awebarts/">Home Page</a></li>
+            	<li><a href="http://localhost/mahmoud/awebarts/">Home Page</a></li>
             	<li><a href="?page=section&id=3">Our services</a></li>
             	<li><a href="?page=page&id=15">Portfolio</a></li>
             	<li><a href="?page=page&id=16">Contact Us</a></li>
