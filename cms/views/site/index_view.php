@@ -15,31 +15,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
 <title>Homepage</title>
-<link rel="icon" href="<?php echo base_url('views/site/favicon.png');?>" type="image/png">
-<link href="<?php echo base_url('views/site/css/bootstrap.css/');?>" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url('views/site/css/style.css');?>" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url('views/site/css/linecons.css');?>" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url('views/site/css/font-awesome.css');?>" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url('views/site/css/responsive.css');?>" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url('views/site/css/animate.css');?>" rel="stylesheet" type="text/css">
+<link rel="icon" href="<?php echo base_url('views/assets/favicon.png');?>" type="image/png">
+<link href="<?php echo base_url('views/assets/css/bootstrap.css/');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('views/assets/css/style.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('views/assets/css/linecons.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('views/assets/css/font-awesome.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('views/assets/css/responsive.css');?>" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url('views/assets/css/animate.css');?>" rel="stylesheet" type="text/css">
 
 <link href='http://fonts.googleapis.com/css?family=Lato:400,900,700,700italic,400italic,300italic,300,100italic,100,900italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Dosis:400,500,700,800,600,300,200' rel='stylesheet' type='text/css'>
 
 <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
 
-<script type="text/javascript" src="<?php echo base_url('views/site/js/jquery.1.8.3.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('views/site/js/bootstrap.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('views/site/js/jquery-scrolltofixed.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('views/site/js/jquery.easing.1.3.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('views/site/js/jquery.isotope.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('views/site/js/wow.js');?>"></script>
-<script type="text/javascript" src="<?php echo base_url('views/site/js/classie.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/jquery.1.8.3.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/bootstrap.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/jquery-scrolltofixed.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/jquery.easing.1.3.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/jquery.isotope.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/wow.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('views/assets/js/classie.js');?>"></script>
 
 <!--[if lt IE 9]>
-    <script src="<?php echo base_url('views/site/js/respond-1.1.0.min.js');?>"></script>
-    <script src="<?php echo base_url('views/site/js/html5shiv.js');?>"></script>
-    <script src="<?php echo base_url('views/site/js/html5element.js');?>"></script>
+    <script src="<?php echo base_url('views/assets/js/respond-1.1.0.min.js');?>"></script>
+    <script src="<?php echo base_url('views/assets/js/html5shiv.js');?>"></script>
+    <script src="<?php echo base_url('views/assets/js/html5element.js');?>"></script>
 <![endif]-->
 
 <script type="text/javascript">
@@ -256,7 +256,7 @@ function resizeText() {
       
       <!-- Portfolio Item With PrettyPhoto  -->
       <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   videography isotope-item">
-        <div class="portfolio-image"> <img src="<?php echo base_url('views/site/').'img/portfolio_pic1.jpg';?>"  alt="Portfolio 1"> </div>
+        <div class="portfolio-image"> <img src="<?php echo base_url('views/assets/img/portfolio_pic1.jpg');?>"  alt="Portfolio 1"> </div>
         <a title="Starbucks Coffee" rel="prettyPhoto[galname]" href="http://clapat.ro/themes/newave/images/portfolio/portfolio2.jpg">
         <div class="project-overlay">
           <div class="project-info">
@@ -270,7 +270,7 @@ function resizeText() {
       
       <!-- Portfolio Item Video Expander  -->
       <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio-image"> <img src="<?php echo base_url('views/site/').'img/portfolio_pic2.jpg';?>" alt="Portfolio 1"> </div>
+        <div class="portfolio-image"> <img src="<?php echo base_url('views/assets/img/portfolio_pic2.jpg');?>" alt="Portfolio 1"> </div>
         <div class="project-overlay">
           <div class="open-project-link"> <a class="open-project" href="http://clapat.ro/themes/newave/project-video-expander.html" title="Open Project"></a> </div>
           <div class="project-info">
