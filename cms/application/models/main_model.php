@@ -6,7 +6,7 @@
  * and open the template in the editor.
  * 
  * 
- * check_auth
+ * +check_auth
  * -get_info
  * add_data
  */
@@ -32,6 +32,19 @@ class main_model extends CI_Model {
             $query->free_result();
         }
         return FALSE;
+    }
+
+    public function add_data($username, $password) {
+        $data = array('username' => $username, 'email' => $password);
+
+        $str = $this->db->insert_string('auth', $data);
+
+
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
 }
