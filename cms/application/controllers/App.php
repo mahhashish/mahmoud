@@ -19,7 +19,7 @@ class App extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    function __construct() {
+    public function __construct() {
         parent::__construct();
     }
 
