@@ -6,9 +6,9 @@
  * and open the template in the editor.
  * 
  * 
- * +check_auth
+ * check_auth
  * -get_info
- * add_data
+ * -add_data
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -20,9 +20,9 @@ class main_model extends CI_Model {
         $this->load->database();
     }
 
-    public function get_info() {
+    public function get_data() {
         $this->db->select('title,header');
-        $this->db->limit(1);
+        $this->db->order_by('id','DESC');
         $query = $this->db->get('data');
         if ($query->num_rows()) {
             $row = array();
@@ -34,12 +34,11 @@ class main_model extends CI_Model {
         return FALSE;
     }
 
-    public function add_data($username, $password) {
-        $data = array('username' => $username, 'email' => $password);
+    public function add_data($title, $header) {
+        $data = array('title' => $title, 'header' => $header);
 
-        $str = $this->db->insert_string('auth', $data);
-
-
+        $str = $this->db->insert_string('data', $data);
+        $this->db->query($str);
         if ($this->db->affected_rows() > 0) {
             return TRUE;
         } else {
@@ -47,4 +46,13 @@ class main_model extends CI_Model {
         }
     }
 
+    public function check_auth($username, $password) {
+        $this->db->select('username,password');
+        $query = $this->db->get('auth');
+        if ($query->num_rows()) {
+            return TRUE;
+        }
+        return FALSE;
+    }
 }
+    

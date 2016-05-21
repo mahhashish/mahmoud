@@ -25,21 +25,11 @@ class App extends CI_Controller {
         $this->load->library($libraries);
         $helpers = array('form', 'url');
         $this->load->helper($helpers);
+        $this->load->model('main_model');
     }
 
     public function index() {
-
-
-        /*
-         * To change this license header, choose License Headers in Project Properties.
-         * To change this template file, choose Tools | Templates
-         * and open the template in the editor.
-         * 
-         * load form & validator & library AND main_model model
-         * 
-         *
-         */
-        if (!isset($_SESSION['username'])) {
+        if (!$this->session->has_userdata('username')) {
             if ($this->input->post()) {
                 if ((NULL !== $this->input->post('submit')) && $this->input->post('submit') == 'Login') {
                     /* validate username & password from the form
@@ -47,8 +37,8 @@ class App extends CI_Controller {
                       session_start();
                       $_SESSION['username'] = $username;
                       header('Location:app'); */
-                    $this->form_validation->set_rules('username', 'Username', 'required|[50]|min_length[6]', array(
-                        'required' => 'You must provide a %s.',
+                    $this->form_validation->set_rules('username', 'Username', 'required|max_length[50]|min_length[6]', array(
+                        'required' => 'You must provide a %s',
                         'max_length' => 'Max length for %s is 50 characters',
                         'min_length' => 'Min length for %s is 6 characters'
                             )
@@ -59,34 +49,44 @@ class App extends CI_Controller {
                         'min_length' => 'Min length for %s is 6 characters'
                             )
                     );
-                    if ($this->form_validation->run() == FALSE) {
-                        $this->load->view('myform');
+                    if ($this->form_validation->run() == TRUE) {
+                        $username = $this->input->post('username');
+                        $password = $this->input->post('password');
+                        if ($this->main_model->check_auth($username, $password)) {
+                            $this->session->set_userdata($this->input->post('username'));
+                            $this->load->view('app/main_view');
+                        }  else {
+                            $this->load->view('app/login_view');
+                        }
                     } else {
-                        $this->load->view('formsuccess');
+                        $this->load->view('app/login_view');
                     }
                 } elseif (NULL !== ($this->input->post('submit')) && $this->input->post('submit') == 'SetData') {
 
 
-                    $this->form_validation->set_rules('title', 'Title', 'required|[50]|min_length[6]', array(
+                    $this->form_validation->set_rules('title', 'Title', 'required|max_length[50]|min_length[6]', array(
                         'required' => 'You must provide a %s.',
                         'max_length' => 'Max length for %s is 50 characters',
                         'min_length' => 'Min length for %s is 6 characters'
                             )
                     );
-                    $this->form_validation->set_rules('header', 'Header', 'required|max_length[50]|min_length[6]', array(
+                    $this->form_validation->set_rules('header', 'Header', 'required|max_length[150]|min_length[6]', array(
                         'required' => 'You must provide a %s.',
-                        'max_length' => 'Max length for %s is 50 characters',
+                        'max_length' => 'Max length for %s is 150 characters',
                         'min_length' => 'Min length for %s is 6 characters'
                             )
                     );
                     if ($this->form_validation->run() == TRUE) {
-                        if ($this->main_model->add_data($username, $password)) {
+                        $title = $this->input->post('title');
+                        $header = $this->input->post('header');
+                        if ($this->main_model->add_data($title, $header)) {
                             $this->load->view('app/success_view');
                         } else {
-                            $this->load->view('app/main_view', $err);
+                            echo '1';
+                            $this->load->view('app/main_view');
                         }
                     } else {
-                        $this->load->view('app/main_view', $err);
+                        $this->load->view('app/main_view');
                     }
                 } else {
                     $this->session->sess_destroy();

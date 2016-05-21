@@ -38,7 +38,7 @@ class Site extends CI_Controller {
     public function index() {
         $data = array();
         $this->load->helper('url');
-        $data['info'] = $this->main_model->get_info();
+        $data['info'] = $this->main_model->get_data();
         $this->load->view('site/index_view', $data);
     }
 

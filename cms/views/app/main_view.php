@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             'placeholder' => 'Enter Header',
                             'value' => set_value('header')
                             );
-                            echo form_password($data);
+                            echo form_input($data);
                             ?>
                         </div>
                         <div class="clearfix"></div><hr />
