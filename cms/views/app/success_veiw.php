@@ -1,10 +1,11 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>successful submission</title>
+</head>
+<body>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- * 
- * your info has been set OK
- */
+<p>Your data had been successfully submitted</p>
 
+</body>
+</html>

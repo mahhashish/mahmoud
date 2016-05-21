@@ -7,7 +7,7 @@
  * 
  * 
  * check_auth
- * get_info
+ * -get_info
  * add_data
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -31,6 +31,7 @@ class main_model extends CI_Model {
             }
             $query->free_result();
         }
+        return FALSE;
     }
 
 }
