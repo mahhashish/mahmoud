@@ -31,7 +31,7 @@ class App extends CI_Controller {
     public function index() {
         if (!$this->session->has_userdata('username')) {
             if ($this->input->post()) {
-                if ((NULL !== $this->input->post('submit')) && $this->input->post('submit') == 'Login') {
+                if ($this->input->post('submit') && $this->input->post('submit') == 'Login') {
                     /* validate username & password from the form
                       check_auth() and if OK
                       session_start();
@@ -61,7 +61,7 @@ class App extends CI_Controller {
                     } else {
                         $this->load->view('app/login_view');
                     }
-                } elseif (NULL !== ($this->input->post('submit')) && $this->input->post('submit') == 'SetData') {
+                } elseif ($this->input->post('submit') && $this->input->post('submit') == 'SetData') {
 
 
                     $this->form_validation->set_rules('title', 'Title', 'required|max_length[50]|min_length[6]', array(
