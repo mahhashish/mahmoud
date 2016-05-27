@@ -10,7 +10,7 @@ if (!isset($_GET['uid']) || !isset($_GET['token']))
 {
     $GLOBALS['TEMPLATE']['content'] = '<p><strong>Incomplete information ' .
         'was received.</strong></p> <p>Please try again.</p>';
-    include '../templates/template-page.phptemplate_page.php';
+    include '../templates/template-page.php';
     exit();
 }
 
