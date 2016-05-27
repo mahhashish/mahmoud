@@ -55,8 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="clearfix"></div><hr />
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" name="submit" value="Login">
-                                <i class="glyphicon glyphicon-open-file"></i>SIGN IN
+                            <button type="submit" class="btn btn-primary" name="submit" value="Login">SIGN IN
                             </button>
                         </div>
                         <br /><?php

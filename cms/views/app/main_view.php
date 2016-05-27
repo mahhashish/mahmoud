@@ -54,8 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="clearfix"></div><hr />
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" name="submit" value="SetData">
-                                <i class="glyphicon glyphicon-open-file"></i>Set Data
+                            <button type="submit" class="btn btn-primary" name="submit" value="SetData">Set Data
                             </button>
                         </div>
                         <br />

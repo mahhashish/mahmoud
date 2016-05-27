@@ -1,0 +1,1333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-06 11:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /var/www/remository/administrator/classes/aliroAdminPageNav.php:78
+msgid "Display #"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminPageNav.php:133
+msgid "Move up"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminPageNav.php:163
+msgid "Move down"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminTemplateBase.php:11
+msgid "Administration [Aliro]"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:66
+#, php-format
+msgid "Please make a selection from the list to %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:88
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:92
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:234
+msgid "New"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:96
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:101
+msgid "Publish"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:100
+msgid "Please make a selection from the list to publish"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:105
+msgid "Please select an item to make default"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:106
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:17
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:29
+msgid "Default"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:110
+msgid "Please select an item to assign"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:111
+msgid "Assign"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:115
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:120
+msgid "Unpublish"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:119
+msgid "Please make a selection from the list to unpublish"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:124
+msgid "Please make a selection from the list to archive"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:125
+msgid "Archive"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:129
+msgid "Please select a news story to unarchive"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:130
+msgid "Unarchive"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:134
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:139
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:144
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:149
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:154
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:159
+msgid "Please select an item from the list to edit"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:135
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:140
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:234
+msgid "Edit"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:145
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:150
+msgid "Edit HTML"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:155
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:160
+msgid "Edit CSS"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:164
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:169
+msgid "Please make a selection from the list to delete"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:165
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:170
+msgid "Delete"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:174
+msgid "Trash"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:183
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:184
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:189
+msgid "Help"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:193
+msgid "Apply"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:197
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:204
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:211
+msgid "Save"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:215
+msgid "Cancel"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:224
+msgid "Back"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:245
+msgid "Upload"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:246
+#: /var/www/remository/administrator/classes/aliroAdminToolbar.php:247
+msgid "Upload Image"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroComponentAdminManager.php:68
+#, php-format
+msgid "Aliro error in %s: class not found %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroComponentAdminManager.php:82
+msgid "You are not authorized to view this resource."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroComponentAdminManager.php:89
+#: /var/www/remository/administrator/classes/aliroComponentAdminManager.php:94
+#, php-format
+msgid "Aliro error in %s: method %s not found in class %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroComponentAdminManager.php:135
+msgid "Invalid operation attempted"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroDBUpdateController.php:66
+msgid "No item was selected for editing"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroDBUpdateController.php:98
+msgid "Deletion completed"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroDBUpdateController.php:100
+msgid "No items for deletion"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:130
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:304
+#, php-format
+msgid "Installer error with %s: file %s contains illegal \"..\""
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:145
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:181
+#, php-format
+msgid "Extension XML %s database error on %s at %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:159
+#, php-format
+msgid "Extension XML %s for %s cannot be installed - already present"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:163
+#, php-format
+msgid ""
+"Extension XML %s with name %s cannot be upgraded - not presently installed"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:165
+#, php-format
+msgid "Extension XML %s with name %s cannot be installed - no handler"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:175
+msgid "Installation completed: "
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:198
+#, php-format
+msgid "Extension XML %s for %s has no valid type"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:202
+#, php-format
+msgid "Extension XML %s with name %s has no formal name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:255
+#, php-format
+msgid "Installer error with %s: classfile %s has no classes specified"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:267
+#, php-format
+msgid "Installer error with %s: unable to create user directory for %s %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:280
+#, php-format
+msgid "Installer error with %s: unable to create admin directory for %s %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/aliroExtensionInstaller.php:414
+#, php-format
+msgid "Extension XML %s for %s: is plugin but has no triggers"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_config/admin.config.php:19
+msgid "Clear All Caches"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_config/admin.config.php:50
+msgid "Non-database configuration updated"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_config/admin.config.php:58
+msgid "Configuration updated"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_config/admin.config.php:62
+msgid "The core database details were not valid"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_config/admin.config.php:67
+msgid "The general database details were not valid"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:8
+msgid "The page 404 error log is empty"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:9
+msgid "404 Log Review"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:10
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:14
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:100
+msgid "Timestamp"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:11
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:103
+msgid "URI"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:12
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:104
+msgid "Referer"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:13
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:105
+msgid "POST data"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.html.php:14
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:106
+msgid "Trace"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.php:57
+#: /var/www/remository/administrator/classes/cor_err404/admin.err404.php:80
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.php:54
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.php:65
+msgid "Please select an item for detailed display"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:8
+msgid "The error log is empty"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:13
+msgid "Error Log Review"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:15
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:101
+msgid "Short Message"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:99
+msgid "Entry from Error Log"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:102
+msgid "Long Message"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:107
+msgid "Database Name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:108
+msgid "Database Error"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:109
+msgid "SQL"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_errors/admin.errors.html.php:110
+msgid "Database call trace"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_extensions/admin.extensions.php:48
+msgid "Please select one or more items for deletion"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_extensions/admin.extensions.php:62
+#, php-format
+msgid "Uninstaller could not find XML file for component %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_extensions/admin.extensions.php:69
+#, php-format
+msgid "Uninstaller could not find XML file for module %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_extensions/admin.extensions.php:78
+#, php-format
+msgid "Uninstaller could not find XML file for mambot %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_extensions/admin.extensions.php:84
+#, php-format
+msgid "Uninstaller could not find XML file for template %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_extensions/admin.extensions.php:88
+#, php-format
+msgid "Uninstaller could not find XML file for language %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:30
+msgid "Icon"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:49
+msgid "Display number"
+msgstr ""
+
+#. *
+#. * @package Mambo
+#. * @subpackage Languages
+#. * @copyright  Refer to copyright.php
+#. * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+#. * @author Mambo Foundation Inc see README.php
+#.
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:51
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/catalogs.tpl.php:29
+msgid "Search:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:53
+msgid "Show Descendants?"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:68
+msgid "Parent folder"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:85
+msgid "Mambo "
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:98
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:145
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:20
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:14
+msgid "Published"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:130
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:25
+msgid "Title"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:134
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:16
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:15
+msgid "Reorder"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:135
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:17
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:16
+msgid "Order"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:138
+msgid "Save Order"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:142
+msgid "Top level folder"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:143
+msgid "Immediate folder"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:196
+msgid "Folders"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:260
+msgid "Edit Folder details"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:262
+msgid "Folder name"
+msgstr ""
+
+#. if (class_exists('ConvertCharset')) : ? >
+#. <div style="display:inline;text-align:right;margin-right:0px">
+#. <button class="button" onclick="submitbutton('convert')"><?php echo T_('Convert to') ? >:</button>
+#. <select name="newcharset" id="newcharset">
+#. < ?php foreach ($language->codesets as $chr):
+#. if ($chr != $language->charset) echo '<option value="'.$chr.'">'.$chr.'</option>';
+#. endforeach; ? >
+#. </select>
+#. </div>
+#. <?php endif;
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:263
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:212
+msgid "Description"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:263
+msgid "Up to 500 characters"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:264
+msgid "Keywords"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.html.php:265
+msgid "Window title"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.php:39
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:95
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:101
+msgid "Save order"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.php:116
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.php:129
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:265
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:270
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:275
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:328
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:333
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:338
+msgid "Ordering updated"
+msgstr ""
+
+#. In case the Javascript cannot do the check, ensure at least one item selected
+#: /var/www/remository/administrator/classes/cor_folders/admin.folders.php:134
+msgid "Please mark item(s) for deletion"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_help/admin.help.php:11
+msgid "Aliro Help"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:24
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:39
+msgid "Upload Package File"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:25
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:164
+msgid "Please select a directory"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:26
+msgid "Package File:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:27
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:31
+msgid "Tick if upgrading"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:28
+msgid "Upload File &amp; Install"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:29
+msgid "Install from directory"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:30
+msgid "Install directory:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:32
+#: /var/www/remository/administrator/classes/cor_languages/admin.languages.php:59
+msgid "Install"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:33
+msgid "Install from HTTP URL"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:34
+msgid "Install HTTP URL:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:35
+msgid "Upload URL &amp; Install"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:157
+msgid "Unwriteable"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.html.php:157
+msgid "Writeable"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.php:35
+msgid "Uninstall"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.php:46
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.php:53
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.php:60
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.php:67
+#: /var/www/remository/administrator/classes/cor_installer/admin.installer.php:74
+msgid ""
+"Install Aliro extension (component, module, mambot, template, include, "
+"parameter, composite)"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:77
+msgid ""
+"The installer can't continue before file uploads are enabled. Please use the "
+"install from directory method."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:82
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:107
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:136
+msgid "The installer can't continue before zlib is installed"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:87
+msgid "No file selected"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:98
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:129
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:158
+#, php-format
+msgid "Upload %s -  Upload Error - %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:119
+#, php-format
+msgid "Failed to extract archive %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:123
+#, php-format
+msgid "Failed to copy file %s to <code>/media</code> directory."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:126
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:207
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:236
+msgid "Upload failed as <code>/media</code> directory is not writable."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:128
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:209
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:238
+msgid "Upload failed as <code>/media</code> directory does not exist."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:141
+msgid "Please select an HTTP URL"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:148
+msgid "The URL did not define a file name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:154
+#, php-format
+msgid "Upload %s -  unable to extract archive"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:203
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:230
+msgid "Failed to change the permissions of the uploaded file."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:205
+msgid "Failed to move uploaded file to <code>/media</code> directory."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:232
+msgid "Failed to open the local file from the URL."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:234
+msgid "Failed to open the specified URL."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:263
+#, php-format
+msgid "Installer unrecoverable ZIP error %s in %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_installer/installer.class.php:272
+#, php-format
+msgid "Installer unrecoverable TAR error in %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/admin.languages.php:57
+msgid "Scan Sources"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/admin.languages.php:60
+msgid "Translate"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/admin.languages.php:61
+msgid "Export"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/admin.languages.php:78
+msgid "Update"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/admin.languages.php:84
+msgid "Auto Translate"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/languagesAdmin.php:59
+msgid "Chosen language has invalid locale"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/languagesAdmin.php:61
+msgid "Invalid default language selection"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/catalogs.view.php:39
+#, php-format
+msgid "Manage Translations: %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/edit.view.php:33
+#: /var/www/remository/administrator/classes/cor_languages/views/edit.view.php:51
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:128
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:176
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:15
+msgid "Language"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/edit.view.php:33
+msgid "New language"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/edit.view.php:51
+msgid "Edit language"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/edit.view.php:76
+#, php-format
+msgid "Translate Catalog: %s [%s]"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/catalogs.tpl.php:42
+msgid "Language File"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/catalogs.tpl.php:43
+msgid "% Translated"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/catalogs.tpl.php:44
+msgid "Total Strings"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/catalogs.tpl.php:45
+msgid "Translated Strings"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/catalogs.tpl.php:46
+msgid "Fuzzy"
+msgstr ""
+
+#. *
+#. * @package Mambo
+#. * @subpackage Languages
+#. * @copyright  Refer to copyright.php
+#. * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+#. * @author Mambo Foundation Inc see README.php
+#.
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:20
+msgid "You must provide a Language Name."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:22
+msgid "You must provide a Language Identifier."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:24
+msgid "You must provide a locale."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:26
+msgid "You must provide a character encoding."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:28
+msgid "You must provide a date format."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:42
+msgid "New Language"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:49
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:170
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:22
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:24
+msgid "Details"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:52
+msgid "Language Identifier"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:55
+msgid ""
+"The identifier for this language. This is used for naming the language xml "
+"file and translations directory."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:59
+msgid "Language Name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:62
+msgid "The official name for this language"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:66
+msgid "Locale"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:69
+msgid ""
+"The locale list for this language. \\nLocale names must be comma separated."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:73
+msgid "Encoding"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:76
+msgid "The character encoding for this language. Ex. utf-8"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:80
+msgid "Direction"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:83
+msgid "Left-to-Right"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:84
+msgid "Right-to-Left"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:86
+msgid "Text direction."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:90
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:255
+msgid "Date Format"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:93
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:258
+msgid "Date format for strftime()."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:97
+msgid "Plural forms"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/edit.tpl.php:100
+msgid "Plural forms for gettext."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:27
+msgid "Messages"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:33
+msgid "Verified"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:36
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:124
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:131
+msgid "Original"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:39
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:126
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:135
+msgid "Translation"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:42
+msgid "Ref"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:65
+msgid "Translation OK"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:65
+msgid "Verify Translation"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:96
+msgid "Headers"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:110
+msgid "Comments"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:132
+msgid "Singular"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:133
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/editcatalog.tpl.php:142
+msgid "Plural"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/form.tpl.php:48
+msgid "Mambo Language Editor"
+msgstr ""
+
+#. <!--
+#. <td>
+#. <?php if ($task == 'list'): ? >
+#. <select name="lang" class="inputbox" size="1" onchange="document.adminForm.submit();">
+#. <option value="en">< ?php echo T_('Select Language') ? ></option>
+#. < ?php foreach ($languages as $name => $obj): ? >
+#. <option value="< ?php echo $name.'"';? > < ?php echo $lang==$name?' selected="selected"':''? >>< ?php echo $obj->title; if (!empty($obj->territory)) echo ' ('.$obj->territory.')' ?></option>
+#. < ?php endforeach; ? >
+#. </select>
+#. < ?php endif; ? >
+#. </td> -->
+#. <?php
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/form.tpl.php:65
+msgid "No content to display."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:24
+msgid "You must choose a language."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:26
+msgid "You must choose a character set."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:50
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:131
+msgid "choose language"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:57
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:142
+msgid "choose territory"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:58
+msgid "choose character set"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:124
+msgid ""
+"You must choose a language. Do not choose a territory unless it is necessary "
+"for your purpose. If you do not choose a character set, it will default to "
+"UTF-8, which is the preferred choice."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:139
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:184
+msgid "Territory"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:147
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:192
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:18
+msgid "Character Set"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:150
+msgid "choose charset"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:218
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:38
+msgid "Author"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:224
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:41
+msgid "Author Email"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:230
+msgid "Author Url"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:236
+msgid "Text Direction"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:239
+msgid "left to right"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:240
+msgid "right to left"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:245
+msgid "Plural Forms"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:262
+msgid "Locales"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:266
+msgid ""
+"The locale list for setlocale(). \\nLocale names must be comma separated."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:270
+msgid "Days"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/langform.tpl.php:284
+msgid "Months"
+msgstr ""
+
+#. Required because xgettext does not find T_ strings within heredoc
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:12
+msgid "You cannot delete English."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:13
+msgid "You cannot delete default language."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:14
+msgid "You cannot translate default English."
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:16
+msgid "Country - Region"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:19
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:32
+msgid "Version"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/languages.tpl.php:20
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:35
+msgid "Date"
+msgstr ""
+
+#. *
+#. * @package Mambo
+#. * @subpackage Languages
+#. * @copyright  Refer to copyright.php
+#. * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
+#. * @author Mambo Foundation Inc see README.php
+#.
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:13
+msgid "Language Manager"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:26
+msgid "Languages"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:53
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:30
+#: /var/www/remository/administrator/classes/cor_templates/admin.templates.html.php:12
+msgid "No"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_languages/views/templates/table.tpl.php:53
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:29
+#: /var/www/remository/administrator/classes/cor_templates/admin.templates.html.php:11
+msgid "Yes"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_mambots/admin.mambots.html.php:9
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:28
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:29
+msgid "Published:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_mambots/admin.mambots.html.php:37
+msgid "Edit Plugin"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_mambots/admin.mambots.php:35
+msgid "No plugin specified for editing"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_mambots/admin.mambots.php:58
+msgid "Plugin update saved"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_mambots/admin.mambots.php:60
+msgid "Plugin update unexpected, no action taken"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:12
+msgid "New menu name: "
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:13
+msgid "Menu Manager"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:14
+msgid "Name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:15
+msgid "Level"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:18
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:20
+msgid "Type"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:19
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:19
+msgid "ID"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:21
+msgid "Item must have a name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:23
+msgid "Part of menu:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:24
+msgid "Name:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:25
+msgid "Url:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:26
+msgid "Parent Item:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:27
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:28
+msgid "Restrict to roles:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:31
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:32
+msgid "Parameters"
+msgstr ""
+
+#. Note that this message is only represented in greatly abbreviated form in the heredoc
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:33
+msgid ""
+"For a URL menu link on THIS site, omit the actual site link,\r\n"
+"\t\t\t\t\tfor example write index.php?option=com_example&task=edit.\r\n"
+"\t\t\t\t\tDo not use the SEF version for a link on this site, only the basic "
+"one, similar to the example.\r\n"
+"\t\t\t\t\tFor all other sites, include the full URL, for example http://"
+"somedomain.com/somewhere"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:231
+#, php-format
+msgid "Edit Menu Item :: Component <small><small>%s</small></small>"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:250
+msgid "Component:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.html.php:250
+msgid "User specified -"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:157
+msgid "URL or choice of component"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:228
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:207
+msgid "No restriction"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:240
+msgid "Please select a menu to edit"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:285
+msgid "Selected menu items published"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_menus/admin.menus.php:290
+msgid "Selected menu items unpublished"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:11
+msgid "Module Manager"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:12
+msgid "Filter:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:13
+msgid "Module Name"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:17
+msgid "Position"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:18
+msgid "Pages"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:21
+msgid "Select custom module, or module type"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:22
+msgid "Module must have a title"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:23
+msgid "Module:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:26
+msgid "Showtitle:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:27
+msgid "Position:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:30
+msgid "ID:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:31
+msgid "Description:"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:33
+msgid "Pages / Items"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:34
+msgid "Menu Item Link(s):"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:55
+msgid "User"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:98
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:233
+msgid "Administrator"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:98
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.html.php:233
+msgid "Site"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:68
+msgid "Next"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:122
+msgid "- All Types -"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:137
+msgid "- All Positions -"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:152
+msgid "No module extensions have been installed yet"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:187
+#, php-format
+msgid "The module %s is currently being edited by another administrator"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:245
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:246
+msgid "Store of module failed"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:282
+#, php-format
+msgid "Successfully Saved Module: %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:288
+#, php-format
+msgid "Successfully Saved changes to Module: %s"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:297
+msgid "Copy of "
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:313
+msgid "Your chosen action requires the selection of a module"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:323
+msgid "Module deletions completed"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:349
+#, php-format
+msgid "Module Copied [%s]"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:360
+msgid "Selected modules published"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_modules/admin.modules.php:365
+msgid "Selected modules unpublished"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/cor_sysinfo/admin.sysinfo.php:11
+msgid "Aliro System Information"
+msgstr ""
+
+#: /var/www/remository/administrator/classes/defaultAdminTemplate.php:29
+msgid "Logout"
+msgstr ""

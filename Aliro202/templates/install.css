@@ -1,0 +1,198 @@
+/*
+Adapted from a design by Free CSS Templates
+by Martin Brampton http://www.aliro.org
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #cf9;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #390
+}
+
+img {
+	border: 0;
+}
+
+input {
+	background: #ffc;
+	font-size: 1.2em;
+}
+
+h1, h2, h3 {
+	margin-bottom: 0.5;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #390;
+}
+
+h1 a, h2 a, h3 a {
+	text-decoration: none;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	letter-spacing: -2px;
+	font-size: 2.6em;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+p, ul, ol {
+	margin-bottom: 1.5em;
+	line-height: 140%;
+}
+
+ul, ol {
+	margin-left: 3em;
+}
+
+blockquote {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+span.warning {
+	color: red;
+}
+
+a {
+	text-decoration: none;
+	color: #090
+}
+
+a:hover {
+	background: #cf9;
+	text-decoration: underline;
+	color: #390;
+}
+
+/* Header */
+
+#headerwrapper {
+	height: 90px;
+	background: #6f0;
+	border-bottom: 5px solid #390;
+}
+
+#header {
+	width: 980px;
+	height: 90px;
+	margin: 0 auto;
+}
+
+/* Logo */
+
+#logo h1, #logo h2 {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+#logo h1 {
+	padding-top: 30px;
+	color: #ff0;
+}
+
+#logo a {
+	display: block;
+	float: right;
+	padding: 10px 0 0 0;
+}
+
+#logo a:hover {
+	background: #6f0;
+}
+
+#logo img {
+	border: 2px solid #390;
+}
+
+#logo h2 {
+	padding: 45px 0 0 7px;
+	letter-spacing: normal;
+	font-size: 1.4em;
+}
+
+/* Page */
+
+#page {
+	width: 980px;
+	margin: 0 auto;
+	background: #cf9;
+}
+
+#page fieldset {
+	padding: 8px;
+	margin-top: 8px;
+	background: #fff;
+}
+
+#page legend {
+	background: #390;
+	padding: 4px;
+	color: #ff0;
+}
+
+#installaliro {
+	font-size: 1.4em;
+	color: #390;
+	background: #ff0;
+	margin: 8px 0;
+}
+
+#installdbcore {
+	float: left;
+	width: 475px;
+}
+
+#installdbgen {
+	float: right;
+	width: 475px;
+}
+
+.inputset {
+	padding: 4px 0;
+}
+
+.clear {
+	clear: both;
+}
+
+#installdone a {
+	color: red;
+	font-weight: bold;
+}
+
+/* Footer */
+
+#footer {
+	width: 980px;
+	margin: 0 auto;
+	padding: 30px 0;
+	text-align: center;
+	background: #cf9;
+}
+
+#footer p, #footer div {
+	margin: 0;
+	padding: 0;
+	font-size: smaller;
+	line-height: normal;
+}

@@ -1,0 +1,889 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-06 11:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:81
+msgid "Sorry, your request used an invalid or expired form, please try again"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:85
+msgid "This form submission has already been processed"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:102
+#, php-format
+msgid "Invalid method call on aliroRequest - %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:109
+#, php-format
+msgid "Invalid property request on aliroAbstractRequest - %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:178
+#, php-format
+msgid "Please click on %s this link %s to continue"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:248
+msgid "Sorry, the form you used has expired, please try again"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:249
+msgid "Sorry, the form you used is invalid"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:250
+msgid "Sorry, the form you used did not have a required authentication"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:251
+msgid "The form you used has already been processed"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:255
+msgid "Internal error - invalid form check value"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:273
+msgid "Form failed consistency check"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:476
+msgid "At entry of aliroRequest::invokeComponent"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:483
+msgid "Retro call was unable to find component: "
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:487
+msgid "Unable to find component object for "
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:493
+#, php-format
+msgid "Failed on urlerror from SEF or no option (%s)"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAbstractRequest.php:500
+#, php-format
+msgid "A database error occurred on %s at %s while processing %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:128
+msgid "Please complete the username and password fields."
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:141
+msgid "Your browser is not accepting cookies - login is not possible."
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:152
+msgid "Logins are not permitted.  There is no authentication check active."
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:205
+msgid "Your login has been blocked. Please contact the administrator."
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:215
+msgid "Incorrect username or password. Please try again."
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:243
+msgid "Please enter a password"
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:266
+msgid "You cannot login. There are no administrators set up."
+msgstr ""
+
+#: /var/www/remository/classes/aliroAuthenticator.php:275
+msgid "Incorrect Username, Password, or Access Level.  Please try again"
+msgstr ""
+
+#: /var/www/remository/classes/aliroBasicHTML.php:25
+#: /var/www/remository/classes/aliroRenderer.php:97
+#: /var/www/remository/classes/aliroTemplateBase.php:70
+#: /var/www/remository/classes/aliroXMLParams.php:97
+#, php-format
+msgid "No translation in %s for %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroComponentManager.php:74
+#, php-format
+msgid "Invalid criticalInfo property %s requested through aliroFriendlyBase"
+msgstr ""
+
+#: /var/www/remository/classes/aliroComponentManager.php:184
+#, php-format
+msgid "Aliro error in %s: class not found %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroComponentManager.php:191
+#, php-format
+msgid "Component %s error: attempt to use non-existent method %s in %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroCore.php:96
+msgid "Impossible to determine the name of this server"
+msgstr ""
+
+#: /var/www/remository/classes/aliroCore.php:193
+#, php-format
+msgid "Invalid property %s requested from aliroCore"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabase.php:479
+#, php-format
+msgid "Insert into table %s but no fields"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabase.php:503
+#, php-format
+msgid "Update table %s but no key fields"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRow.php:11
+msgid ""
+"Asked aliroDBRowFactory to create object not subclassed from "
+"aliroDBGeneralRow"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRow.php:85
+#: /var/www/remository/classes/aliroDatabaseRowMultiKey.php:93
+msgid "::bind failed, parameter not an array"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRow.php:91
+#: /var/www/remository/classes/aliroDatabaseRowMultiKey.php:99
+#, php-format
+msgid "WARNING: %s does not support %s."
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRow.php:189
+msgid "Invalid method call to mosDBTable"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRow.php:295
+#: /var/www/remository/classes/aliroDatabaseRowMultiKey.php:309
+msgid "Database row attempt to obtain invalid property: "
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRowMultiKey.php:45
+msgid ""
+"Setting database row multiple key fields - given value is not array, or has "
+"wrong count"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRowMultiKey.php:48
+msgid "Setting database row single key field - given value is an array"
+msgstr ""
+
+#: /var/www/remository/classes/aliroDatabaseRowMultiKey.php:258
+msgid "No items selected."
+msgstr ""
+
+#: /var/www/remository/classes/aliroErrorRecorder.php:58
+#, php-format
+msgid "PHP Error %s: %s in %s at line %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroErrorRecorder.php:66
+msgid "A PHP error has been recorded in the log"
+msgstr ""
+
+#: /var/www/remository/classes/aliroErrorRecorder.php:67
+msgid "Serious PHP error - processing halted - see error log for details"
+msgstr ""
+
+#: /var/www/remository/classes/aliroFileManager.php:141
+#, php-format
+msgid "Copy requested for %s, but source file not found"
+msgstr ""
+
+#: /var/www/remository/classes/aliroFileManager.php:147
+#, php-format
+msgid "Copy requested for %s, but could not create destination directory"
+msgstr ""
+
+#: /var/www/remository/classes/aliroFileManager.php:153
+#, php-format
+msgid "Copy requested for %s, source found but could not copy to %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroFileManager.php:250
+#, php-format
+msgid "Installer unrecoverable ZIP error %s in %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroFileManager.php:259
+#, php-format
+msgid "Installer unrecoverable TAR error in %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroFolder.php:117
+msgid "No parent"
+msgstr ""
+
+#: /var/www/remository/classes/aliroHTML.php:171
+#: /var/www/remository/classes/compatibilityClasses.php:535
+#: /var/www/remository/classes/compatibilityClasses.php:555
+msgid "Published"
+msgstr ""
+
+#: /var/www/remository/classes/aliroHTML.php:171
+#: /var/www/remository/classes/compatibilityClasses.php:575
+#: /var/www/remository/classes/compatibilityClasses.php:595
+msgid "Unpublished"
+msgstr ""
+
+#: /var/www/remository/classes/aliroHTML.php:172
+msgid "Publish item"
+msgstr ""
+
+#: /var/www/remository/classes/aliroHTML.php:172
+msgid "Unpublish Item"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:15
+#: /var/www/remository/classes/aliroInstall.php:52
+msgid "Aliro Powered Site"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:19
+msgid "This site is down for maintenance.<br /> Please check back again soon."
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:20
+msgid ""
+"This site is temporarily unavailable.<br /> Please notify the System "
+"Administrator"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:24
+msgid ""
+"Aliro - the accessible, dynamic portal engine and content management system"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:70
+msgid ""
+"The default admin user name is \"admin\".  You can change this if you have "
+"user management installed."
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:71
+msgid "The initial password for the default admin user is: "
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:72
+#, php-format
+msgid ""
+"The basic installation is complete.  You can visit the empty site %s here %s."
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:73
+#, php-format
+msgid "Or you can visit the admin side of the site %s here %s."
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:74
+msgid ""
+"You are strongly recommended to login as admin and review the site "
+"configuration"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:94
+msgid "The general database details were not valid"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:96
+msgid "The core database details were not valid"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:116
+msgid "Not an empty user table - left untouched"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:117
+msgid ""
+"Site name and admin email not stored - please review config from admin "
+"interface"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:118
+msgid "same as it was before"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:185
+#, php-format
+msgid "Configuration file %s (encoded) already exists"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:193
+#, php-format
+msgid "Unable to write configuration file %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:223
+msgid "Install Aliro Content Management System"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:224
+msgid "Core Database details"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:225
+msgid "General Database details"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:243
+msgid "Configuration files"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:244
+msgid "Configuration file"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:245
+msgid "General DB credentials file"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:246
+msgid "Core DB credentials file"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:263
+msgid "Host for database (commonly localhost)"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:264
+msgid "Database name"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:265
+msgid "Database user name"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:266
+msgid "Database user password"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:267
+msgid "Prefix for database"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:300
+msgid "General Site Information"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:302
+msgid "Site Title"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:303
+msgid "Admin Password"
+msgstr ""
+
+#: /var/www/remository/classes/aliroInstall.php:304
+msgid "Admin Email"
+msgstr ""
+
+#: /var/www/remository/classes/aliroLanguageExtended.php:68
+msgid "Cannot create language, it already exists"
+msgstr ""
+
+#: /var/www/remository/classes/aliroMenuHandler.php:72
+msgid "aliroMenuItem class could not find XML file "
+msgstr ""
+
+#. prepare an array with 'all' as the first item
+#: /var/www/remository/classes/aliroModule.php:94
+#: /var/www/remository/classes/aliroSelectors.php:36
+msgid "All"
+msgstr ""
+
+#. prepare an array with 'none' as the first item
+#: /var/www/remository/classes/aliroModule.php:94
+#: /var/www/remository/classes/aliroSelectors.php:42
+#: /var/www/remository/classes/compatibilityClasses.php:220
+msgid "None"
+msgstr ""
+
+#: /var/www/remository/classes/aliroModule.php:94
+msgid "Varies"
+msgstr ""
+
+#: /var/www/remository/classes/aliroModule.php:128
+msgid "Please select a title"
+msgstr ""
+
+#: /var/www/remository/classes/aliroModule.php:273
+msgid "Your Module must contain a title."
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:72
+#, php-format
+msgid "XML ERROR in %s: %s at line %d"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:78
+#, php-format
+msgid "XML error in %s - unclosed tag(s) (%s) at end of file"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:108
+#, php-format
+msgid "XML error in %s: %s is not a valid containing element"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:109
+#, php-format
+msgid "XML error in %s: %s not permitted within %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:118
+#, php-format
+msgid "XML error in %s: expected MOSINSTALL but found %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:125
+#, php-format
+msgid "XML error in %s: last open tag was %s, but found end of %s"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:144
+#, php-format
+msgid "XML error in %s: mosinstall does not have type attribute"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:318
+#: /var/www/remository/classes/aliroXMLParams.php:161
+#, php-format
+msgid "Dynamic parameter class: %s, method: %s failed"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:333
+#: /var/www/remository/classes/aliroXMLParams.php:176
+msgid "Handler not defined for type"
+msgstr ""
+
+#: /var/www/remository/classes/aliroOldXML.php:346
+#: /var/www/remository/classes/aliroXMLParams.php:54
+msgid "There are no Parameters for this item"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPage404.php:51
+msgid "404 Error - page not found"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPage404.php:78
+msgid ""
+"This Aliro based web site is not yet configured with user data, please call "
+"back later"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPage404.php:124
+msgid "Sorry, none found"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:104
+#, php-format
+msgid "Results %d to %d of %d"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:105
+msgid "No records found."
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:122
+#: /var/www/remository/classes/aliroPageNav.php:125
+msgid "Start"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:122
+msgid "first page"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:123
+#: /var/www/remository/classes/aliroPageNav.php:126
+msgid "Previous"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:123
+msgid "previous page"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:136
+#: /var/www/remository/classes/aliroPageNav.php:139
+msgid "Next"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:136
+msgid "next page"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:137
+#: /var/www/remository/classes/aliroPageNav.php:140
+msgid "End"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:137
+msgid "end page"
+msgstr ""
+
+#: /var/www/remository/classes/aliroPageNav.php:182
+#, php-format
+msgid "Page %d of %d"
+msgstr ""
+
+#: /var/www/remository/classes/aliroParameters.php:52
+msgid "Raw data for aliroParameters not a string"
+msgstr ""
+
+#: /var/www/remository/classes/aliroParameters.php:56
+msgid "Raw data for aliroParameters was not null, but did not yield any values"
+msgstr ""
+
+#: /var/www/remository/classes/aliroParameters.php:103
+msgid "Data passed to aliroParameters"
+msgstr ""
+
+#: /var/www/remository/classes/aliroRenderer.php:14
+msgid "aliroRenderer called for invalid renderer type"
+msgstr ""
+
+#: /var/www/remository/classes/aliroRenderer.php:54
+msgid "A template has not been specified in a call to aliroRenderer"
+msgstr ""
+
+#: /var/www/remository/classes/aliroRenderer.php:55
+#, php-format
+msgid ""
+"Specified template file %s is not readable in a call to aliroPHPRenderer"
+msgstr ""
+
+#: /var/www/remository/classes/aliroRequest.php:94
+msgid "Program killed - Probably looping"
+msgstr ""
+
+#: /var/www/remository/classes/aliroSelectors.php:16
+msgid "Top"
+msgstr ""
+
+#: /var/www/remository/classes/aliroSession.php:128
+msgid "No session ID found, although aliroSession has been instantiated"
+msgstr ""
+
+#: /var/www/remository/classes/aliroSession.php:152
+msgid "Remember Me login failed - incorrect username-password combination"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:97
+msgid "mosUser::store failed"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:115
+msgid "Please enter your name"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:116
+msgid "Please enter a user name"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:117
+#, php-format
+msgid ""
+"Please enter a valid %s.  No spaces, more than %d characters and containing "
+"only the characters 0-9,a-z, or A-Z"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:117
+msgid "Username"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:118
+msgid "Please enter a valid e-mail address"
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:123
+msgid "This username/password is already in use. Please try another."
+msgstr ""
+
+#: /var/www/remository/classes/aliroUser.php:127
+msgid ""
+"This e-mail is already registered. If you forgot the password click on "
+"\"Password Reminder\" and new password will be sent to you."
+msgstr ""
+
+#: /var/www/remository/classes/aliroXML.php:41
+msgid " parser error: "
+msgstr ""
+
+#: /var/www/remository/classes/aliroXML.php:43
+msgid "An XML processing error occurred in class aliroXML"
+msgstr ""
+
+#: /var/www/remository/classes/aliroXML.php:52
+msgid "XML analysis was requested but no valid XML was supplied"
+msgstr ""
+
+#: /var/www/remository/classes/aliroXML.php:61
+#, php-format
+msgid "XML analysis found illegal tag: %s"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:29
+#: /var/www/remository/classes/compatibilityClasses.php:180
+msgid ""
+"New items default to the last place. Ordering can be changed after this item "
+"is saved."
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:65
+msgid "Parent Window With Browser Navigation"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:66
+msgid "New Window With Browser Navigation"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:67
+msgid "New Window Without Browser Navigation"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:113
+#: /var/www/remository/classes/compatibilityClasses.php:271
+msgid "- All Sections -"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:162
+msgid "- Select Image -"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:178
+msgid ""
+"New items default to the first place. Ordering can be changed after this "
+"item is saved."
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:204
+msgid "- No User -"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:223
+msgid "Center"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:226
+msgid "Left"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:229
+msgid "Right"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:251
+msgid "- All Categories -"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:258
+msgid "You must create a category first."
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:496
+msgid "Please make a selection from the list to"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:515
+msgid "New"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:562
+#: /var/www/remository/classes/mosMenuBar.php:93
+msgid "Please make a selection from the list to publish"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:602
+#: /var/www/remository/classes/mosMenuBar.php:132
+msgid "Please make a selection from the list to unpublish"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:615
+msgid "Archive"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:622
+#: /var/www/remository/classes/mosMenuBar.php:142
+msgid "Please make a selection from the list to archive"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:635
+msgid "Unarchive"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:642
+#: /var/www/remository/classes/mosMenuBar.php:152
+msgid "Please select a news story to unarchive"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:655
+msgid "Edit"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:662
+#: /var/www/remository/classes/compatibilityClasses.php:681
+#: /var/www/remository/classes/compatibilityClasses.php:700
+#: /var/www/remository/classes/mosMenuBar.php:162
+#: /var/www/remository/classes/mosMenuBar.php:173
+#: /var/www/remository/classes/mosMenuBar.php:183
+#: /var/www/remository/classes/mosMenuBar.php:194
+#: /var/www/remository/classes/mosMenuBar.php:204
+#: /var/www/remository/classes/mosMenuBar.php:215
+msgid "Please select an item from the list to edit"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:675
+msgid "Edit HTML"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:694
+msgid "Edit CSS"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:714
+#: /var/www/remository/classes/mosMenuBar.php:239
+msgid "Delete"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:721
+msgid "Are you sure you want to delete selected items?"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:721
+#: /var/www/remository/classes/mosMenuBar.php:226
+#: /var/www/remository/classes/mosMenuBar.php:238
+msgid "Please make a selection from the list to delete"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:737
+#: /var/www/remository/classes/compatibilityClasses.php:738
+msgid "Preview"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:754
+#: /var/www/remository/classes/mosMenuBar.php:279
+#: /var/www/remository/classes/mosMenuBar.php:286
+#: /var/www/remository/classes/mosMenuBar.php:293
+msgid "Save"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:772
+#: /var/www/remository/classes/compatibilityClasses.php:773
+#: /var/www/remository/classes/compatibilityClasses.php:787
+#: /var/www/remository/classes/compatibilityClasses.php:788
+msgid "save"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:804
+#: /var/www/remository/classes/mosMenuBar.php:302
+msgid "Cancel"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:823
+#: /var/www/remository/classes/compatibilityClasses.php:824
+msgid "back"
+msgstr ""
+
+#: /var/www/remository/classes/compatibilityClasses.php:851
+#: /var/www/remository/classes/compatibilityClasses.php:852
+msgid "Upload Image"
+msgstr ""
+
+#: /var/www/remository/classes/mosHTML.php:17
+msgid "Unwriteable"
+msgstr ""
+
+#: /var/www/remository/classes/mosHTML.php:17
+msgid "Writeable"
+msgstr ""
+
+#: /var/www/remository/classes/mosMenuBar.php:103
+msgid "Please select an item to make default"
+msgstr ""
+
+#: /var/www/remository/classes/mosMenuBar.php:113
+msgid "Please select an item to assign"
+msgstr ""
+
+#: /var/www/remository/classes/mosMenuBar.php:269
+msgid "Apply"
+msgstr ""
+
+#: /var/www/remository/classloader.php:204
+#, php-format
+msgid "SmartClassMapper, %s dynamic items, % logs"
+msgstr ""
+
+#: /var/www/remository/classloader.php:259
+#, php-format
+msgid "Class %s defined in %s but already defined in %s"
+msgstr ""
+
+#: /var/www/remository/extclasses/phpgettext/phpgettext.admin.php:166
+msgid "PHPGettextAdmin execute failure"
+msgstr ""
+
+#: /var/www/remository/extclasses/phpgettext/phpgettext.admin.php:167
+msgid "Debug PHPGettextAdmin"
+msgstr ""
+
+#: /var/www/remository/includes/mambofunc.php:60
+#, php-format
+msgid "User Submitted '%s'"
+msgstr ""
+
+#: /var/www/remository/includes/mambofunc.php:61
+msgid ""
+"Hello %s,\n"
+"\n"
+"\r\n"
+"A user submitted %s:\n"
+"[ %s ]\n"
+"\r\n"
+"has been just been submitted by user:\n"
+"[ %s ]\n"
+"\n"
+"\r\n"
+"for %\n"
+"\n"
+"Please go to %s/administrator to view and approve this %s\n"
+"\n"
+"\r\n"
+"Please do not respond to this message as it is automatically generated and "
+"is for information purposes only."
+msgstr ""
+
+#: /var/www/remository/includes/mambofunc.php:287
+msgid "Mambo Warning"
+msgstr ""
+
+#: /var/www/remository/index.php:143
+#, php-format
+msgid "Time to generate page %s seconds"
+msgstr ""

@@ -1,0 +1,43 @@
+##
+# htaccess.txt for Aliro SEF with Apache URL rewriting
+#
+# All of this should ideally be replaced by directives in the server configuration file
+##
+
+# Restrictions on files
+<FilesMatch "\.xml$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+<Files sitemap.xml>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<FilesMatch "\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+<FilesMatch "index[0-9]?\.php$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+#
+#  mod_rewrite in use - the line below MUST be uncommented for SEF to work
+#
+
+RewriteEngine On
+
+#  Uncomment following line if your webserver's URL
+#  is not directly related to physical file paths.
+#  Update YourMamboDirectory (just / for root)
+
+# RewriteBase /
+
+#
+#  Rules - the lines below MUST be uncommented for SEF to work
+#
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php

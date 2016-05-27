@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extinstall version="2.0" type="language">
+	<name>English</name>
+	<formalname>en</formalname>
+	<version>2.0</version>
+	<description>English Locale</description>
+	<creationdate>20-01-2008</creationdate>
+	<author>Aliro</author>
+	<authorurl>www.aliro.org</authorurl>
+	<authoremail>translation@aliro.org</authoremail>
+	<copyright>(C) 2000 - 2007 Mambo Foundation Inc.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL v.2</license>
+	<files>
+		<filename domain="" strings="" translated="0" fuzzy="0" percent="" filetype="xml">en.xml</filename>
+	</files>
+	<params>
+		<param name="locale" type="text" default="en.utf-8,en,en,english" label="Locale String" description="Locale string for setlocale() (eg. en, english)"></param>
+		<param name="charset" type="text" default="utf-8" label="Character Set" description="Character set for this language."></param>
+		<param name="text_direction" type="text" default="ltr" label="Text Direction" description="left-to-right or light-to-left"></param>
+		<param name="date_format" type="text" default="%B %d, %Y at %I:%M %p" label="Date Format" description="Date format for strftime() (eg. %A, %d %B %Y)"></param>
+		<param name="plural_form" type="text" default="nplurals=2; plural=n != 1;" label="Plural Forms" description="Plural Forms expression"></param>
+	</params>
+	<locale name="en" title="English" territory="" locale="en.utf-8,en,en,english" text_direction="ltr" iso639="en" iso3166_2="" iso3166_3="" charset="utf-8">
+		<plural_form nplurals="2" plural="n != 1" expression="nplurals=2; plural=n != 1;"></plural_form>
+		<date_format>%B %d, %Y at %I:%M %p</date_format>
+		<codesets>
+			<charset>utf-8</charset>
+			<charset>iso-8859-1</charset>
+			<charset>iso-8859-15</charset>
+		</codesets>
+		<days sun="Sun" mon="Mon" tue="Tue" wed="Wed" thu="Thu" fri="Fri" sat="Sat"></days>
+		<months jan="Jan" feb="Feb" mar="Mar" apr="Apr" may="May" jun="Jun" jul="Jul" aug="Aug" sep="Sep" oct="Oct" nov="Nov" dec="Dec"></months>
+	</locale>
+</extinstall>

@@ -1,0 +1,266 @@
+/*
+Adapted from a design by Free CSS Templates
+by Martin Brampton http://www.aliro.org
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #cf9;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #6c0
+}
+
+img {
+	border: 0;
+}
+
+h1, h2, h3 {
+	margin-bottom: 0.5;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #390;
+}
+
+h1 a, h2 a, h3 a {
+	text-decoration: none;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	letter-spacing: -2px;
+	font-size: 2.6em;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, ul, ol {
+	margin-bottom: 1.5em;
+	line-height: 140%;
+}
+
+ul, ol {
+	margin-left: 3em;
+}
+
+blockquote {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+a {
+	text-decoration: none;
+	color: #090
+}
+
+a:hover {
+	background: #cf9;
+	text-decoration: underline;
+	color: #390;
+}
+
+/* Header */
+
+#headerwrapper {
+	height: 90px;
+	background: #6f0;
+	border-bottom: 5px solid #390;
+}
+
+#header {
+	width: 980px;
+	height: 90px;
+	margin: 0 auto;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+}
+
+#logo h1, #logo h2 {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+#logo h1 {
+	padding-top: 30px;
+}
+
+#logo h1 a {
+	color: #ff0;
+}
+
+#logo h1 a:hover {
+	text-decoration: none;
+	background: none;
+}
+
+#logo h2 {
+	padding: 45px 0 0 7px;
+	letter-spacing: normal;
+	font-size: 1.4em;
+}
+
+#logo h2 a {
+	color: #390;
+}
+
+/* Menu */
+
+#top_menu {
+	float: right;
+}
+
+#top_menu ul {
+	margin: 0;
+	padding: 50px 0 0 0;
+	list-style: none;
+	line-height: normal;
+}
+
+#top_menu li {
+	display: inline;
+	padding-left: 20px;
+}
+
+#top_menu a {
+	text-transform: lowercase;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#top_menu a:hover {
+	text-decoration: underline;
+}
+
+#main_menu a.active {
+	color: #f00;
+}
+
+/* Page */
+
+#page {
+	width: 980px;
+	margin: 0 auto;
+	background: #cf9;
+}
+
+/* Sidebars */
+
+.sidebar {
+	float: left;
+	width: 180px;
+	padding-top: 20px;
+	background: #cf9;
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar li {
+	padding-bottom: 30px;
+}
+
+.sidebar li ul {
+}
+
+.sidebar li li {
+	padding: 0;
+}
+
+.sidebar h2 {
+	margin: 0;
+	padding: 10px;
+	letter-spacing: normal;
+	font-size: 1.4em;
+	background: #ffc;
+}
+
+/* Sidebar1 */
+
+#sidebar1 h2 {
+	text-align: right;
+	border-left: 3px solid #390;
+	border-right: 1px solid #cf9;
+}
+
+#sidebar1 li li {
+	padding-right: 20px;
+	text-align: right;
+}
+
+/* Sidebar2 */
+
+#sidebar2 h2 {
+	border-right: 3px solid #390;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 620px;
+	background: #fff;
+	border-bottom: 3px solid #390;
+}
+
+#content .contentheading {
+	color: #390;
+	font-size: 1.8em;
+}
+
+#content_top1, #content_top2 {
+	float: left;
+	width: 300px;
+	background: #cf9;
+}
+
+#maincontent {
+	clear: left;
+}
+
+#pathway {
+	padding: 5px;
+}
+
+.post {
+	padding: 10px; 
+}
+
+/* Footer */
+
+#footer {
+	width: 980px;
+	margin: 0 auto;
+	padding: 30px 0;
+	text-align: center;
+	background: #cf9;
+}
+
+#footer p, #footer div {
+	margin: 0;
+	padding: 0;
+	font-size: smaller;
+	line-height: normal;
+}
