@@ -1,13 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- * 
- * 
- */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,23 +23,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <?php
                             echo form_error('title');
                             $data = array(
-                            'class' => 'form-control',
-                            'name' => 'title',
-                            'placeholder' => 'Enter Title',
-                            'value' => set_value('title')
+                                'class' => 'form-control',
+                                'name' => 'title',
+                                'placeholder' => 'Enter Title',
+                                'value' => set_value('title')
                             );
                             echo form_input($data);
                             ?>
 
                         </div>
                         <div class="form-group">
-                            <?php  
+                            <?php
                             echo form_error('header');
                             $data = array(
-                            'class' => 'form-control',
-                            'name' => 'header',
-                            'placeholder' => 'Enter Header',
-                            'value' => set_value('header')
+                                'class' => 'form-control',
+                                'name' => 'header',
+                                'placeholder' => 'Enter Header',
+                                'value' => set_value('header')
                             );
                             echo form_input($data);
                             ?>
@@ -58,9 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </button>
                         </div>
                         <br />
-                            <?php
-                            echo form_close();
-                            ?>
+                        <?php
+                        echo form_close();
+                        ?>
                     </div>
                     </div>
 
