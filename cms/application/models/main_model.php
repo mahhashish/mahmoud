@@ -25,9 +25,7 @@ class main_model extends CI_Model {
 
     public function add_data($title, $header) {
         $data = array('title' => $title, 'header' => $header);
-
-        $str = $this->db->insert_string('data', $data);
-        $this->db->query($str);
+        $this->db->insert('data', $data);
         if ($this->db->affected_rows() > 0) {
             return TRUE;
         } else {
