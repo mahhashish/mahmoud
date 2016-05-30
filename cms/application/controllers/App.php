@@ -17,11 +17,6 @@ class App extends CI_Controller {
         if (!$this->session->has_userdata('username')) {
             if ($this->input->post()) {
                 if ($this->input->post('submit') && $this->input->post('submit') == 'Login') {
-                    /* validate username & password from the form
-                      check_auth() and if OK
-                      session_start();
-                      $_SESSION['username'] = $username;
-                      header('Location:app'); */
                     $this->form_validation->set_rules('username', 'Username', 'required|max_length[50]|min_length[6]', array(
                         'required' => 'You must provide a %s',
                         'max_length' => 'Max length for %s is 50 characters',
@@ -47,8 +42,6 @@ class App extends CI_Controller {
                         $this->load->view('app/login_view');
                     }
                 } elseif ($this->input->post('submit') && $this->input->post('submit') == 'SetData') {
-
-
                     $this->form_validation->set_rules('title', 'Title', 'required|max_length[50]|min_length[6]', array(
                         'required' => 'You must provide a %s.',
                         'max_length' => 'Max length for %s is 50 characters',
