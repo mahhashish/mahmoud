@@ -23,11 +23,11 @@ switch ($appservlang)
 }
 define("_LPHPMYADMIN","phpMyAdmin");
 define("_LPERL","/cgi-bin/");
-define("_APPVERSION","8.1.0");
-define("_VMYSQL","5.7.10");
-define("_VPHP","5.6.18");
-define("_VPHP7","7.0.3");
-define("_VAPACHE","2.4.18");
-define("_VPHPMYADMIN"," 4.5.4.1");
+define("_APPVERSION","8.3.0");
+define("_VMYSQL","5.7.12");
+define("_VPHP","5.6.21");
+define("_VPHP7","7.0.6");
+define("_VAPACHE","2.4.20");
+define("_VPHPMYADMIN"," 4.6.1");
 define("_APPSERV","AppServ");
 ?>

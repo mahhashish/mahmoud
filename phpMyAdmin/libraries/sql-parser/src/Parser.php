@@ -36,6 +36,7 @@ class Parser
 
         // MySQL Utility Statements
         'DESCRIBE'          => 'SqlParser\\Statements\\ExplainStatement',
+        'DESC'              => 'SqlParser\\Statements\\ExplainStatement',
         'EXPLAIN'           => 'SqlParser\\Statements\\ExplainStatement',
         'FLUSH'             => '',
         'GRANT'             => '',
@@ -119,22 +120,26 @@ class Parser
             'class'             => 'SqlParser\\Components\\UnionKeyword',
             'field'             => 'union',
         ),
+        'UNION DISTINCT'        => array(
+            'class'             => 'SqlParser\\Components\\UnionKeyword',
+            'field'             => 'union',
+        ),
 
         // Actual clause parsers.
         'ALTER'                 => array(
             'class'             => 'SqlParser\\Components\\Expression',
             'field'             => 'table',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'ANALYZE'               => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'BACKUP'                => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'CALL'                  => array(
             'class'             => 'SqlParser\\Components\\FunctionCall',
@@ -143,22 +148,22 @@ class Parser
         'CHECK'                 => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'CHECKSUM'              => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'DROP'                  => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'fields',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'FROM'                  => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'from',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'GROUP BY'              => array(
             'class'             => 'SqlParser\\Components\\OrderKeyword',
@@ -184,6 +189,11 @@ class Parser
             'class'             => 'SqlParser\\Components\\JoinKeyword',
             'field'             => 'join',
         ),
+        'ON'                    => array(
+            'class'             => 'SqlParser\\Components\\Expression',
+            'field'             => 'table',
+            'options'           => array('parseField' => 'table'),
+        ),
         'RIGHT JOIN'            => array(
             'class'             => 'SqlParser\\Components\\JoinKeyword',
             'field'             => 'join',
@@ -200,6 +210,10 @@ class Parser
             'class'             => 'SqlParser\\Components\\JoinKeyword',
             'field'             => 'join',
         ),
+        'FULL OUTER JOIN'       => array(
+            'class'             => 'SqlParser\\Components\\JoinKeyword',
+            'field'             => 'join',
+        ),
         'STRAIGHT_JOIN'         => array(
             'class'             => 'SqlParser\\Components\\JoinKeyword',
             'field'             => 'join',
@@ -211,7 +225,7 @@ class Parser
         'OPTIMIZE'              => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'ORDER BY'              => array(
             'class'             => 'SqlParser\\Components\\OrderKeyword',
@@ -232,12 +246,12 @@ class Parser
         'REPAIR'                => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'RESTORE'               => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'SET'                   => array(
             'class'             => 'SqlParser\\Components\\SetOperation',
@@ -250,12 +264,12 @@ class Parser
         'TRUNCATE'              => array(
             'class'             => 'SqlParser\\Components\\Expression',
             'field'             => 'table',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'UPDATE'                => array(
             'class'             => 'SqlParser\\Components\\ExpressionArray',
             'field'             => 'tables',
-            'options'           => array('skipColumn' => true),
+            'options'           => array('parseField' => 'table'),
         ),
         'VALUE'                 => array(
             'class'             => 'SqlParser\\Components\\Array2d',
@@ -421,7 +435,7 @@ class Parser
                 continue;
             }
 
-            if (($token->value === 'UNION') || ($token->value === 'UNION ALL')) {
+            if (($token->value === 'UNION') || ($token->value === 'UNION ALL') || ($token->value === 'UNION DISTINCT')) {
                 $unionType = $token->value;
                 continue;
             }
