@@ -12,6 +12,7 @@ class main_model extends CI_Model {
     public function get_data() {
         $this->db->select('title,header');
         $this->db->order_by('id', 'DESC');
+        $this->db->limit(1);
         $query = $this->db->get('data');
         if ($query->num_rows()) {
             $row = $query->row_array();
