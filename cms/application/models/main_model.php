@@ -14,11 +14,8 @@ class main_model extends CI_Model {
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get('data');
         if ($query->num_rows()) {
-            $row = array();
-            foreach ($query->result_array() as $row) {
-                return $row;
-            }
-            $query->free_result();
+            $row = $query->row_array();
+            return $row;
         }
         return FALSE;
     }
