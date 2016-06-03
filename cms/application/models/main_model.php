@@ -14,7 +14,7 @@ class main_model extends CI_Model {
         $this->db->order_by('id', 'DESC');
         $this->db->limit(1);
         $query = $this->db->get('data');
-        if ($query->num_rows()) {
+        if ($query->num_rows() > 0) {
             $row = $query->row_array();
             return $row;
         }
@@ -34,7 +34,7 @@ class main_model extends CI_Model {
     public function check_auth($username, $password) {
         $this->db->select('username,password');
         $query = $this->db->get('auth');
-        if ($query->num_rows()) {
+        if ($query->num_rows() > 0) {
             return TRUE;
         }
         return FALSE;
