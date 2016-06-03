@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'tuts';
-$db['default']['password'] = 'tutsplus';
-$db['default']['database'] = 'cms';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'LOflower';
+$db['default']['database'] = 'tutplus-cms';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;
