@@ -1,4 +1,5 @@
 <?php
+
 $config['full_tag_open'] = '<ul>';
 $config['full_tag_close'] = '</ul>';
 $config['first_link'] = FALSE;
