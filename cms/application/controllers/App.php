@@ -14,7 +14,7 @@ class App extends CI_Controller {
     }
 
     public function index() {
-        if (!$this->session->has_userdata('username')) {
+        if (!isset($_SESSION['username'])) {
             if ($this->input->post()) {
                 if ($this->input->post('submit',TRUE) && $this->input->post('submit',TRUE) == 'Login') {
                     $this->form_validation->set_rules('username', 'Username', 'required|max_length[50]|min_length[6]', array(
