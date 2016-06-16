@@ -6,10 +6,11 @@ class Users extends MY_Controller {
     $this->load->helper('file'); // for html emails
     $this->load->model('Users_model');
     $this->load->model('Password_model');
+    $this->load->library('encrypt');
 
     if ( ($this->session->userdata('logged_in') == FALSE) || 
        ($this->session->userdata('usr_access_level') != 1) ) {
-        redirect('signin');
+        #redirect('signin');
     }  
   }
   

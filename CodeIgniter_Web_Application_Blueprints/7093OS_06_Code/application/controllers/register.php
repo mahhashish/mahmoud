@@ -27,6 +27,7 @@ class Register extends CI_Controller {
     } else { 
       // Create hash from user password 
       $password = random_string('alnum', 8);
+      echo "$password";
       $hash = $this->encrypt->sha1($password);  
        
       $data = array( 
@@ -39,7 +40,7 @@ class Register extends CI_Controller {
       ); 
 
       if ($this->Register_model->register_user($data)) {
-        $file = read_file('../views/email_scripts/welcome.txt');
+        $file = file_get_contents('../views/email_scripts/welcome.txt');
         $file = str_replace('%usr_fname%', $data['usr_fname'], $file);
         $file = str_replace('%usr_lname%', $data['usr_lname'], $file);
         $file = str_replace('%password%', $password, $file);
