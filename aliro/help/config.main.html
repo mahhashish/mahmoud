@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US" xml:lang="en_US">
+<head>
+<title>Global Configuration Manager</title>
+<link href="css/help.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<strong class="title">Global Configuration Manager </strong>
+<table width="100%"  border="1" cellspacing="0" cellpadding="3">
+     <tr>
+          <td width="16%" align="right" valign="top" bgcolor="#EFEFEF" class="datalabel">Purpose:</td>
+          <td width="84%" valign="top" class="data"><p>The Global Configuration
+                    Manager allows you to control a number of variables that
+                    affect your site as a whole. Changes made on this screen
+                    will update the configuration.php file; accordingly, this
+                    file must be writable. When your site is configured,
+                    it is a good idea to make configuration.php unwritable for
+                    security reasons. </p>
+               <p ><strong>Site Tab</strong></p>
+               
+      <ul>
+        <li><strong>Site Offline</strong> - Takes the front end of your website 
+          on or offline. Use this option if you are updating the site and do not 
+          wish to have your visitors view the site until you are finished.</li>
+        <li><strong>Offline Message</strong> - When the Site Offline switch is 
+          in the Yes position, this field sets the default message that displays 
+          for your site visitors.</li>
+        <li><strong>System Error Message</strong> - This message will display 
+          if the initial database connection fails.&nbsp; You can type anything 
+          you like in this box.</li>
+        <li><strong>Site Name</strong> - Sets the name of the site. This will 
+          display in the Title Bar of the visitors' browsers and will also show 
+          in system-generated emails. </li>
+        <li><strong>ShowUnauthorised Links</strong> -&nbsp;With this option turned 
+          on, visitors&nbsp;will see all links, including those to Content Items 
+          to which the visitor may not have access, (that is, content given an 
+          Access Level of &#39;Registered&#39; or &#39;Special&#39;). With this 
+          option off, they will only see links to content with an Access Level 
+          of &#39;Public&#39;.</li>
+        <li><strong>Allow User Registration</strong> - This option allows you 
+          to set whether visitors can register for a user account. If the &quot;Yes&quot; 
+          radio button is chosen, the Login Form will include the prompt &ldquo;No 
+          account yet? Create one&quot;. If the &quot;No&quot; radio button is 
+          chosen, they will not be presented with an option to register.</li>
+        <li><strong>Use New Account Activation</strong> - If the &quot;Yes&quot; 
+          radio button is chosen, an activation link will be sent to user&#39;s 
+          e-mail address. A new user can not login until he has clicked on the 
+          activation link.&nbsp; If the &quot;No&quot; radio button is chosen, 
+          Users will be able to login right away without activation.</li>
+        <li><strong>Email New User Password</strong> - With this option set to 
+          &#39;Yes&#39;, the new user will receive an email with a password generated 
+          by Mambo. If it is set to &#39;No&#39;, new Users will select their 
+          own password.</li>
+        <li><strong>Require Unique Email</strong> - Select whether you want to 
+          prevent registration with duplicate e-mail addresses. In combination 
+          with user activation this option prevents users from signing up more 
+          than once using the same e-mail address.</li>
+        <li><strong>Use Captcha Authentication</strong> - Select whether users 
+          are required to enter verification details from a security image before 
+          submitting forms. This stops automatic form submissions such as spam.</li>
+        <li><strong>Debug Site</strong> - This option allows you to view the error 
+          messages that are created by your site&#39;s php installation. It can 
+          be a handy tool for debugging if you are having problems and for reporting 
+          errors to your System Administrator or Web host.</li>
+        <li><strong>WYSIWYG Editor</strong> - Choose which of the installed Text 
+          Editors you want to use to edit Content Items.</li>
+        <li><strong>List Length</strong> - Choose a default length for lists in 
+          the Admin system.</li>
+        <li><strong>Favourites Site Icon</strong> - This sets the icon that appears 
+          in some browsers next to the name and/or address of your site.&nbsp; 
+          By default this is the Mambo flower.&nbsp; If you want another icon 
+          to show up, you must upload another icon to replace the Mambo flower.&nbsp;</li>
+      </ul>               
+               <p><strong>Locale Tab</strong> </p>
+               <ul>
+                    <li><strong>Language</strong>:&nbsp; Choose
+                         the default language used on your site. Note that you
+                         may have to install a language pack if you wish to use
+                         a language other than that deployed with the system.</li>
+                    <li><strong>Time
+                         Offset</strong>: This option sets the time offset in
+                         hours between your server location and GMT (Greenwich
+                         Mean Time - UK).</li>
+                    <li><strong>Debugging</strong>: </li>
+                    <li><strong>Use gettext</strong>: </li>
+                    <li><strong>Country
+                         Locale</strong>: Type the location of your Web site.&nbsp; For
+                         instance en_GB would be the setting for the UK.</li>
+               </ul>               
+               <p><strong>Content Tab</strong> </p>
+               <ul>
+                    <li><strong>Linked Titles</strong>:
+                         Select &#39;Yes&#39;, if you want the title of a Content
+                         Item to function as a hyper-link leading to the Content
+                         Item.</li>
+                    <li><strong>Read
+                         More Link</strong>: Hide / display the
+                         text &quot;Read more&quot; at the end of your &quot;Intro
+                         Text&quot; of your Content Items.</li>
+                    <li><strong>Item Rating / Voting</strong>:&nbsp;This
+                         option allows users to vote on / rate  Content Items.&nbsp; Choose &#39;Yes&#39;,
+                         and a &#39;Star Bar&#39; will be shown on each Content
+                         Item, as well as a form for submitting ratings. </li>
+                    <li><strong>Author
+                         Names</strong>: Show /Hide the Author&#39;s name when
+                         a Content Item is displayed.</li>
+                    <li> <strong>Created Date and Time</strong>:&nbsp;Show /Hide the
+                         creation date and time when a Content Item
+                         is displayed</li>
+                    <li>.<strong>Modified
+                         Date and Time</strong>: Show /Hide the last modified
+                         date and time when
+                         a Content Item is displayed.</li>
+                    <li><strong>Hits</strong>: Show /Hide the number
+                         of times an article/content has been viewed.</li>
+                    <li> <strong>PDF Icon</strong>:
+                         Show /Hide the PDF
+                         maker icon on Content Items.</li>
+                    <li><strong>Print Icon</strong>:&nbsp; Show /Hide the Printer
+                         Friendly Version icon on Content Items.</li>
+                    <li><strong>Email
+                         Icon</strong>:&nbsp;Show /Hide the Email Page to Friend
+                         icon on Content Items.</li>
+                    <li><strong>Icons</strong>: Choose the
+                         radio button &quot;Show&quot;, when you want the hidden links
+                         to Email/Print/PDF to be icons rather than text.</li>
+                    <li><strong>Table
+                         of Contents on multi-page items</strong>: Choose the radio
+                         button &quot;Show&quot;, to show the Table of Content navigation
+                         index boxes&nbsp; for multi-page Content Items.</li>
+                    <li><strong>Back Button</strong>:&nbsp;Show /Hide navigational
+                         back buttons on each page to make it easier for users
+                         to navigate your site.</li>
+                    <li><strong>Content Item Navigation</strong>:
+                         Choose the radio button &quot;Show&quot;, to publish&nbsp; &#39;Next&#39; and &#39;Previous&#39; links
+                         when viewing Content Items in a category or&nbsp; to change
+                         pages within the same article.</li>
+               </ul>               
+               <p><strong>Database Tab</strong> </p>
+               <p ><strong>Warning</strong>&nbsp;&nbsp;These
+                    are very important settings. If your Mambo web site has been
+                    installed on your behalf do not alter these settings.</p>
+               <ul>
+                    <li><strong>Hostname</strong>:
+                         Your Host name - typically &quot;localhost.&quot; </li>
+                    <li><strong>MySQL
+                         Username</strong>: The username to access
+                         your Mambo database.</li>
+                    <li><strong>MySQL Password</strong>:&nbsp; The password to
+                         access your Mambo database.</li>
+                    <li><strong>MySQL
+                         Database</strong>: The name of the database
+                         your Mambo installation uses.</li>
+                    <li><strong>MySQL Database Prefix</strong>:
+                         The prefix used for records in your Mambo
+                         database. Typically &ldquo;mos_&quot; by default. <strong>Very
+                         Important!</strong> DO NOT CHANGE UNLESS YOU HAVE A
+                         DATABASE BUILT USING TABLES WITH THE PREFIX YOU ARE
+                         SETTING!!</li>
+               </ul>               
+               <p><strong>Server Tab</strong> </p>
+               <p >The following two items are predefined
+                    during the installation and are not configurable through
+                    this tab. The only way to change them is by manually editing
+                    the configuration.php file.</p>
+               <ul>
+                    <li><strong>Absolute Path</strong>:&nbsp;This
+                         is the directory information used by Mambo on the server
+                         that orientates it to it&#39;s surrounding system.</li>
+                    <li><strong>Live
+                         Site</strong>:&nbsp;This is the absolute URL (web address)
+                         for your installation of Mambo. Typical value is http://www.mysite.com.</li>
+               </ul>               
+               <p>The following items are editable on the screen. </p>
+               <ul>
+                    <li><strong>GZIP Page Compression</strong>:
+                              Choose the radio button &quot;Yes&quot;, to allow
+                              your web server to send compressed data, if supported
+                         by the server, to the client web browser.</li>
+                    <li><strong>Login
+                              Session Lifetime</strong>: Type the number of seconds
+                              the Administration session should be allowed to stay
+                              live before automatic logout occurs. After automatic
+                              logout, the Administrator will be required to login
+                         again using the correct username and password.&nbsp; </li>
+                    <li><strong>Error
+                              Reporting</strong>:&nbsp;If this option
+                              is enabled under the Site tab, then using the drop down
+                              box, select the level or reporting required. Options
+                         are System Default, None, Simple and Maximum.</li>
+               </ul>               <div >
+                    <ul>
+                         <ul>
+                              <li>System Default - &nbsp;This turns Error reporting
+                                        to the system default according to php.ini on the
+                                        server.</li>
+                              <li>None -&nbsp;This turns off error reporting.</li>
+                              <li>Simple - &nbsp;This turns error reporting to
+                                   simple options.</li>
+                              <li>&nbsp;Maximum - &nbsp;This turns error reporting
+                                   to the Maximum level.</li>
+                         </ul>
+                         <li><strong>Register Globals Emulation</strong>: By
+                              default set to &quot;ON.&quot; Setting this to &quot;OFF&quot; may
+                              cause problems with some components. </li>
+                         <li><strong>Help Server</strong>: Set the URL for the
+                              system to use to access the live help site data.
+                              Leave blank to disable this feature. </li>
+                         <li> <strong>File Creation</strong>:
+                              By default, files created by the installation of
+                              components, modules and mambots inherit the server
+                              default permissions. By choosing &quot;CHMOD new
+                              files&quot;, you can override
+                              the server permissions.</li>
+                         <li><strong>Directory Creation</strong>:
+                              As with files, new directories will by default
+                              inherit the server default permissions. Choose &quot;CHMOD
+                              new directories&quot; to
+                              override the server permissions.</li>
+                    </ul>
+                    <p><strong>Metadata Tab</strong> </p>
+                    <p >These settings, affect the way
+                    search engines index your site.</p>
+                    <ul>
+                         <li><strong>Global Site Meta Description</strong>:&nbsp;Type
+                              a description of your web site used to assist Search
+                              Engines. Make sure that the most important
+                              part of your description is in the first 20 words. </li>
+                         <li><strong>Global
+                              Site Meta Keywords</strong>: Appears in the keywords
+                              field of your site's metadata. Can append metadata
+                              to this list for individual Content Items, but
+                              the appended text will always come after what is
+                              input here. </li>
+                         <li><strong>Show
+                                   Title Meta Tag</strong>: Includes the item
+                                   / component title name in the Title meta tag
+                                   field in the source code.</li>
+                         <li><strong>Show Author Meta
+                                        Tag</strong>: Includes the Author meta
+                                        tag field in the source code when viewing
+                                        content.</li>
+                    </ul>
+                    <p><strong>Mail Tab</strong> </p>
+                    <ul>
+                         <li><strong>Mailer</strong>: Choose
+                              which mailer you wish to use: PHP mail function, Sendmail
+                              or SMTP Server.</li>
+                         <li><strong>Mail From</strong>: Choose which email
+                              address will show as the sender of system-generated
+                              emails.</li>
+                         <li><strong>From Name</strong>:
+                              Choose what name will show as the sender of system-generated
+                              emails.</li>
+                         <li><strong>Sendmail
+                              Path</strong>: This is the directory of the Mail server.
+                              Under Linux installations is normally /usr/sbin/sendmail.
+                              Not applicable on Windows installations.If you have chosen
+                              the SMTP Server as the Mailer, then you have to set the following
+                              settings. Ignore otherwise.&nbsp;</li>
+                         <li><strong>SMTP</strong> <strong>Auth</strong>:
+                              Choose &quot;Yes&quot; if SMTP Authentication is required
+                              by your host.</li>
+                         <li><strong>SMTP User</strong>: If authentication
+                              is required and set above, type your username.</li>
+                         <li><strong>SMTP
+                              Pass</strong>:&nbsp;If authentication is required and set
+                              above, type your password.</li>
+                         <li><strong>SMTP Host</strong>: This
+                                   is usually set as &quot;localhost,&quot; but you may
+                              need to check this with your host.</li>
+                    </ul>
+                    <p><strong>Cache Tab</strong> </p>
+                    <ul>
+                         <li><strong>Caching</strong>: Choose &quot;Yes&quot; to
+                              allow for caching of certain elements within Mambo. This
+                              will generally improve the performance of your site.</li>
+                         <li><strong>Cache
+                              Folder</strong>:&nbsp;This is the folder or directory to
+                              store the cache files. This must be writable for this caching
+                              to be successfully implemented. Contact your Web Master if
+                              you have any difficulties.</li>
+                         <li><strong>Cache Time</strong>: Edit
+                                   the maximum length of time, in seconds, for a cache file
+                                   to be stored before it is refreshed.</li>
+                    </ul>
+                    <p><strong>Statistics Tab</strong> </p>
+                    <ul>
+                         <li><strong>Statistics</strong>: Choose &#39;Yes&#39;,
+                              to allow the browser and visitor domain statistics to be
+                              collected on the basis of settings in&nbsp; the Content Tab.
+                              You can then access the statistics, from&nbsp;Site -&gt; Statistics.</li>
+                         <li><strong>Log
+                              Content Hits by Date</strong>: Choose &quot;Yes&quot; to
+                              enable logging of the hits on Content Items, on
+                              a daily basis. Warning: This will tend to collect
+                              masses of data over time. Be sure that your server
+                              space has the space to to store this information.&nbsp;</li>
+                         <li> <strong>Log
+                              Search Strings</strong>: Choose &quot;Yes&quot; to enable
+                              logging of the search text, entered by a user. Such logging
+                              facilitates the &#39;tuning&#39; of your web site, giving
+                              you an insight into how your visitors are trying to find
+                              the information they seek. Analysis reporting is provided
+                              under Site-&gt;Statistics-&gt;Search Text.</li>
+                    </ul>
+                    <p><strong>SEO Tab</strong> </p>
+                    <ul>
+                         <li><span ><strong>Search Engine Friendly
+                                        URLs</strong>:&nbsp; This changes the way site
+                                        links are presented and optimises them so that
+                                        search engines can access more of your site. This
+                                        option is ONLY available to sites hosted on Apache
+                                        servers.&nbsp; Choose &#39;Yes&#39; to enable Mambo
+                                        to output friendly URLs rather than normal database
+                                        generated URLs. If you use this option you must
+                         rename your htaccess.txt file to .htaccess.</span></li>
+                         <li><span ><strong>Dynamic
+                                             Page Titles</strong>: Choose &quot;Yes&quot; to
+                                             set the page titles (that appear at the top of
+                                             a viewers browser) to be the same as the page title
+                         they are viewing. Again this helps search engines.NOTE: &nbsp;</span></li>
+                    </ul>
+          </div></td>
+     </tr>
+     <tr>
+          <td align="right" valign="top" bgcolor="#EFEFEF" class="datalabel">Usage:</td>
+          <td valign="top" class="data">n/a</td>
+     </tr>
+     <tr>
+          <td align="right" valign="top" bgcolor="#EFEFEF" class="datalabel">Default State: </td>
+          <td valign="top" class="data">n/a</td>
+     </tr>
+     <tr>
+          <td align="right" valign="top" bgcolor="#EFEFEF" class="datalabel">Parameters:</td>
+          <td valign="top" class="data"><ul>
+               <li><strong>Make unwritable
+                         after saving</strong> Checking
+                    this box will change the file permissions of configuration.php
+               to unwritable once you have applied your changes. </li>
+          </ul></td>
+     </tr>
+     <tr>
+          <td align="right" valign="top" bgcolor="#EFEFEF" class="datalabel">Toolbar Icons: </td>
+          <td valign="top" class="data"><ul>
+               <li><strong>Save</strong>: Save your changes. </li>
+               <li><strong>Apply</strong>: Apply your changes to the site without
+                    saving. </li>
+               <li><strong>Cancel</strong>: Cancel the present operation without
+                    saving. </li>
+          </ul></td>
+     </tr></table>
+
+
+
+</body></html>

@@ -1,3 +1,0 @@
-# Refuse any access to web server here
-order deny,allow
-deny from all

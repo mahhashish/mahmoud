@@ -1,0 +1,218 @@
+body {
+background:#f7f7f7;
+color:#582902;
+font:14px Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+}
+
+div,p,ul,form,input,h2,h3,h4,img {
+margin:0;
+padding:0;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+}
+
+a:visited,a:link {
+text-transform:capitalize;
+text-decoration:none;
+}
+
+a:hover {
+  background-color: #dbe4f2;
+}
+/* The above hover change defeats the
+  IE/Win display changing bug */
+ 
+a {position: relative;}
+ 
+a:hover span {
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  display: block;
+  width: 180px;
+  font-size: 13px;
+  text-align: center;
+  color: green;
+  background: #ffa;
+  border: 1px solid green;
+}
+  
+a span {
+	display: none;
+}
+
+#AliroAdmin {
+/* width:1024px;
+margin:0 auto; */
+}
+
+#AliroAdminNavigation {
+width:179px;
+float:left;
+background:#96c600;
+color:#FF0;
+text-transform:uppercase;
+font-weight:700;
+border-bottom:1px solid #8db517;
+border-left:1px solid #8db517;
+border-right:1px solid #c7ff1c;
+padding:5px 0 0;
+}
+
+.aliroadminlogo {
+height:43px;
+background:#FFF;
+color:#c7ff1c;
+text-decoration:none;
+font:38px Arial, Helvetica, sans-serif;
+text-transform:lowercase;
+font-style:oblique;
+text-indent:5px;
+font-weight:700;
+padding:0;
+}
+
+ul {
+list-style:none;
+}
+
+#AliroAdminNavigation li li li {
+text-indent:10px;
+}
+
+#AliroAdminNavigation li a {
+color:#FFF;
+text-transform:capitalize;
+text-decoration:none;
+padding:0;
+}
+
+#AliroAdminNavigation li li li a {
+color:#c7ff1c;
+}
+
+#AliroAdminNavigation li a:hover {
+background:none;
+text-transform:capitalize;
+text-decoration:underline overline;
+padding:0;
+}
+
+.adminheading th {
+font-size:20px;
+color:#582902;
+}
+
+.adminlist th {
+font-size:13px;
+color:#fff;
+text-align: center;
+background:#ffc906;
+border-top:1px solid #FF0;
+border-right:1px solid #FF0;
+border-left:1px solid #c6c6c6;
+border-bottom:1px solid #c6c6c6;
+}
+
+.toolitem {
+float:right;
+background-color:#96c600;
+border-top:1px solid #c7ff1c;
+border-right:1px solid #c7ff1c;
+border-left:1px solid #8db517;
+border-bottom:1px solid #8db517;
+margin:0;
+padding:5px;
+}
+
+.toolitem a, input.toolitem {
+color:#FFF;
+font-weight:700;
+text-transform:capitalize;
+}
+
+.toolitem a:hover, input.toolitem:hover {
+text-decoration:underline overline;
+}
+
+.toolitem a:hover {
+background:none;
+}
+
+#AliroMainPart {
+	margin-left: 187px;
+}
+
+#aliroAdminToolBar, #aliroAdminLogout {
+	float: right;
+	clear: right;
+}
+
+#AliroAdminLogout {
+	height:25px;
+	text-align:right;
+	padding:0;
+}
+
+#AliroAdminMainbox {
+	position: absolute;
+	top: 65px;
+}
+
+#AliroAdminFooter {
+	clear: both;
+	padding-top: 10px;
+}
+
+#AliroAdminFooter,#AliroAdminPageTimer {
+	text-align:center;
+	color:#010000;
+	font-size:11px;
+	margin:10px auto;
+}
+
+#AliroAdminNavigation ul,#AliroAdminNavigation ul ul {
+margin:0 0 10px 4px;
+}
+
+a:hover {
+   position: relative;
+}
+
+a span.tooltip {
+   display: none;
+}
+
+a:hover span.tooltip {
+   display: block;
+   z-index: 100;
+   position: absolute; top: 10px; left: 0;
+}
+
+.errormessage {
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 15px;
+}
+
+/* Colours */
+.fatalcolour {
+	color: red;
+}
+.severecolour {
+	color: red;
+}
+.warncolour {
+	color: orange;
+}
+.informcolour {
+	color: green;
+}

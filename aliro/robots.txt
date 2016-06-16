@@ -1,0 +1,18 @@
+User-agent: * 
+Disallow: /administrator/
+Disallow: /cache/
+Disallow: /classes/
+Disallow: /components/
+Disallow: /editor/
+Disallow: /extclasses/
+Disallow: /help/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /language/
+Disallow: /mambots/
+Disallow: /media/
+Disallow: /modules/
+Disallow: /templates/
+Disallow: /installation/
+
+ 
