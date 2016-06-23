@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms in Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<style> 
+#packt {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+	}
+</style>
+  </head>
+<body id="packt">
+ <form role="form" class="form-inline">
+  <div class="form-group">
+    <label for="emailaddress" class="sr-only">Email Address</label>
+    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="enterpassword" class="sr-only">Password</label>
+    <input type="password" class="form-control" id="enterpassword" placeholder="Password">
+  </div>
+<br><br>
+  <div class="checkbox">
+    <label> <input type="checkbox"> Keep me signed in </label>
+  </div>
+<br><br>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option1" id="radio1">
+        Male
+      </label>
+    </div>
+
+     <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option2" id="radio2">
+        Female
+      </label>
+    </div>
+<br><br>
+<p> Enter your comments in the following box </p>
+<br>
+<textarea rows="5" cols="70" placeholder="Your feedback is important to us">
+</textarea>
+   <br><br>	
+   <button type="submit" class="btn btn-default">Login</button>
+ </form>
+</body>
+</html>

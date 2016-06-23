@@ -4,6 +4,7 @@ class Register extends CI_Controller {
   function __construct() {
   parent::__construct();
   $this->load->helper('form');
+  $this->load->helper('file');
   $this->load->helper('url');
   $this->load->helper('security');
   $this->load->model('Register_model');
@@ -27,7 +28,7 @@ class Register extends CI_Controller {
     } else { 
       // Create hash from user password 
       $password = random_string('alnum', 8);
-      echo "$password";
+      #echo "$password";
       $hash = $this->encrypt->sha1($password);  
        
       $data = array( 
@@ -40,11 +41,11 @@ class Register extends CI_Controller {
       ); 
 
       if ($this->Register_model->register_user($data)) {
-        $file = file_get_contents('../views/email_scripts/welcome.txt');
+        $file = read_file('../views/email_scripts/welcome.txt');
         $file = str_replace('%usr_fname%', $data['usr_fname'], $file);
         $file = str_replace('%usr_lname%', $data['usr_lname'], $file);
         $file = str_replace('%password%', $password, $file);
-        redirect('signin');
+        #redirect('signin');
       } else {
         redirect('register');
       }

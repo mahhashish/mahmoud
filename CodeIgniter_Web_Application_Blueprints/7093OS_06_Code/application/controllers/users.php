@@ -10,7 +10,7 @@ class Users extends MY_Controller {
 
     if ( ($this->session->userdata('logged_in') == FALSE) || 
        ($this->session->userdata('usr_access_level') != 1) ) {
-        #redirect('signin');
+        redirect('signin');
     }  
   }
   

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms in Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<style> 
+#packt {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+	}
+</style>
+  </head>
+<body id="packt">
+ <form role="form">
+  <div class="form-group">
+    <label for="enterusername"> Enter Email Address as the Username</label>
+    <input type="email" class="form-control" id="enterusername" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="enterpassword">Password</label>
+    <input type="password" class="form-control" id="enterpassword" placeholder="Password">
+  </div>
+<br>
+  <div class="form-group">
+    <label for="filebrowse">Browse to find file</label>
+    <input type="file" id="filebrowse">
+  </div>
+<br>
+  <div class="checkbox">
+    <label> <input type="checkbox"> Keep me signed in </label>
+  </div>
+<br>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option1" id="radio1">
+        Male
+      </label>
+    </div>
+
+     <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" value="option2" id="radio2">
+        Female
+      </label>
+    </div>
+   <br>	
+   <button type="submit" class="btn btn-default">Login</button>
+ </form>
+</body>
+</html>

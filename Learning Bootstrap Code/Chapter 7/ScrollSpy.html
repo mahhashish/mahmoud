@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scrollspy in Bootstrap</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+.scroll-area {
+	height: 500px;
+	position: relative;
+	overflow: auto;
+}
+#packt
+    {padding: 30px 30px 30px 30px;}
+    </style>
+</head>
+<body id="packt">
+<div class="container">
+    <h2>ScrollSpy</h2>
+    <p>The ScrollSpy plugin is quite useful for automatically updating nav targets based on scroll position. When you scroll the area below the navbar,you can witness the change in the active class.It works for dropdowns too.</p>
+    <nav id="myNavbar" class="navbar navbar-default" role="navigation"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse"> 
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="#">Packt Publishing </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#packt1">Packt Information</a></li>
+                <li><a href="#packt2">Ordering information</a></li>
+                <li><a href="#packt3">Terms and Conditions</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs and Primers<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#packtsub1">Blog</a></li>
+                        <li><a href="#packtsub2">Tech Hub</a></li>
+                        <li><a href="#packtsub3">Articles</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="scroll-area" data-spy="scroll" data-target="#myNavbar" data-offset="0">
+        <h1 id="packt1"> Packt Info </h1>
+        <p>Founded in 2004 in Birmingham, UK, Packt’s mission is to help the world put software to work in new ways, through the delivery of effective learning and information services to IT professionals. Working towards that vision, we have published over 2000 books and videos so far, providing IT professionals with the actionable knowledge they need to get the job done –whether that’s specific learning on an emerging technology or optimizing key skills in more established tools.As part of our mission, we have also awarded over $1,000,000 through our Open Source Project Royalty scheme, helping numerous projects become household names along the way.</p>
+        
+        <hr>
+        <h1 id="packt2"> How Pre-Orders Work </h1>
+        <p>We usually put new titles up for sale from two months before publication. During this period, you can pre-order a title at a discounted price. When you place your pre-order, we ask for your credit card details. As with all payments to Packt Publishing, these details are entered into the secure servers of our payment provider, WorldPay. They are not at any time held on our local servers. WorldPay record this transaction, but do not complete it, nor do they reserve any pre-authorized funds on your account. They set up what they call a “limited FuturePay agreement” which is your agreement for us to process a one-off payment for the agreed amount at a future date when the book ships. When the book you have pre-ordered is available for shipment, we notify WorldPay, and they process your credit card for the agreed amount. For eBook pre-orders, the link to download the eBook will be available when the book is published and the payment is received. We then send you a receipt in the same way we would for a regular order. You will also receive an e-mail directly from WorldPay.</p>
+        <hr>
+        <h1 id="packt3"> Packt's Terms and Conditions</h1>
+        <p>Agreement to Communicate Electronically
+In using this website or sending us email, you are communicating with us electronically. You consent to receive communications from us electronically subject to the Privacy Policy. We will communicate with you by email or by posting notices on this site. You agree that all agreements, notices, disclosures and other communications that we provide to you electronically satisfy any legal requirement that such communications be in writing. Packt Publishing Ltd grants PacktPub.com account holders a limited license to access free content on PacktLib and paid subscribers access to agreed content, for personal use but not to modify or re-use its contents, or any portion of it, except with express written consent of Packt Publishing Ltd. Packt Publishing Ltd retains the right to remove access to free content. When the paid subscription period ends, access to content, aside from any free content, is removed and any caching must be removed. </p>
+        <hr>
+        <h1>Blogs and Primers: One stop Technical Hub </h1>
+        <p>The Blog section contains relevant information about technologies. The Tech Hub is a one-stop answer to know more about technologies. The articles help you gain insight into a particular task that can be performed with the technology </p>
+        <h2 id="packtsub1">Golang Blog</h2>
+        <p>Golang is an exciting new language seeing rapid adoption in an increasing number of high profile domains. Its flexibility, simplicity, and performance makes it an attractive option for fields as diverse as web development, networking, cloud computing, and DevOps. Here are five great tools in the thriving ecosystem of Go libraries and frameworks. Martini is a web framework that touts itself as “classy web development”, offering neat, simplified web application development. It serves static files out of the box, injects existing services in the Go ecosystem smoothly, and is tightly compatible with the HTTP package in the native Go library. Its modular structure and support for dependency injection allows developers to add and remove functionality with ease, and makes for extremely lightweight development. Out of all the web frameworks to appear in the community, Martini has made the biggest splash, and has already amassed a huge following of enthusiastic developers. GoLearn is a new library that enables basic machine learning methods. It currently features several fundamental methods and algorithms, including neural networks, K-Means clustering, naïve Bayesian classification, and linear, multivariate, and logistic regressions. The library is still in development, as are the number of standard packages being written to give Go programmers the ability to develop machine learning applications in the language, such as mlgo, bayesian, probab, and neural-go. Go’s continual expansion into new technological spaces such as machine learning demonstrates how powerful the language is for a variety of different use cases and that the community of Go programmers is starting to generate the kind of development drive seen in other popular general purpose languages like Python. While libraries and packages are predominantly appearing for web development, we can see support growing for data intensive tasks and in the Big Data space. Adoption is already skyrocketing, and the next 3 years will be fascinating to observe as Golang is poised to conquer more and more key territories in the world of technology.</p>
+       
+        <h2 id="packtsub2">Technical Hub for PhpStorm</h4>
+        <p>PhpStorm is quite useful with its various facets such as automatic code-completion, syntax highlighting, code formatting, on-the-fly error checking, language mixtures and code refactoring. Your development process becomes much easier and streamlined allowing you to build state-of-art applications. PhpStorm comes with code quality analytical tools such as PHP Code Sniffer, Mess Detector, Smarty or Twig template, and aids in easy code navigation and search. Finding errors during the programming phase ensures less rework, less bugs, and an organized process thereby enabling you to build robust and sturdy applications with ease. It also saves you a lot of time allowing you to focus on the imperative parts of the development stage. Debugging, testing and profiling using integrated tools such as PHPUnit helps you test your application comprehensively making it less error-prone. PhpStorm can perform all the stuff Webstorm(an IDE for JavaScript development) does and has integrated features such as support for Node.js, ECMAScript Harmony compliance, JSLINT, code completion and compatibility with Sass, Dart, Less, TypeScript, and other cutting edge technologies. You can also simulate the real time environment and check if your applications functions well prior to deployment. Command and code completion makes your development accurate resulting in an efficient and faster development life cycle.</p>
+        <h2 id="packtsub3">Article about Foundation</h2>
+        <p>You will see that there are four versions of Foundation: complete, essentials, custom, and SCSS. But let's talk about the other versions. The essentials is just a smaller version of Foundation that does not include all the components of the framework; this version is a barebones version. Once you are familiar with Foundation, you will likely only include the components that you need for a specific project. By only including the components you need, you can speed up the load time of your project and you do not make the user download files that are not being used by your project. The custom version allows you to pick the components and basic sizes, colors, radius, and text direction. You will likely use this or the SCSS version of Foundation once you are more comfortable with the framework. The SCSS or Sass version of Foundation is the most powerful version. If you do not know what Sass is, it basically gives you additional features of CSS that can speed up how you theme your projects. There is actually another version of Foundation that is not listed on this page, which can be found by hitting the blue Getting Started option in the top right-corner and then clicking on App Guide under Building and App. </p>
+        <hr>
+        </div>
+</div>
+</body>
+</html> 
