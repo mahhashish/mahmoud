@@ -60,7 +60,6 @@ class App extends CI_Controller {
                         if ($this->main_model->add_data($title, $header)) {
                             $this->load->view('app/success_view');
                         } else {
-                            echo '1';
                             $this->load->view('app/main_view');
                         }
                     } else {
