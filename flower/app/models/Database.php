@@ -16,7 +16,7 @@ class Database {
 
     function __construct($filename) {
         if (is_file($filename)) {
-            include "$filename";
+            include $filename;
         } else {
             throw new Exception("Error: Not connected!");
         }
