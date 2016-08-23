@@ -1,0 +1,33 @@
++------------------------------------------+
+| P.E.T. Versionen and Änderungen Historie |
++------------------------------------------+
+
+Version 1.4, 09.01.2003
+-=-=-=-=-=-=-=-=-=-=-=-=-
+ÄNDERUNGEN:
+- neue Methode $pet->assign() als Alias für $pet->add_content()
+- komplett neue Dokumentation
+- Quellcode-Kommentare nun PHPdoc und ZendStudio konform
+
+Version 1.3.1, 07.01.2003
+-=-=-=-=-=-=-=-=-=-=-=-=-
+FIXES:
+- In Loops wird nur der erste Buchstabe dargestellt, falls Subloop kein Array ist
+- Notice: Undefined variable in class_pet.inc.php on line 196 
+ÄNDERUNGEN:
+- Code-Einrückung an Standard angepaßt dank Zend Studio :-)
+
+Version 1.3, 04.01.2003
+-=-=-=-=-=-=-=-=-=-=-=-
+- neue Methode $pet->get_content(), liefert allen Content zurück, welcher
+  bis zu diesem Augenblick via $pet->add_content() hinzugefügt wurde
+- kleinere Änderungen an der Dokumentation
+
+Version 1.1, 31.12.2002
+-=-=-=-=-=-=-=-=-=-=-=-
+- neue Methode $pet->debugging($switch) um das Debugging an- oder abzuschalten
+- das Debugging ist nun standardmäßig deaktiviert
+
+Version 1.0, 29.12.2002
+-=-=-=-=-=-=-=-=-=-=-=-
+- erste Veröffentlichung
