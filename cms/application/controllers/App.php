@@ -16,7 +16,7 @@ class App extends CI_Controller {
     public function index() {
         if (!isset($_SESSION['username'])) {
             if ($this->input->post()) {
-                if ($this->input->post('submit',TRUE) && $this->input->post('submit',TRUE) == 'Login') {
+                if ($this->input->post('submit', TRUE) && $this->input->post('submit', TRUE) == 'Login') {
                     $this->form_validation->set_rules('username', 'Username', 'required|max_length[50]|min_length[6]', array(
                         'required' => 'You must provide a %s',
                         'max_length' => 'Max length for %s is 50 characters',
@@ -30,10 +30,10 @@ class App extends CI_Controller {
                             )
                     );
                     if ($this->form_validation->run() == TRUE) {
-                        $username = $this->input->post('username',TRUE);
-                        $password = $this->input->post('password',TRUE);
+                        $username = $this->input->post('username', TRUE);
+                        $password = $this->input->post('password', TRUE);
                         if ($this->main_model->check_auth($username, $password)) {
-                            $this->session->set_userdata($this->input->post('username',TRUE));
+                            $this->session->set_userdata($this->input->post('username', TRUE));
                             $this->load->view('app/main_view');
                         } else {
                             $this->load->view('app/login_view');
@@ -41,7 +41,7 @@ class App extends CI_Controller {
                     } else {
                         $this->load->view('app/login_view');
                     }
-                } elseif ($this->input->post('submit',TRUE) && $this->input->post('submit',TRUE) == 'SetData') {
+                } elseif ($this->input->post('submit', TRUE) && $this->input->post('submit', TRUE) == 'SetData') {
                     $this->form_validation->set_rules('title', 'Title', 'required|max_length[50]|min_length[6]', array(
                         'required' => 'You must provide a %s.',
                         'max_length' => 'Max length for %s is 50 characters',
@@ -55,8 +55,8 @@ class App extends CI_Controller {
                             )
                     );
                     if ($this->form_validation->run() == TRUE) {
-                        $title = $this->input->post('title',TRUE);
-                        $header = $this->input->post('header',TRUE);
+                        $title = $this->input->post('title', TRUE);
+                        $header = $this->input->post('header', TRUE);
                         if ($this->main_model->add_data($title, $header)) {
                             $this->load->view('app/success_view');
                         } else {
