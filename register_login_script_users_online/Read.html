@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ro">
+  <head>
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+   <title>Script users register, login - coursesweb.net</title>
+  </head>
+<body>
+
+<center>
+<h2 style="margin:8px auto; 3px auto">Script users register, login</h2>
+<sup>( <em>From: <a href="http://coursesweb.net/" title="Courses for Web Programming and Development">http://coursesweb.net</a></em> )</sup>
+</center><br/>
+This is a PHP script to Register and Log users in a website, it's created with the method based on classes and objects (OOP). It uses PHP, MySQL (with PDO) and Ajax / JavaScript (with jQuery effects) [<i>it can work also in browsers with JavaScript disabled</i>]. The HTML code is valid HTML5, also, works in Internet Explorer browsers which don't recognise HTML5 tags<br />
+The script includes button "Remember" that gives the posibility to automaticaly login the users in the next visits.<br />
+Also, it has option to Log in with Facebook, Yahoo, or with a Google account.<br/>
+The connection to MySQL database is made with PHP PDO, so, <b>the PHP server must have the PDO module installed and enabled</b>.<br/>
+If the user forgot the password, the script can send it to his e-mail.<br />
+By default, this script is set to send a message to the user's e-mail, after the registration, with a link to confirm the registration, but this setting can easily be reset to let the user to log in imediately after registration, without any confirmation.<br/>
+The script can send the emails via a local mail server (with mail() function), or through SMTP via an GMail account, with the PHPMailer class.<br/>
+Each user has a personal page that contains: an image uploaded by the user, the registration date, the last visit date, the number of visits /logins, and other personal data (name, pronoun, birthday, personal website, occupation, hobby).<br/>
+In his personal page, the user can receive messages added by other users (will be notified by email), and can add 12 favorite links.<br/>
+The logged user can delete the messages in his page, can modify the password and the e-mail address used to registration, then he/she will receive an email with the new data.<br/>
+The messages posted in the user's page are paginated, and can be included smiles, an image (displayed in full page when click on it), the text can be formated with Bold, Italic, Underline (with BBCODE).<br/>
+The user which writes the message can select the option to receive email notification when new message is added.<br />
+The script displays the total number of users, the last registered user and the Online users (updated with Ajax every 2 minutes) with link to their page.<br/>
+The script contains a page that shows a table with all registered users, that are paginated and can be ordered by Name, Last Visit, Registration date, Visits number, and Rank.<br/>
+When the tables are created in database, it is also created a first account for Admin, with Rank 9, and the Name, Password, and E-mail set in the "<b>config.php</b>" file (in "usrincls/" directory).<br/>
+The Admin can delete users, modify their data, adds /delete messages and favorite links, and change their Rank, from -1 to 9 . The Rank -1 means banned, 0 is unconfirmed account, and a Rank 9 gives to the user Administration privileges.
+<h3>Installation and usage</h3>
+<b><i>Perform exactly the following 5 steps:</i></b>
+<blockquote style="background-color:#fefeda;padding:1px 4px; font-family:Calibri, sans-serif;">
+<b>1.</b> After you have unzipped the archive "register_login_script_users_online.zip", open the "<b>config.php</b>" file (in the "usrincls/" folder) and change the following data for connecting to MySQL database, with your data.
+<blockquote style="background-color:#eaeafe;">
+- <i>$mysql['host'] = "localhost";</i> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>localhost</b> add your MySQL server address.<br />
+- <i>$mysql['user'] = "userdb";</i> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>userdb</b> write your username for database.<br />
+- <i>$mysql['pass'] = "passdb";</i> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>passdb</b> write your password for database<br />
+- <i>$mysql['bdname'] = "dbname";</i> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; - instead of <b>dbname</b> add the name of your database.</blockquote><br />
+ - The following codes are for the Administrator data:
+<pre style="background-color:#eaeafe; font-weight:bold;">
+// Set administrator login data, and e-mail
+define('ADMINNAME', 'admin');                      // the admin name (at least 3 characters)
+define('ADMINPASS', 'pass123');                    // the admin password (at least 7 characters)
+define('ADMINMAIL', 'contact@domain.net');         // Here add the Administrator e-mail
+</pre>
+- The sender email address which appears in registration confirmation message or in the email for recovery password, is the Admin's e-mail added in the constant "<b style="color:blue">ADMINMAIL</b> (here "<i>contact@domain.net</i>").<br />
+<blockquote>
+ - If the server of your website can't use <i>mail()</i> function to send emails with link to confirm registration, or recovery user's data, and notification when new message are added; the script has implemented the PHPMailer class to send the mails via GMail.<br/>
+ So, if you want the script to send the mails via GMail, and you have a GMail account, set the value of USEGMAIL constant to 1, and add your GMail Username and Password to GMAILUSER, and GMAILPASS, to the following code in "config.php":
+<pre style="background-color:#eaeafe; font-weight:bold;">
+// If you want to use a GMail account for sending mails to user (Link confirmation, Recovery data)
+// set USEGMAIL to 1, and add your GMail Username and Password to GMAILUSER, and GMAILPASS
+define('USEGMAIL', 0);
+define('GMAILUSER', 'username@gmail.com');
+define('GMAILPASS', 'gmailpass');
+</pre></blockquote><br/>
+<h3> - Settings for log in with Facebook, Yahoo, Google</h3>
+ - To add the "<b>Button for Login with Facebook</b>"
+<blockquote style="background-color:#fdfefe;">
+First you need a Developer APP ID, and Secret Key, from this page: <a href="https://developers.facebook.com/apps/" title="Facebook Developer" target="_blank">https://developers.facebook.com/apps/</a> (after you login in facebook)<br/>
+Click "<b><em>Register as a developer</em></b>", then you need to confirm your phone number.<br/>
+For more details, see the documentation: <a href="http://developers.facebook.com/docs/howtos/login/server-side-login/" target="_blank" title="Facebook Login for Server-side Apps">Facebook Login for Server-side Apps</a>
+</blockquote>
+Then, in "<b>config.php</b>" set the value of <b>FBCONN</b> constant to 1, and add your FaceBook ID Developer (APP ID) to <b>FBID</b>, and the Secret Key (APP Secret) to <b>FBSK</b> .
+<pre style="background-color:#eaeafe; font-weight:bold;">
+// If you want to add Connect with FaceBook,
+// Set FBCONN to 1, and add your FaceBook ID Developer (APP ID), and the secret key (APP Secret)
+define('FBCONN', 1);
+if(FBCONN == 0) {
+  define('FBID', 'YOUR_APP_ID');
+  define('FBSK', 'YOUR_APP_SECRET');
+}
+</pre><br/>
+ - By default, the script include "<b>Button for Login with Yahoo</b>". If you want to remove it, set the value of <b>YHCONN</b> constant to 0 (in "<b>config.php</b>").
+<pre style="background-color:#eaeafe; font-weight:bold;">
+// Value of 1 include button Connect with Yahoo, 0 removes it
+define('YHCONN', 0);
+</pre><br/>
+ - By default, the script include "<b>Button for Login with Google</b>". If you want to remove it, set the value of <b>GOCONN</b> constant to 0 (in "<b>config.php</b>").
+<pre style="background-color:#eaeafe; font-weight:bold;">
+// Value of 1 include button Connect with Google, 0 removes it
+define('GOCONN', 0);
+</pre>
+<blockquote style="background-color:#fdfefe;">
+If you get "Forbide, 403 error" in redirected page from Yahoo or Google login, the problem is from a configuration in Apache server, mod_security is set up to block URLs in querystrings. In this case, contact server administrator to remove the blocking of URLs in querystrings.
+</blockquote><br/>
+<h3> - The following lines of code set options for user account</h3>
+<pre style="background-color:#eaeafe; font-weight:bold;">
+// if RANK is 0, the script will send a link to the user's e-mail, to confirm the registration 
+// if RANK > 0, the user can log in immediately after registration
+define('RANK', 0);
+define('ACCOUNT', 1);       // If the value is different from 1, allow to create multiple accounts with same IP
+
+define('ALLOWIMG', 1);                             // allows upload images in message (1), not allow (0)
+define('ALLOWMAIL', 1);                            // allows mail notification when new message (1), not allow (0)
+define('ROWSPAGE', 12);                            // numbers of messages displayed in the page
+
+// HERE you cand edit the permissions for the image uploded by User
+$imguprule = array(
+  'dir' => 'usrimgup/',                // directory to store uploded images
+  'allowext' => array('gif', 'jpg', 'jpe', 'png'),        // allowed extensions
+  'maxsize' => 200,       // maximum allowed size for the image file, in KiloBytes
+  'width' => 800,         // maximum allowed width, in pixeli
+  'height' => 600         // maximum allowed height, in pixeli
+);
+</pre>
+- If you want the user to confirm the registration to his e-mail address, let the value '<b>0</b>' at the constant <b style="color:blue"><i>RANK</i></b>, so, after registration, a message will be sent to his e-mail with a link through which the user can confirm the registration. He can log in only after confirmation. <br />
+- If you want to remove the requirement of registration confirmation, replace the '<b>0</b>' with '<b>1</b>' (or other positive number) at the constant: <b style="color:blue"><i>RANK</i></b><br /><br />
+- The elements of the Array variable: <b style="color:blue"><i>$imguprule</i></b> define the allowed values for the image that can be uploaded by user in his page, and in message (<i>directory name in which the images are saved ["usersimg"], allowed file extension, maximum size in kilobytes and the maximum dimensions allowed</i>).<br/><br/>
+<b>2.</b> After you have added and saved your data for MySQL connection, copy on your server the "<b>users.php</b>" file (<i>the "test.php" file can be used for test</i>), and the directories: "<b>icos</b>", "<b>usrimgup</b>", "<b>usrincls</b>", "<b>usrjs</b>", and "<b>usrtempl</b>" (with all their content, <b><i><u>in the same directory in which the file you want to include the script is</u></i></b>).<br/><br />
+<b>3.</b> Set to the directory "<b style="color:blue">usrimgup</b>", and to the file "<b style="color:blue">ltmsgs_reset.txt</b>" (in the folder "usrimgup/"), read-write-execute permissions for PHP (by setting CHMOD 0777 (or 0755) with your FTP application).<br/>
+ - The "usrimgup/" directory stores the images uploaded by the user, and the "ltmsgs_reset.txt" file stores the last reset date of the checking messages by Admin.
+<blockquote><i>When the Admin logs in, in the user page, under messages appears a link "<u>Latest Messages Posted to all Users</u>". After you click on this link, will open the file "<b>latestmsgs.php</b>". This file will show all the messages added in all the user pages from the last reset. To reset the time of the last checking, you must add the admin password in the text box at the bottom of the page "<b>latestmsgs.php</b>", then click "Reset" button.</i></blockquote><br/>
+<b>4.</b> Access in your browser the file "<b style="color:blue">create_tables.php</b>" (in "usrincls/" folder) to create the tables in your database<br/> (fo example, access in your browser - <i><b>http://domain/usrincls/create_tables.php</b></i> ).<br/>
+If the tables are successfully created, you'll see a confirmation text.<br /><br />
+<b>5.</b> Then add the following codes in the PHP file in which you want to use this script:
+<ul><li>At the beginning of the PHP file add the following code:
+<blockquote style="background-color:#eaeafe;"><b>&lt;?php include('users.php'); ?&gt;</b></blockquote></li></ul>
+<ul><li>Add in the HTML HEAD section of that file in which you include the script, the following lines (required for graphics, and jQuery):
+<pre style="background-color:#eaeafe;"><b>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;usrtempl/style.css&quot; /&gt;
+&lt;script src=&quot;usrjs/jquery_1.7.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</b></pre>
+ <b><i>- If the page already uses jQuery, not add the code that include the jQuery library (jquery_1.7.js).</i></b></li></ul>
+- In that file, where you want to appear the login form, add the following code:
+<blockquote style="background-color:#eaeafe;"><b>
+&lt;?php echo $login; ?&gt;
+</b></blockquote>
+- In the place you want to appear the Total number of users, Newest user, and Online users, add:
+<blockquote style="background-color:#eaeafe;"><b>
+&lt;?php<br/>
+echo $objUsers-&gt;users['total'];<br/>
+echo $objUsers-&gt;users['last'];<br/>
+echo $objUsers-&gt;users['online'];<br/>
+?&gt;
+</b></blockquote><br />
+- <i><u>You can see how this code is added in the file "test.php".</u></i><br /><br/>
+ - If you want to use the script in other language, just translate the texts in the file "<b>texts.php</b>" (in "usrincls/" directory).<br />
+- To change the number of paginated rows with users displayed in the page with all registered users, modify in "<b>allusers.php</b>" (in "usrtempl/" directory), at line 5, the value of the following variable:
+<pre style="background-color:#eaeafe;"><b>$objUsers->rowsperpage = 30;               // number of users paginated in the page with all users</b></pre>
+- To change the logo image, modify the image in "<b>logo.gif</b>", in "icos" folder.
+</blockquote>
+<h4>Security features</h4>
+<ul>
+ <li>Not allow two accounts with the same name or e-mail.</li>
+ <li>Can allow only one account with the same IP, or registered from the same browser.</li>
+ <li>Not allow two visitors to log in with the same e-mail (on different browsers) in the same time. If there are two logged users with the same e-mail, the first will be logged out and will alert a message that he/she can re-log in.</li>
+ <li>Each user has a "<b>rank</b>" stored in database (a number). Then, the value of this rank is sored in Session and can be used to display content in the website according to the user's rank.</li>
+ <li>The e-mail address, and the minimum and maximum number of characters added in form fields are validated both on the client side (with JavaScript) and server-side (with PHP).</li>
+ <li>It allows up to 4 failed login attempts (incorrect password or username), then the visitor can try a new authentication after 10 minutes. This is a protection against bots.</li>
+ <li>The first Admin can't be deleted, neither his rank changed.</li>
+</ul>
+
+<h4>How to display in your web page a content for visitors and another content for logged users:</h4>
+<ul><li>It can be made by checking the existence of the variable: <b style="color:blue">$_SESSION['username']</b>.
+<pre style="background-color:#eaeafe; font-weight:bold;">
+&lt;?php
+if(isset($_SESSION['username'])) {
+  echo 'Execute some code for logged users';
+}
+else {
+  echo 'Add another code for visitors';
+}
+?&gt;
+</pre></li></ul>
+<h4>How to display a content in your web page according to the user's rank</h4>
+<ul><li>It can be made by checking the value of the variable: <b style="color:blue">$_SESSION['rank']</b>.
+<pre style="background-color:#eaeafe; font-weight:bold;">
+&lt;?php
+if(isset($_SESSION['rank']) &amp;&amp; $_SESSION['rank']&gt;2) {
+  echo 'Content for users with rank greater than 2.';
+}
+else if(isset($_SESSION['rank']) &amp;&amp; $_SESSION['rank']==2) {
+  echo 'Another content, for users with rank 2.';
+}
+else if(isset($_SESSION['rank'])) {
+  echo 'Code for logged users with rank 1.';
+}
+?&gt;
+</pre></li></ul>
+<h3>Script structure</h3>
+<h4>Tables in database</h4>
+This script uses 6 tables in a MySQL database (<i>the connection is made with PDO</i>):
+<ol>
+ <li><b>users</b> - has the following columns:
+ <ul>
+  <li><b>name</b> - store the user names for login</li>
+  <li><b>id</b> - adds an unique ID to each user, in the registration order (<i>after login, this ID is stored in the <b style="color:blue">$_SESSION['idusr']</b></i>)</li>
+  <li><b>passenc</b> - the password for authentication, encrypted with MD5.</li>
+  <li><b>email</b> - the e-mail address used at registration.</li>
+  <li><b>rank</b> - a number that sets a Rank that can be used to create options or to dispay content in the website according to the rank of each user. This number /rank is stored in <b style="color:blue">$_SESSION['rank']</b>. If its value is -1, the user is banned, if it is 0, the user must confirm the registration by acceessing a link which is sent to its e-mail address, than the rank is set to 1.<br/>
+  - <i>See below (also in the code of the file "test.php") an example of how to use the rank.</i></li>
+  <li><b>ip_reg</b> - stores the IP that the visitor has when he registers.</li>
+  <li><b>ip_visit</b> - the IP that the user has when he logs in (this IP is stored in Cookie, if the user has a variable IP, the script gets it from Cookie).<br/>
+  - "ip_reg" and "ip_visit" are checked every time a user registers, to prevent two different accounts from the same IP or browser. If you want to remove this restriction, modify the value 1 of the constant <b style="color:blue">ACCOUNT</b>, at line 21 in the file "<b style="color:blue">config.php</b>" (in "usrincls/" folder).</li>
+  <li><b>dtreg</b> - the registration date.</li>
+  <li><b>dtvisit</b> -  last login date.</li>
+  <li><b>visits</b> - the number of visits /logins.</li>
+  <li><b>pass</b> - the password, unencrypted.</li>
+ </ul></li>
+ <li><b>fbusers</b> - For users loged in with Facebook; has the following columns:
+ <ul>
+  <li><b>name</b> - store the names of users loged with Facebook</li>
+  <li><b>id</b> - adds an unique ID to each user, in the registration order</li>
+  <li><b>fbuserid</b> - ID of the user on Facebook</li>
+  <li><b>email</b> - the e-mail address of the Facebook user ("no_email" if is not passed).</li>
+  <li><b>rank</b> - a number that sets a Rank that can be used to create options or to dispay content in the website according to the rank of each user. By default the rank is set to 1.</li>
+  <li><b>ip_visit</b> - the IP that the user has when he logs in</li>
+  <li><b>dtreg</b> - date of the first loged with Facebook.</li>
+  <li><b>dtvisit</b> -  last login date.</li>
+  <li><b>visits</b> - the number of visits /logins.</li>
+ </ul></li>
+ <li><b>gousers</b> and <b>yhusers</b> - For users loged in with Google, and Yahoo; have the following columns:
+ <ul>
+  <li><b>name</b> - store the names of users loged with Google</li>
+  <li><b>id</b> - adds an unique ID to each user, in the registration order</li>
+  <li><b>email</b> - the e-mail address of the Google user ("no_email" if is not passed).</li>
+  <li><b>rank</b> - a number that sets a Rank that can be used to create options or to dispay content in the website according to the rank of each user. By default the rank is set to 1.</li>
+  <li><b>ip_visit</b> - the IP that the user has when he logs in</li>
+  <li><b>dtreg</b> - date of the first loged with Facebook.</li>
+  <li><b>dtvisit</b> -  last login date.</li>
+  <li><b>visits</b> - the number of visits /logins.</li>
+ </ul></li>
+ <li><b>logattempt</b> - used to limit the number of failed login attempts (stores the name, the number of login attempts, the user IP, and date). The attempts older than 10 minutes are deleted.</li>
+ <li><b>usersdat</b> - stores the optional user's data (name, pronoun, address, birthday, occupation, hobby, ...), in the following columns: <i>name, pronoun, country, city, bday, ym, msn, site, img (image's path and name), ocupation, interes, transmit, fav (favorite links, into a string with JSON format)</i>.</li>
+ <li><b>useron</b> - stores the online users. Updated with Ajax every 2 minutes.</li>
+ <li><b>msgs</b> - to store the messages added in user page. Having these columns:
+ <ul>
+  <li><b>id</b> - index numeric of the messages.</li>
+  <li><b>user</b> - the name of the user to which the message is added.</li>
+  <li><b>idusr</b> - the ID of the user to which the message is added.</li>
+  <li><b>name</b> - the name of the user which writes the message.</li>
+  <li><b>email</b> - store the email of the user which writes the message</li>
+  <li><b>fbuserid</b> - Facebook ID of user who writes message, if loged with Facebook</li>
+  <li><b>social</b> - 'social' string, if loged with Yahoo, or Google openid</li>
+  <li><b>msg</b> - to store the message</li>
+  <li><b>ip</b> - to store the IP of the user which writes the message</li>
+  <li><b>dt</b> - the time when the message is added</li>
+  <li><b>amail</b> - stores a value 1, 2, or 3 set after the user adds an e-mail adress when he adds a message (1 = displays the email, 2 = send notification when new message is added, 3 = displays the e-mail and also send notification).</li>
+ </ul></li>
+</ol>
+
+<h4>Directories and files</h4>
+<ul>
+ <li><b>users.php</b> - the instances of the classes are created in this file.</li>
+ <li><b>facebook</b> - script files (including Facebook PHP SDK) to login with Facebook.</li>
+ <li><b>openid</b> - script files (with OpenID) to login with Yahoo, or Google.</li>
+ <li><b>icos</b> - stores the images for smiles, and logo in the user page.</li>
+ <li><b>usrincls</b> - contains the PHP classes and the files of this script.
+ <ul>
+  <li><b>phpmailer</b> - this directory contains the PHPMailer class, used to send emails via SMTP GMail.</li>
+  <li><b>config.php</b> - conteins data that must be set by Admin.</li>
+  <li><b>.htaccess</b> - blocks the external access to "config.php".</li>
+  <li><b>class.Base.php</b> - the main class with methods used in the other classes: perform SQL instructions, send email, upload file, and for pagination.</li>
+  <li><b>class.Msgs.php</b> - adds, selects, and delete messages.</li>
+  <li><b>class.Users.php</b> - the class with the form and PHP code for Login and Online users, and All users.</li>
+  <li><b>class.UsersReg.php</b> - contains the functions and the form for registration.</li>
+  <li><b>class.UsersRecov.php</b> - contains functions and the form for recovery username / password and re-sending confirmation link.</li>
+  <li><b>class.UserPage.php</b> - processes user's data displayed in the user page, and to add /select favorite links (taken in "usrbody.php", in "usrtempl/").</li>
+  <li><b>create_tables.php</b> - code to create tables in database.</li>
+  <li><b>functions.php</b> - some functions used in the script, to cleans data from POST and GET, add smiles, sets the &lt;select&gt; to change user`s rank, format BBCODE.</li>
+  <li><b>latestmsgs.php</b> - to see the newest messages posted in all the user pages.</li>
+  <li><b>msgs.php</b> - creates instances of the Msgs class, to add, select, delete messages.</li>
+  <li><b>texts.php</b> - contains the texts used in the script. Just translate the texts in this file if you want to use the script in other language.</li> </ul></li>
+ <li><b>usrimgup</b> - the images uploaded by the user are saved in this folder, you must set CHMOD 0766 (or 0777).<ul>
+  <li><b>ltmsgs_reset.txt</b> - stores the last reset date of the checking messages by the Admin.</li>
+ </ul></li>
+ <li><b>usrjs</b> - this directory contains the files with JavaScript code.</li>
+ <li><b>usrtempl</b> - this directory contains the files with the HTML code for the user's page template, and the CSS styles.<br/>
+ - The file <b>style.css</b> conteins the CSS properties for top of the page, login /register forms, and "All users page".<br/>
+ - The file <b>usrpg.css</b> conteins the CSS properties for the body of the users page.</li>
+</ul><br/>
+
+<span style="font-weight:bold;">- This script is free (<u>does not provide assistance or personal modifications</u>).</span><br/><br/>
+It was successfully tested for a general configuration on localhost with XAMPP (with Internet Explorer, Mozilla Firefox, and Opera), and also on the server of the website <i>coursesweb.net</i>. If on other systems does not work properly, depends on their configuration. Problems can appear especially on free hostings which have restrictions on the "session", or not support PDO.<br /><br />
+<i>Respectfully, Marius</i><br />
+&nbsp; &nbsp; <i><a href="http://coursesweb.net/php-mysql/">coursesweb.net</a></i>
+<br />
+</body>
+</html>
