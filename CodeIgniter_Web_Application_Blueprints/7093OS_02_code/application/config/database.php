@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'LOflower';
 $db['default']['database'] = 'url_shortener';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

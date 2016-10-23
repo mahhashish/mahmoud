@@ -1,0 +1,11 @@
+; PHP is installed into c:\php
+; JDK 1.4.1_01 is installed into c:\j2sdk1.4.1_01
+;
+; These settings in the php.ini file work for me
+
+[Java]
+; this is the virtual machine to use
+java.library = c:\j2sdk1.4.1_01\jre\bin\client\jvm.dll 
+
+; this is the classpath to use.  Yours will vary
+java.class.path = "c:\php\extensions\php_java.jar;c:\java\jars\saxon-6.5.1\saxon.jar;c:\java\jars\saxon-6.5.1\saxon-jdom.jar;c:\devel\php\docXP\java"

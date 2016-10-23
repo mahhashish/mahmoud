@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<class name="docXP_args">
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+<package>docXP::utils</package>
+<attributes>
+<attribute name="aArgs" class="docXP_args">
+<nodefault/>
+<fixme>docXP_args::aArgs needs a default value</fixme>
+</attribute>
+<attribute name="aArgsLong" class="docXP_args">
+<nodefault/>
+<fixme>docXP_args::aArgsLong needs a default value</fixme>
+</attribute>
+<attribute name="aArgsShort" class="docXP_args">
+<nodefault/>
+<fixme>docXP_args::aArgsShort needs a default value</fixme>
+</attribute>
+<attribute name="aOrder" class="docXP_args">
+<nodefault/>
+<fixme>docXP_args::aOrder needs a default value</fixme>
+</attribute>
+</attributes>
+<functions>
+<function name="doProcessArgs" class="docXP_args">
+<prototype>doProcessArgs ($a_aArgs)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="doProcessLongSwitch" class="docXP_args">
+<prototype>doProcessLongSwitch ($a_szString, &amp;$a_aIncomplete)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="doProcessShortSwitch" class="docXP_args">
+<prototype>doProcessShortSwitch ($a_szString, &amp;$a_aReturn, &amp;$a_aIncomplete)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="doProcessSet" class="docXP_args">
+<prototype>doProcessSet ($a_aOps, &amp;$a_aReturn)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="doProcessSets" class="docXP_args">
+<prototype>doProcessSets (&amp;$a_aReturn)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="doRegisterArgs" class="docXP_args">
+<prototype>doRegisterArgs ($a_szOperation, $a_szLong, $a_szShort, $a_iArgs, &amp;$a_oCaller, $a_szCallback = null)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="doAddToProcessOrder" class="docXP_args">
+<prototype>doAddToProcessOrder ($a_iSet, $a_szOperation)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+<function name="getExpandedArray" class="docXP_args">
+<prototype>getExpandedArray ($a_aArray)</prototype>
+<sourcefile>c:/devel/php//docXP-proto/utils/docXP.args.php</sourcefile>
+</function>
+</functions>
+</class>
