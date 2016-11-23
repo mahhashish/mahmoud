@@ -1,27 +1,33 @@
-    SORT: <?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest ' 
-                . (($dir == 'ASC') ? 'DESC' : 'ASC'));?>
+SORT: <?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'), 'Newest '
+        . (($dir == 'ASC') ? 'DESC' : 'ASC'));?>
+      <?php if ($this->session->flashdata('flag_error_2')) : ?>
+        <div class="alert alert-danger">
+           <?php echo $this->session->flashdata('flag_error_2') ; ?> 
+        </div>
+      <?php endif ; ?>
 
-    <table class="table table-hover">
-      <thead>
+<table class="table table-hover">
+    <thead>
         <tr>
-          <th><?php echo $this->lang->line('discussions_title') ; ?></th>
+            <th><?php echo $this->lang->line('discussions_title'); ?></th>
         </tr>
-      </thead>
-      <tbody>
+    </thead>
+    <tbody>
 
-        <?php foreach ($query->result() as $result) : ?>
-          <tr>
-            <td>
-              <?php echo anchor('comments/index/'.$result->ds_id,$result->ds_title) . ' '
-                    . $this->lang->line('comments_created_by') . $result->usr_name; ?>
-                    
-              <?php echo anchor('discussions/flag/'.$result->ds_id,
-              $this->lang->line('discussion_flag')) ; ?>
-              <br />
-              <?php echo $result->ds_body ; ?>
-            </td>
-          </tr>
-        <?php endforeach ; ?>
+<?php foreach ($query->result() as $result) : ?>
+            <tr>
+                <td>
+                    <?php echo anchor('comments/index/' . $result->ds_id, $result->ds_title) . ' '
+                    . $this->lang->line('comments_created_by') . $result->usr_name;
+                    ?>
 
-      </tbody>
-    </table>
+                    <?php echo anchor('discussions/flag/' . $result->ds_id, $this->lang->line('discussion_flag'));
+                    ?>
+                    <br />
+            <?php echo $result->ds_body; ?>
+                </td>
+            </tr>
+<?php endforeach; ?>
+
+    </tbody>
+</table>

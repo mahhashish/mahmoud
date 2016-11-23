@@ -1,0 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+  <META name="generator" content="HTML Tidy, see www.w3.org">
+  <TITLE></TITLE>
+ </HEAD>
+
+ <BODY>
+  <U><B>Output buffering is great!</B></U>
+ </BODY>
+</HTML>

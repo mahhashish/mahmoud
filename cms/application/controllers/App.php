@@ -66,7 +66,7 @@ class App extends CI_Controller {
                         $this->load->view('app/main_view');
                     }
                 } else {
-                    $this->session->sess_destroy();
+                    //$this->session->sess_destroy();
                 }
             } else {
                 $this->load->view('app/login_view');

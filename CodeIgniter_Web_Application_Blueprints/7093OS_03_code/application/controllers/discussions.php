@@ -47,11 +47,14 @@ class Discussions extends MY_Controller {
                           'ds_body' =>  $this->input->post('ds_body')
                           );
 
-            if ($ds_id = $this->Discussions_model->create($data)) {
+            if ($ds_id = $this->Discussions_model->create($data) == FALSE) {
+            //if (FALSE){
                 redirect('comments/index/'.$ds_id);
             } else {
                 // error
                 // load view and flash sess error
+                $this->session->set_flashdata('flag_error','error happened while flaging');
+                redirect('discussions/create');
             }
         }      
     }
@@ -59,10 +62,14 @@ class Discussions extends MY_Controller {
     public function flag() {
         $ds_id = $this->uri->segment(3);
         if ($this->Discussions_model->flag($ds_id)) {
-            redirect('discussions/');
+            
+        redirect('discussions');    
         } else {
-            // error
-            // load view and flash sess error
+                // error
+                // load view and flash sess error
+        $this->session->set_flashdata('flag_error_2','error happened while flaging');
+       
+        redirect('discussions');
         }        
     }    
 }

@@ -1,0 +1,42 @@
+<?php
+
+function findDistance($zipOne,$zipTwo)
+{
+	$query = "SELECT * FROM zipData WHERE zipcode = '$zipOne'";
+	$result = mysql_query($query);
+
+	if(mysql_num_rows($result) < 1) {
+	   return "First Zip Code not found";
+	} else {
+	   $row = mysql_fetch_array($result, MYSQL_ASSOC);
+	   $lat1 = $row["lat"];
+	   $lon1 = $row["lon"];
+	}
+
+	$query = "SELECT * FROM zipData WHERE zipcode = '$zipTwo'";
+	$result = mysql_query($query);
+
+	if(mysql_num_rows($result) < 1) {
+	   return "Second Zip Code not found";
+	}else{
+	   $row = mysql_fetch_array($result, MYSQL_ASSOC);
+	   $lat2 = $row["lat"];
+	   $lon2 = $row["lon"];	   
+	}
+
+	/* Convert all the degrees to radians */
+	$lat1 = $lat1 * M_PI/180.0;
+	$lon1 = $lon1 * M_PI/180.0;
+	$lat2 = $lat2 * M_PI/180.0;
+	$lon2 = $lon2 * M_PI/180.0;
+
+	/* Find the Great Circle distance */
+	$EARTH_RADIUS = 3956;
+
+	$distance = acos(sin($lat1)*sin($lat2)+cos($lat1)*cos($lat2)*cos($lon2-$lon1)) * $EARTH_RADIUS ;
+
+	return $distance;
+
+} // end func
+
+?>

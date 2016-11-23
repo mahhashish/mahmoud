@@ -1,0 +1,13 @@
+{
+  "@context": "/contexts/Corporation",
+  "@id": "/corporations/1",
+  "@type": "http://schema.org/Corporation",
+  "address": null,
+  "description": "Professional services",
+  "email": "contact@les-tilleuls.coop",
+  "faxNumber": null,
+  "legalName": null,
+  "name": "Les-Tilleuls.coop",
+  "telephone": null,
+  "url": "http://les-tilleuls.coop"
+}

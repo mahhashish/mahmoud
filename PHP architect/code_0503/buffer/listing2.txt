@@ -1,0 +1,10 @@
+<?php
+	// some code
+	// ...
+	
+	// causes a notice
+	 pg_fetch_array($result);
+
+	// redirect
+	header('Location: foo.php');
+?>

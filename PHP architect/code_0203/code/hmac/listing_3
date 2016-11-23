@@ -1,0 +1,26 @@
+<html>
+<body bgcolor='#FFFFFF'>
+<?php
+
+include_once('./mhash.php');
+
+echo "Welcome to <b>". $_POST['user'] ."</b><br>";
+// The user logs in, check access in a database 
+// We presume the user has gained access
+// Lets set the user_id
+$user_id = 1;
+
+// Menu option no 1, the user has access to news
+$m1_hash = mhash_cgi("user_id=".$user_id."section=4", SECRET);
+echo "m1 ". $m1_hash ."<br>";
+$m1_url = "<a href='section.php?user_id=$user_id&section=4&hash=$m1_hash'>Access the news section</a>";
+
+// Menu option no 2, the user has access to sport
+$m2_hash = mhash_cgi("user_id=".$user_id."section=3", SECRET);
+echo "m2 ". $m2_hash ."<br>";
+$m2_url = "<a href='section.php?user_id=$user_id&section=3&hash=$m2_hash'>Access the sport section</a>";
+
+echo $m1_url ."<br>". $m2_url;
+?>
+</body>
+</html>

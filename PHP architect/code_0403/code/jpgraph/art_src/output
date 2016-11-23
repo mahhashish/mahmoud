@@ -1,0 +1,605 @@
+<?php
+/**
+ * load forecast data for abc examples
+ *
+ * @author	Jason E. Sweat
+ * @since	2002-12-17
+ */
+error_reporting(E_ALL);
+
+require_once 'phpa_db.inc.php';
+
+define('FCST_VAR_NEG', 0.20);
+define('FCST_VAR_POS', 0.16);
+define('MYSQL_DT_FMT', '%Y-%m-%d');
+
+$sqlCnt = <<<EOS
+SELECT COUNT( 1 ) AS cnt
+FROM `abc_forecast`
+EOS;
+
+$rs = $conn->Execute($sqlCnt);
+if ($rs && !$rs->EOF) {
+	$row = $rs->fetchRow();
+	if (!'0' == $row['cnt']) {
+		die('`abc_forecast` not empty, try truncating first.');
+	}
+} else {
+	die('DB Error');
+}
+
+$sql = <<<EOS
+SELECT id, unit_price
+FROM `abc_catalog`
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+	$priceData = $rs->getAssoc();
+} else {
+	die('DB Error');
+}
+
+foreach($priceData as $key => $value) {
+	$price[$key] = (float)$value;
+}
+
+$sql = <<<EOS
+SELECT YEAR( s.date ) AS y, 
+	MONTH ( s.date) AS m, 
+	s.channel_id, 
+	s.item_id, 
+	r.region_id, 
+	sum( s.qty ) AS qty
+FROM `abc_sales` s, `abc_state_region` r
+WHERE s.state = r.state_abbr
+GROUP BY YEAR( s.date ) , 
+	MONTH ( s.date ), 
+	s.channel_id, 
+	s.item_id, 
+	r.region_id
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+	$baseData = $rs->getArray();
+} else {
+	die('DB Error');
+}
+
+$sql = <<<EOS
+INSERT INTO `abc_forecast` (
+	`date`, `channel_id`, `item_id`, `region_id`, `qty`, `rev` )
+VALUES (?, ?, ?, ?, ?, ?)
+EOS;
+
+for ($i=0,$j=count($baseData); $i<$j; $i++) {
+	$row = $baseData[$i];
+	$rndMaxP = $row['qty'] * FCST_VAR_POS;
+	$rndMaxN = $row['qty'] * FCST_VAR_NEG;
+	$decBias = ('12'==$row['m']) ? 2.2 : 1;
+	$fQty = $row['qty'] + rand(1, $rndMaxP) - rand(1, $rndMaxN);
+	$fQty = round($fQty/10,0)*10*$decBias;
+	$fRev = $fQty * $price[$row['item_id']];
+	$fDate = strftime(MYSQL_DT_FMT, mktime(0,0,0,$row['m'],1,$row['y']));
+	$conn->Execute($sql, array($fDate, $row['channel_id'], $row['item_id'], $row['region_id'], $fQty, $fRev));
+}
+
+$rs = $conn->Execute($sqlCnt);
+if ($rs && !$rs->EOF) {
+	$row = $rs->fetchRow();
+	print $row['cnt'] . ' records inserted into `abc_forecast`.';
+}
+
+?><?php
+/**
+ * simulate sales for ABC Co. and log to database
+ *
+ * Please note this script relies on U.S. Census data 
+ * downloaded from http://www.census.gov/geo/www/gazetteer/places2k.html.  
+ * This data is used to distribute sales by state in proportion with 
+ * the population in each state.  Complete details on loading this 
+ * census data and using JpGraph and Smarty to present the data 
+ * is included in the PHP Graphics book.
+ *
+ * @author	Jason E. Sweat
+ * @since	2002-12-15
+ */
+error_reporting(E_ALL);
+set_time_limit(0);
+
+require_once 'phpa_db.inc.php';
+require_once 'adodb/adodb.inc.php' ;
+
+define('START_TIME',mktime(0,0,0,1,1,2002));
+define('END_TIME',mktime(0,0,0,12,15,2002));
+define('TIME_STEP', 86400);
+define('INS_SQL','INSERT INTO abc_sales (`date`, `channel_id`, `item_id`, `state`, `qty`, `rev`) VALUES (?, ?, ?, ?, ?, ?)');
+define('BASE_NUM_SALES',30);
+define('SALES_RAND_FACTOR',20);
+
+$sql = <<<EOS
+SELECT id, unit_price
+FROM abc_catalog
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+	$itemPrice = $rs->GetAssoc();
+}
+
+$itemStdQty = array(0,100,200,50,10,5);
+$itemStdRnd = array(0,10,20,5,2,5);
+$itemStdInc = array(0,5,5,5,5,1);
+
+foreach ($itemPrice as $key => $value) {
+	$itemInfo[$key]['price'] = (float)$value;
+	$itemInfo[$key]['qty'] = $itemStdQty[$key];
+	$itemInfo[$key]['rnd'] = $itemStdRnd[$key];
+	$itemInfo[$key]['inc'] = $itemStdInc[$key];
+}
+
+$stateData=unserialize('a:49:{i:0;a:2:{s:5:"value";i:159;s:5:"state";s:2:"AL";}i:1;a:2:{s:5:"value";i:255;s:5:"state";s:2:"AR";}i:2;a:2:{s:5:"value";i:439;s:5:"state";s:2:"AZ";}i:3;a:2:{s:5:"value";i:1651;s:5:"state";s:2:"CA";}i:4;a:2:{s:5:"value";i:1805;s:5:"state";s:2:"CO";}i:5;a:2:{s:5:"value";i:1927;s:5:"state";s:2:"CT";}i:6;a:2:{s:5:"value";i:1947;s:5:"state";s:2:"DC";}i:7;a:2:{s:5:"value";i:1975;s:5:"state";s:2:"DE";}i:8;a:2:{s:5:"value";i:2547;s:5:"state";s:2:"FL";}i:9;a:2:{s:5:"value";i:2840;s:5:"state";s:2:"GA";}i:10;a:2:{s:5:"value";i:2945;s:5:"state";s:2:"IA";}i:11;a:2:{s:5:"value";i:2991;s:5:"state";s:2:"ID";}i:12;a:2:{s:5:"value";i:3435;s:5:"state";s:2:"IL";}i:13;a:2:{s:5:"value";i:3652;s:5:"state";s:2:"IN";}i:14;a:2:{s:5:"value";i:3748;s:5:"state";s:2:"KS";}i:15;a:2:{s:5:"value";i:3893;s:5:"state";s:2:"KY";}i:16;a:2:{s:5:"value";i:4053;s:5:"state";s:2:"LA";}i:17;a:2:{s:5:"value";i:4280;s:5:"state";s:2:"MA";}i:18;a:2:{s:5:"value";i:4469;s:5:"state";s:2:"MD";}i:19;a:2:{s:5:"value";i:4515;s:5:"state";s:2:"ME";}i:20;a:2:{s:5:"value";i:4870;s:5:"state";s:2:"MI";}i:21;a:2:{s:5:"value";i:5046;s:5:"state";s:2:"MN";}i:22;a:2:{s:5:"value";i:5246;s:5:"state";s:2:"MO";}i:23;a:2:{s:5:"value";i:5348;s:5:"state";s:2:"MS";}i:24;a:2:{s:5:"value";i:5380;s:5:"state";s:2:"MT";}i:25;a:2:{s:5:"value";i:5668;s:5:"state";s:2:"NC";}i:26;a:2:{s:5:"value";i:5691;s:5:"state";s:2:"ND";}i:27;a:2:{s:5:"value";i:5752;s:5:"state";s:2:"NE";}i:28;a:2:{s:5:"value";i:5796;s:5:"state";s:2:"NH";}i:29;a:2:{s:5:"value";i:6097;s:5:"state";s:2:"NJ";}i:30;a:2:{s:5:"value";i:6162;s:5:"state";s:2:"NM";}i:31;a:2:{s:5:"value";i:6233;s:5:"state";s:2:"NV";}i:32;a:2:{s:5:"value";i:6912;s:5:"state";s:2:"NY";}i:33;a:2:{s:5:"value";i:7318;s:5:"state";s:2:"OH";}i:34;a:2:{s:5:"value";i:7441;s:5:"state";s:2:"OK";}i:35;a:2:{s:5:"value";i:7563;s:5:"state";s:2:"OR";}i:36;a:2:{s:5:"value";i:8002;s:5:"state";s:2:"PA";}i:37;a:2:{s:5:"value";i:8039;s:5:"state";s:2:"RI";}i:38;a:2:{s:5:"value";i:8182;s:5:"state";s:2:"SC";}i:39;a:2:{s:5:"value";i:8209;s:5:"state";s:2:"SD";}i:40;a:2:{s:5:"value";i:8412;s:5:"state";s:2:"TN";}i:41;a:2:{s:5:"value";i:9158;s:5:"state";s:2:"TX";}i:42;a:2:{s:5:"value";i:9238;s:5:"state";s:2:"UT";}i:43;a:2:{s:5:"value";i:9491;s:5:"state";s:2:"VA";}i:44;a:2:{s:5:"value";i:9513;s:5:"state";s:2:"VT";}i:45;a:2:{s:5:"value";i:9724;s:5:"state";s:2:"WA";}i:46;a:2:{s:5:"value";i:9916;s:5:"state";s:2:"WI";}i:47;a:2:{s:5:"value";i:9981;s:5:"state";s:2:"WV";}i:48;a:2:{s:5:"value";i:9999;s:5:"state";s:2:"WY";}}');
+
+for ($i=START_TIME; $i<END_TIME; $i+=TIME_STEP) {
+	$orders = BASE_NUM_SALES + rand(1,SALES_RAND_FACTOR) - rand(1,SALES_RAND_FACTOR);
+	print "working on ". strftime('%D',$i) . " $orders orders<br>";
+	flush();
+	for ($k=0; $k<$orders; $k++) {
+		$sale = new sale($i);
+	}
+}
+
+print "Done!";
+
+class sale {
+	var $_state;
+	var $_channel;
+	var $_item;
+	var $_qty;
+	var $_rev;
+	
+	function sale($dt) {
+		global $itemInfo;
+		
+		//set channel
+		$r = rand(1,100);
+		if ($r < 20) {
+			$this->_channel = 2; //phone
+		} elseif ($r < 40 + strftime('%m',$dt)*2 ) {
+			$this->_channel = 1; //web eating into retail
+		} else {
+			$this->_channel = 3; //retail
+		}
+		
+		$this->_item = rand(1,5);
+		$this->_qty = $itemInfo[$this->_item]['qty'] 
+					+ $itemInfo[$this->_item]['inc'] * rand(1, $itemInfo[$this->_item]['rnd'])
+					- $itemInfo[$this->_item]['inc'] * rand(1, $itemInfo[$this->_item]['rnd']);
+		if ($this->_qty < 1) {
+			$this->_qty = 1;
+		}
+		
+		$this->_rev = $this->_qty * $itemInfo[$this->_item]['price'];
+		
+		$this->_pick_state();
+		
+		$this->_log_sale($dt);
+	}
+	
+	function _pick_state() {
+		global $stateData;
+		
+		$pick = rand (1,10000);
+		$last = $stateData[0]['state'];
+		for ($i=0,$j=count($stateData); $i<$j; $i++) {
+			$last = $stateData[$i]['state'];
+			if ($pick <= $stateData[$i]['value']) {
+				break;
+				//$i=$j;
+			}
+		}
+		$this->_state = $last;
+	}
+	
+	function _log_sale($dt) {
+		global $conn;
+
+		$conn->Execute(INS_SQL, array(strftime('%Y-%m-%d',$dt), $this->_channel, $this->_item, $this->_state, $this->_qty, $this->_rev));
+	}
+}
+
+?>
+<?php
+/**
+ * pie plots on an image map
+ * leading to csim drilldown
+ *
+ * @author  Jason E. Sweat
+ * @since   2002-12-18
+ */
+require_once 'phpa_db.inc.php';
+
+require_once 'jpgraph/jpgraph.php';
+require_once 'jpgraph/jpgraph_canvas.php';
+require_once 'jpgraph/jpgraph_pie.php';
+
+define('GRAPH_START', strftime(MYSQL_DT_FMT, mktime(0, 0, 0, 1, 1, date('Y'))));
+define('WIDTH', 500);
+define('HEIGHT', 310);
+define('PIE_SIZE', 0.16);
+define('DRILL_GRAPH', 'abc_reg_sales_graph.php?region=');
+define('IMG_DIR', 'img/');
+
+$sql = <<<EOS
+SELECT *
+FROM `abc_region`
+ORDER BY `id`
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+  $regions = $rs->GetArray();
+} else {
+  die('DB error');
+}
+
+$region = 1;
+$region_id = $regions[$region]['id'];
+
+$sql = <<<EOS
+SELECT sr.`region_id`, 
+  s.`channel_id`,
+  c.`short_desc`,
+  r.`region`,
+  r.`map_x`,
+  r.`map_y`,
+  ROUND(SUM( s.`rev` )/1000) AS rev
+FROM `abc_sales` s, `abc_state_region` sr, `abc_channel` c, `abc_region` r
+WHERE s.`state` = sr.`state_abbr`
+  AND sr.`region_id` = r.`id`
+  AND s.`channel_id` = c.`id`
+GROUP BY sr.`region_id`, s.`channel_id`
+ORDER BY sr.`region_id`, s.`channel_id`
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+  $regionData = $rs->GetArray();
+} else {
+  die('DB error');
+}
+
+$lastRegion = '';
+$rIndex = -1;
+$graphData['label'] = array();
+for ($i=0,$j=count($regionData); $i<$j; $i++) {
+  if ($lastRegion != $regionData[$i]['region_id']) {
+    $lastRegion = $regionData[$i]['region_id'];
+    $rIndex++;
+    $graphData['r'.$rIndex]['label'] = array();
+    $graphData['r'.$rIndex]['rev'] = array();
+    $graphData['r'.$rIndex]['revFmt'] = array();
+  }
+  if (!$rIndex) { //first region only
+    $graphData['label'][] = $regionData[$i]['short_desc'];
+  }
+  $graphData['r'.$rIndex]['label'][] = $regionData[$i]['short_desc']."\n$".number_format($regionData[$i]['rev']);
+  $graphData['r'.$rIndex]['rev'][] = $regionData[$i]['rev'];
+  $graphData['r'.$rIndex]['revFmt'][] = '$'.number_format($regionData[$i]['rev']);
+  $graphData['r'.$rIndex]['targets'][] = DRILL_GRAPH.$regionData[$i]['region_id'];
+  $graphData['r'.$rIndex]['alts'][] = "Click for more information regarding {$regions[$rIndex]['region']} sales.";
+  $graphData['r'.$rIndex]['map_x'] = $regionData[$i]['map_x'];
+  $graphData['r'.$rIndex]['map_y'] = $regionData[$i]['map_y'];
+}
+
+$sliceColors = array('lightgreen', 'pink', 'lightblue');
+
+$graphName = IMG_DIR.'abc_channel_graph.png';
+$graph = new PieGraph(WIDTH, HEIGHT);
+$graph->SetBackgroundImage('img/abc-regions.png', BGIMG_FILLFRAME);
+
+for ($i=0; $i<$rIndex+1; $i++) {
+  $pickRegion = 'r'.$i;
+
+  $p1 = new PiePlot($graphData[$pickRegion]['rev']);
+  $p1->SetCenter($graphData[$pickRegion]['map_x'], $graphData[$pickRegion]['map_y']);
+  $p1->SetSize(PIE_SIZE);
+  $p1->SetLabels($graphData[$pickRegion]['revFmt']);
+  $p1->SetSliceColors($sliceColors);
+  $p1->SetCSIMTargets($graphData[$pickRegion]['targets'], $graphData[$pickRegion]['alts']);
+
+  if (!$i) {
+    $p1->SetLegends($graphData['label']);
+  }
+
+  $graph->Add($p1);
+}
+
+$graph->legend->Pos(0.9, 0.85, 'center', 'center'); 
+$graph->Stroke($graphName);
+
+$mapName = 'ABC_Region_Drill';
+$imgMap = $graph->GetHTMLImageMap($mapName); 
+
+print <<<EOS
+$imgMap
+<img src="$graphName" alt="ABC Sales by Channel" ismap usemap="#$mapName" border="0">
+EOS;
+
+?>
+<?php
+/**
+ * ABC Company Sale Region Graph
+ *
+ * @author	Jason E. Sweat
+ * @since	2002-12-19
+ */
+require_once 'phpa_db.inc.php';
+
+require_once 'jpgraph/jpgraph.php';
+require_once 'jpgraph/jpgraph_canvas.php';
+require_once 'jpgraph/jpgraph_bar.php';
+require_once 'jpgraph/jpgraph_scatter.php';
+require_once 'jpgraph/jpgraph_line.php';
+
+define('GRAPH_START', strftime(MYSQL_DT_FMT, 
+                      mktime(0, 0, 0, 1, 1, date('Y')-1)));
+define('WIDTH', 500);
+define('HEIGHT', 310);
+define('GRAPH_NAME', 'abc_reg_sales');
+define('GRAPH_TIMEOUT', 60*24);
+define('USING_TRUECOLOR', true);
+
+$colors = array('pink', 'orange', 'yellow', 'lightgreen', 'lightblue');
+
+$sql = <<<EOS
+SELECT `id`, `region`
+FROM `abc_region`
+ORDER BY `id`
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+  $regions = $rs->GetAssoc();
+} else {
+  die('DB error - Regions Query');
+}
+// the following line of code is useful in the 
+// development process to verify your result set
+//print '<pre>'; var_dump($regions); exit;
+
+$region_id = check_passed_region('region');
+if (!$region_id) {
+  graph_error('region parameter incorrect');
+}
+
+$graphName = GRAPH_NAME.$region_id.'.png';
+$graph = new graph(WIDTH, HEIGHT, $graphName, GRAPH_TIMEOUT, true);
+
+$sql = <<<EOS
+SELECT `short_desc`, `item_desc`
+FROM `abc_catalog`
+ORDER BY `short_desc`
+EOS;
+
+$rs = $conn->Execute($sql);
+if ($rs && !$rs->EOF) {
+  $items = $rs->GetArray();
+} else {
+  die('DB error - Items Query');
+}
+
+$sql = <<<EOS
+SELECT 
+  YEAR( s.`date` ) AS y,
+  MONTH( s.`date` ) AS m,
+  SUM( s.`qty` ) AS qty,
+  SUM( s.`rev` ) AS rev,
+  c.`short_desc`,
+  c.`item_desc`,
+  CONCAT( YEAR( s.`date` ), MONTH( s.`date` ), c.`short_desc`) AS f_key
+FROM `abc_sales` s, 
+  `abc_state_region` sr, 
+  `abc_catalog` c
+WHERE s.`date` >= ?
+  AND s.`state` = sr.`state_abbr`
+  AND sr.`region_id` = ?
+  AND s.`item_id` = c.`id`
+GROUP BY
+  YEAR( s.`date` ),
+  MONTH( s.`date` ),
+  c.`short_desc`,
+  c.`item_desc`
+ORDER BY 1, 2, 5
+EOS;
+
+$rs = $conn->Execute($sql, array(GRAPH_START, $region_id));
+if ($rs && !$rs->EOF) {
+  $salesData = $rs->GetArray();
+} else {
+  die('DB error - Sales Query');
+}
+
+$sql = <<<EOS
+SELECT 
+  CONCAT( YEAR( f.`date` ), MONTH( f.`date` ), c.`short_desc`) AS f_key,
+  YEAR( f.`date` ) AS y,
+  MONTH( f.`date` ) AS m,
+  SUM( f.`qty` ) AS qty,
+  SUM( f.`rev` ) AS rev,
+  c.`short_desc`,
+  c.`item_desc`
+FROM 
+  `abc_forecast` f,
+  `abc_catalog` c
+WHERE f.`date` >= ?
+  AND f.`region_id` = ?
+  AND f.`item_id` = c.`id`
+GROUP BY
+  YEAR( f.`date` ),
+  MONTH( f.`date` ),
+  c.`short_desc`,
+  c.`item_desc`
+ORDER BY 1, 2, 5
+EOS;
+
+$rs = $conn->Execute($sql, array(GRAPH_START, $region_id));
+if ($rs && !$rs->EOF) {
+  $fcstData = $rs->GetAssoc();
+} else {
+  die('DB error - Forecast Query');
+}
+
+// Graph Data construction loop
+$graphData['f_qty'] = array();
+$graphData['labelX'] = array();
+for ($i=0,$j=count($salesData); $i<$j; $i++) {
+  $row = $salesData[$i];
+  if ('A'==$row['short_desc']) {
+    $graphData['labelX'][] = strftime('%b', mktime(0, 0, 0, $row['m'], 1, $row['y']));
+  }
+  if (!array_key_exists($row['m']-1, $graphData['f_qty'])) {
+    $graphData['f_qty'][$row['m']-1] = $fcstData[$row['f_key']]['qty'];
+    $graphData['f_rev'][$row['m']-1] = $fcstData[$row['f_key']]['rev'];
+    $graphData['qty'][$row['m']-1] = $row['qty'];
+    $graphData['rev'][$row['m']-1] = $row['rev'];
+  } else {
+    $graphData['f_qty'][$row['m']-1] += $fcstData[$row['f_key']]['qty'];
+    $graphData['f_rev'][$row['m']-1] += $fcstData[$row['f_key']]['rev'];
+    $graphData['qty'][$row['m']-1] += $row['qty'];
+    $graphData['rev'][$row['m']-1] += $row['rev'];
+  }
+  if(!array_key_exists($row['short_desc'], $graphData)) {
+    $graphData[$row['short_desc']]['qty'] = array();
+    $graphData[$row['short_desc']]['rev'] = array();
+  }
+  $graphData[$row['short_desc']]['qty'][] = $row['qty'];
+  $graphData[$row['short_desc']]['rev'][] = $row['rev'];
+}
+
+for ($i=0,$j=count($graphData['labelX']); $i<$j; $i++) {
+  $graphData['zero'][$i] = 0;
+}
+//extend the forecast revenue line by repeating the last value
+$graphData['f_rev'][$j] = $graphData['f_rev'][$j-1];
+
+if (USING_TRUECOLOR) {
+  $graph->SetBackgroundImage('img/abc-background_prefade.png', BGIMG_FILLFRAME);
+} else {
+  //AdjBackgroundImage only works with GD, not GD2 true color
+  $graph->SetBackgroundImage('img/abc-background.png', BGIMG_FILLFRAME);
+  $graph->AdjBackgroundImage(0.9, 0.3);
+}
+$graph->img->SetMargin(65, 65, 30, 50);
+$graph->SetScale('textlin');
+$graph->SetY2Scale('lin');
+$graph->SetY2OrderBack(false);
+$graph->title->Set(date('Y')." Sales for {$regions[$region_id]} Region");
+$graph->title->SetFont(FF_ARIAL, FS_BOLD, 12);
+$graph->SetMarginColor('white'); 
+$graph->yaxis->title->Set('Left Bar Units Sold');
+$graph->yaxis->title->SetFont(FF_ARIAL, FS_BOLD, 10);
+$graph->yaxis->SetLabelFormatCallback('y_fmt');
+$graph->yaxis->SetTitleMargin(48);
+$graph->y2axis->title->Set('Right Bar Revenue ( $ 000 )');
+$graph->y2axis->title->SetFont(FF_ARIAL, FS_BOLD, 10);
+$graph->y2axis->SetTitleMargin(45);
+$graph->y2axis->SetLabelFormatCallback('y_fmt_dol_thou');
+$graph->xaxis->SetTickLabels($graphData['labelX']);
+
+$abqAdd = array();
+$abrAdd = array();
+for($i=0,$j=count($items); $i<$j; $i++) {
+  $key = $items[$i]['short_desc'];
+  $b1 = new BarPlot($graphData[$key]['qty']);
+  $b1->SetFillColor($colors[$i]);
+  $b1->SetLegend($key);
+  $abqAdd[] = $b1;
+  
+  $b2 = new BarPlot($graphData[$key]['rev']);
+  $b2->SetFillColor($colors[$i]);
+  $abrAdd[] = $b2;
+}
+$ab1 = new AccBarPlot($abqAdd);
+$ab2 = new AccBarPlot($abrAdd);
+$b1z = new BarPlot($graphData['zero']);
+$b2z = new BarPlot($graphData['zero']);
+
+$gb1 = new GroupBarPlot(array($ab1, $b1z));
+$gb2 = new GroupBarPlot(array($b2z, $ab2));
+
+$l1 = new LinePlot($graphData['f_rev']);
+$l1->SetStepStyle();
+$l1->SetColor('darkgreen');
+$l1->SetWeight(3);
+$l1->SetLegend('Rev Fcst');
+
+$graph->Add($gb1);
+$graph->AddY2($gb2);
+$graph->AddY2($l1);
+$graph->legend->Pos(0.5, 0.95, 'center', 'center'); 
+$graph->legend->SetLayout(LEGEND_HOR);
+$graph->legend->SetFillColor('white');
+$graph->legend->SetShadow(false);
+$graph->legend->SetLineWeight(0);
+$graph->Stroke();
+
+exit;
+
+function y_fmt($val)
+{
+  return number_format($val);
+}
+
+function y_fmt_dol_thou($val)
+{
+  return '$'.number_format($val/1000);
+}
+
+function check_passed_region( $parm )
+{
+	global $regions;
+	
+	if (array_key_exists($parm,$_GET)) {
+		$val = $_GET[$parm];
+		if (array_key_exists($val, $regions)) {
+			return $val;
+		}
+	}
+	return false;
+}
+
+function graph_error($msg) 
+{
+  $graph = new CanvasGraph(WIDTH, HEIGHT);    
+
+  $t1 = new Text($msg);
+  $t1->Pos(0.05, 0.5);
+  $t1->SetOrientation('h');
+  $t1->SetFont(FF_ARIAL, FS_BOLD);
+  $t1->SetColor('red');
+  $graph->AddText($t1);
+
+  $graph->Stroke();
+  exit;
+}
+
+?><?php
+/**
+ * establish database connection
+ *
+ * @author	Jason E. Sweat
+ * @since	2002-12-17
+ */
+error_reporting(E_ALL);
+
+require_once('adodb/adodb.inc.php');
+define('MYSQL_DT_FMT', '%Y-%m-%d');
+
+$conn = &ADONewConnection('mysql');
+//$conn->debug=true;
+$conn->Connect('localhost', 'phpa', 'phpapass', 'phpa');
+$ADODB_FETCH_MODE = ADODB_FETCH_ASSOC;
+
+?>

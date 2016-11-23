@@ -1,0 +1,23 @@
+{
+  "@context": "/contexts/Corporation",
+  "@id": "/corporations",
+  "@type": "hydra:PagedCollection",
+  "hydra:totalItems": 1,
+  "hydra:itemsPerPage": 30,
+  "hydra:firstPage": "/corporations",
+  "hydra:lastPage": "/corporations",
+  "hydra:member": [
+    {
+      "@id": "/corporations/1",
+      "@type": "http://schema.org/Corporation",
+      "address": null,
+      "description": "ProfesSional services",
+      "email": "contact@les-tilleuls.coop",
+      "faxNumber": null,
+      "legalName": null,
+      "name": "Les-Tilleuls.coop",
+      "telephone": null,
+      "url": "http://les-tilleuls.coop"
+    }
+  ]
+}

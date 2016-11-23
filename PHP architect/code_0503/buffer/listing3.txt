@@ -1,0 +1,17 @@
+<?php
+ 
+ob_start();
+ 
+// other code
+print "The results of your search: ";
+ 
+$result = pg_query($conn, $query);
+if (! $result)
+{
+    // error
+    ob_clean();
+    print "We are experiencing technical difficulties";
+}
+ob_flush();
+ 
+?>

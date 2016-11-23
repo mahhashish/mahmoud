@@ -1,0 +1,19 @@
+Namespace HealthRecord
+    Public Class patient
+        Private m_lmp As Date
+        Public Property lmp()
+            Get
+                Return Format(m_lmp, "D")
+            End Get
+            Set(ByVal Value)
+                m_lmp = Value
+            End Set
+        End Property
+        Public ReadOnly Property edd()
+            Get
+              'EDD is 280 days from LMP
+              Return Format(DateAdd(DateInterval.Day, 280, m_lmp), "D")
+            End Get
+        End Property
+    End Class
+End Namespace

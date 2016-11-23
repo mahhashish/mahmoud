@@ -1,0 +1,25 @@
+{
+  "@context": "/contexts/Person",
+  "@id": "/people/1",
+  "@type": "http://schema.org/Person",
+  "additionalName": null,
+  "address": {
+    "@id": "/postal_addresses/1",
+    "@type": "http://schema.org/PostalAddress",
+    "addressCountry": "FR",
+    "addressLocality": "Lomme",
+    "addressRegion": null,
+    "postalCode": "59160",
+    "postOfficeBoxNumber": null,
+    "streetAddress": "Euratechnologies - bâtiment Canal, 2 rue Hegel"
+  },
+  "description": null,
+  "familyName": "Dunglas",
+  "gender": null,
+  "givenName": "Kévin",
+  "jobTitle": null,
+  "telephone": null,
+  "url": null,
+  "worksFor": "/corporations/1",
+  "internalScore": 5
+}

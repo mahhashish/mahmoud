@@ -1,0 +1,16 @@
+<?php
+
+	ob_start('ob_handler');
+	
+	print "<html><body><u><b> Output buffering is great! </u></b></body></html>";
+	
+	// output buffer handler 
+	function ob_handler($buffer)
+	{
+		$fp = popen("echo \"" . $buffer . "\" | /usr/local/bin/tidy -i -u -q -latin1 --indent-spaces 1 -wrap 0", "r");
+		$tidy = fread($fp, 99999);
+		header( "Content-length: " . strlen( $tidy ) );
+		return $tidy;
+	}
+	
+?>

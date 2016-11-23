@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://localhost/CodeIgniter_Web_Application_Blueprints/7093OS_03_code/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'lfoihfffsfsafssfhafafhfdssfhd';
 
 /*
 |--------------------------------------------------------------------------
@@ -251,7 +251,7 @@ $config['sess_encrypt_cookie']	= FALSE;
 $config['sess_use_database']	= FALSE;
 $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
-$config['sess_match_useragent']	= TRUE;
+$config['sess_match_useragent']	= FALSE;
 $config['sess_time_to_update']	= 300;
 
 /*

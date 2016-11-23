@@ -36,8 +36,8 @@ class Comments_model extends CI_Model {
             }
         } else {
             $password = random_string('alnum', 16);
-            $hash = $this->encrypt->sha1($password);  
-
+            //$hash = $this->encrypt->sha1($password);  
+            $hash = $password;
             $user_data = array('usr_email' => $data['usr_email'],
                                'usr_name' => $data['usr_name'],
                                'usr_is_active' => '1',

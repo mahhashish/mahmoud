@@ -1,7 +1,11 @@
 <!-- Form - begin form section -->
 <br /><br />
 <p class="lead"><?php echo $this->lang->line('discussion_form_instruction');?></p>
-
+      <?php if ($this->session->flashdata('flag_error')) : ?>
+        <div class="alert alert-danger">
+           <?php echo $this->session->flashdata('flag_error') ; ?> 
+        </div>
+      <?php endif ; ?>
 <?php echo validation_errors(); ?>
 <?php echo form_open('discussions/create','role="form"') ; ?>
     <div class="form-group col-md-5">

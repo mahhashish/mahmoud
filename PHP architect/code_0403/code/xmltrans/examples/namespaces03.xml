@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<example>
+    <utils:ucase>
+        <date:today/>
+    </utils:ucase>
+</example>

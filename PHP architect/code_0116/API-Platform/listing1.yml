@@ -1,0 +1,45 @@
+types:
+  Person:
+    parent:     false
+    properties:
+      givenName: ~
+      additionalName: ~
+      familyName: ~
+      worksFor: { range: Corporation }
+      jobTitle: ~
+      gender: ~
+      address: { range: PostalAddress }
+      telephone: ~
+      faxNumber: ~
+      url: ~
+      description: ~
+      internalScore: { range: Integer }
+  Corporation:
+    parent: false
+    properties:
+      name: ~
+      legalName: ~
+      address: { range: PostalAddress }
+      email: ~
+      telephone: ~
+      faxNumber: ~
+      url: ~
+      description: ~
+  PostalAddress:
+    parent: false
+    properties:
+      addressCountry: { range: Text }
+      addressLocality: ~
+      addressRegion: ~
+      postOfficeBoxNumber: ~
+      postalCode: ~
+      streetAddress: ~
+rdfa:
+  - https://raw.githubusercontent.com/schemaorg/schemaorg/sdo-phobos/data/schema.rdfa
+namespaces:
+  entity: AppBundle\Entity
+annotationGenerators:
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\PhpDocAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DoctrineOrmAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\ConstraintAnnotationGenerator
+    - ApiPlatform\SchemaGenerator\AnnotationGenerator\DunglasApiAnnotationGenerator

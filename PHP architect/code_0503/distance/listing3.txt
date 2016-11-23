@@ -1,0 +1,29 @@
+<?php
+
+function inRadius($zip,$radius)
+{
+	$query="SELECT * FROM zipData WHERE zipcode='$zip'";
+	$result = mysql_query($query);
+
+	if(mysql_num_rows($result) > 0) {
+		$row = mysql_fetch_array($result, MYSQL_ASSOC);
+		$lat=$row["lat"];
+		$lon=$row["lon"];
+
+		/*This is the magical query */  
+		$query="SELECT zipcode FROM zipData WHERE (POW((69.1*(lon-\"$lon\")*cos($lat/57.3)),\"2\")+POW((69.1*(lat-\"$lat\")),\"2\"))<($radius*$radius) ";
+
+		$result = mysql_query($query);
+
+		if(mysql_num_rows($result) > 0) {
+			while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$zipArray[]=$row["zipCode"];
+			}
+		return $zipArray;                
+		}
+	} else {
+		return "Zip Code not found";
+	}
+} // end func
+
+?>

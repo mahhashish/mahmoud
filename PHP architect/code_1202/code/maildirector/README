@@ -1,0 +1,15 @@
+mailDirector v1.0.0
+(c) 2002 Jonathan Sharp <jonathan@sharpmedia.net>
+See: http://www.sharpmedia.net/mailDirector/
+
+INSTALLATION:
+To install edit include/config.inc and set the MD_CONFIG constant to the config file.
+Also edit APPLOG to point to a place to write log messages to. 
+
+That's it! Run it from your browser.
+
+Send feedback to jonathan@sharpmedia.net
+
+CHANGELOG:
+- November 29, 2002:
+	Initial release of v1.0.0

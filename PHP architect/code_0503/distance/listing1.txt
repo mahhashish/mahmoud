@@ -1,0 +1,9 @@
+Listing 1
+CREATE TABLE zipData (
+   zipcode varchar(10) NOT NULL,
+   lon float(3,5) DEFAULT '0.00000' NOT NULL,
+   lat float(3,5) DEFAULT '0.00000' NOT NULL,
+   city varchar(100) DEFAULT '' NOT NULL ,
+   state varchar(5) DEFAULT '' NOT NULL ,   
+   PRIMARY KEY (zipcode)
+);

@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>P.E.T.: PHP Processor Engine for Templates</title>
+	<link rel="stylesheet" type="text/css" id="layout" href="layout.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<div id="header">
+	<div id="navLinks">
+		[ <a href="classtrees_P.E.T..html">Class Tree: P.E.T.</a> ]
+		[ <a href="elementindex_P.E.T..html">Index: P.E.T.</a> ]
+		[ <a href="elementindex.html">All elements</a> ]
+	</div>
+	<div id="packagePosition">
+		<div id="packageTitle2">P.E.T.</div>
+		<div id="packageTitle">P.E.T.</div>
+		<div id="elementPath"> &middot; </div>
+	</div>
+</div>
+
+<div id="nav" class="small">
+	<div id="packages">
+		Packages:
+					<p><a href="li_P.E.T..html">P.E.T.</a></p>
+			</div>
+
+
+				<div id="index">
+			<div id="files">
+								Files:<br>
+								<a href="P.E.T./_class_pet_ger_inc_php.html">		class_pet.ger.inc.php
+		</a><br>
+				</div>
+			<div id="classes">
+				Classes:<br>
+								<a href="P.E.T./pet.html">		pet
+		</a><br>
+				</div>
+		</div>
+	</div>
+
+<div id="body">
+		<h1>
+     P.E.T.: Processor Engine for Templates
+	 <br>
+	 Dokumentation & Anleitung
+   </h1>
+   entwickelt von Andreas Demmer
+   (<a href="mailto:andreas@demmer-online.de">andreas@demmer-online.de</a>)
+   <br>
+   Projekt Website:
+   <a href="http://php-pet.sourceforge.net" target="_blank">http://php-pet.sourceforge.net</a>
+   <br><br><br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <b>Inalt</b>
+         <ul>
+           <li><a href="#preface">Vorwort</a></li>
+           <li>Die Metasprache zum Gestalten der Templates</li>
+	       <ul>
+             <li><a href="#content-tags">Die Content Tags</a></li>
+             <li><a href="#loop-tags">Die Loop Tags</a></li>
+             <li><a href="#ssi">SSI: Server Side Includes</a></li>
+           </ul>
+           <li><a href="#preparing">Vorbereiten des Content in PHP</a></li>
+	       <li><a href="#processing">Verarbeitung der Templates und das Ergebnis</a></li>
+	       <ul>
+             <li><a href="#example">An Example</a></li>
+           </ul>
+         </ul>	   
+	   </td>
+	 </tr>
+   </table>
+   <br><br>   
+   <a name="preface"></a>
+   <h3>Was ist P.E.T.?</h3>
+    P.E.T. ist sowohl eine Meta-Sprache zur Gestaltung von Templates, als auch eine Engine diese zu verarbeiten.
+	Nutzen Sie dies, um PHP Quellcode vom HTML Quellcode zu trennen, was Skripte überschaubarer macht.
+	<br>
+   <h3>Funktionsumfang</h3>
+   Platzhalter in Ihren Templates werden durch Inhalte ersetzt, welche Ihr PHP Skript liefert. Dies ist nicht
+   nur auf vereinzelte Inhalte beschränkt sondern funktioniert auch mit mehrzeiligen verschachtelten Datensätzen.
+   Man kann sich wiederholende Bereiche definieren, welche für jede Zeile eines Datensatzes wiederholt werden. 
+   Desweiteren gestattet P.E.T. die Verwendung von Server Side Includes, sogar dann, wenn Ihr Webserver dies eigentlich
+   gar nicht unterstützt. 
+   <br>
+   <h3>Die Metasprache zum Gestalten der Templates</h3>
+   Die Templates sind nicht auf einen Dateityp beschränkt, es eignet sich jede Plain Text Datei, etwa HTML Dokumente.
+   <br><br>
+   <a name="content-tags"></a>
+   <b>Die Content Tags</b>
+   <br><br>
+   Content Tags weissen dem Content einen Platz im Template zu.
+   <br><br>
+   <i>Beispiel:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        Hallo &lt;!-- {name} --&gt;, wie geht es Dir?
+         </code>
+	   </td>
+	 </tr>
+   </table> 
+   <br><br>
+   <a name="loop-tags"></a>
+   <b>Die Loop Tags</b>
+   <br><br>
+   Alles was zwischen einem Begin Loop und einem End Loop Tag steht, wird für jede Zeile
+   des Datensatzes im Content wiederholt, der so heisst wie der Loop Tag.
+   <br><br>
+   <i>Beispiel:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        &lt;table&gt;<br>
+  	        &nbsp;&nbsp;&lt;!-- begin loop {kontakte} --&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;!-- {name} --&gt;&lt;/td&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;!-- {nummer} --&gt;&lt;/td&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br>
+  	        &nbsp;&nbsp;&lt;!-- end loop --&gt;<br>
+  	        &lt;/table&gt;
+         </code>
+	   </td>
+	 </tr>
+   </table> 
+   <br>
+   Loops können weitere Loops enthalten, dies gestattet die Verwendung
+   beliebig verschachtelter Datensätze.
+   <br><br>
+   <i>Beispiel:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        &lt;table&gt;<br>
+  	        &nbsp;&nbsp;&lt;!-- begin loop {kontakte} --&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;!-- {name} --&gt;&lt;/td&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- begin loop {nummern} --&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- {nummer} --&gt;&lt;br&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- end loop --&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br>
+  	        &nbsp;&nbsp;&lt;!-- end loop --&gt;<br>
+  	        &lt;/table&gt;
+         </code>
+	   </td>
+	 </tr>
+   </table>     
+   <br><br><br>
+   <a name="ssi"></a>
+   <b>SSI: Server Side Includes</b>
+   <br><br>
+   SSI Tags können genutzt werden, um externe Dateien in den Quellcode einzubinden.
+   Dies geschieht vor dem Verarbeiten der Loop und Content Tags.
+   <br><br>
+   <i>Beispiel:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>  
+  	        &lt;!--#include virtual="header.html" --&gt;
+         </code>
+	   </td>
+	 </tr>
+   </table>
+   <br>
+   <a name="content"></a>
+   <h3>Vorbereiten des Contents in PHP</h3>
+   Der Content wird durch die Methode "$pet-&gt;add_content($content, $name)" hinzugefügt.
+   $name muss hierbei dem Namen des Content Tags im Template entsprechen.
+   <br><br>
+   <i>Beispiel:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        $pet-&gt;add_content('John Doe', 'name');<br>
+			$pet-&gt;add_content('john@doe.com', 'email');
+         </code>
+	   </td>
+	 </tr>
+   </table> 
+   <br>
+   <i>Das Content Array sieht dann so aus:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        $content<br>
+			&nbsp;&nbsp;&nbsp;[name] => John Doe<br>
+			&nbsp;&nbsp;&nbsp;[email] => john@doe.com
+         </code>
+	   </td>
+	 </tr>
+   </table> 
+   <br><br>   
+   Auch ganze Datensätze können so übergeben werden, etwa
+   das Ergebnis einer Datenbankabfrage.
+   <br><br>
+   <i>Beispiel:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        $band[][member] = 'Peter';<br>
+			$band[][member] = 'Paul';<br>
+			$band[][member] = 'Mary';<br>
+			$pet-&gt;add_content($band, 'band');
+         </code>
+	   </td>
+	 </tr>
+   </table> 
+   <br>
+   <i>Das Content Array sieht dann so aus:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        $content<br>
+			&nbsp;&nbsp;&nbsp;[band] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[member] => Peter<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[member] => Paul<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[member] => Mary	
+         </code>
+	   </td>
+	 </tr>
+   </table>
+   <br>
+   Natürlich kann all dies im Content Array beliebig kombiniert werden:
+   <br>   
+   <br>
+   <i>Das Content Array sieht dann so aus:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        $content<br>
+			&nbsp;&nbsp;&nbsp;[name] => John Doe<br>
+			&nbsp;&nbsp;&nbsp;[band] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[member] => Peter<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[member] => Paul<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[member] => Mary<br>
+			&nbsp;&nbsp;&nbsp;[colors] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[color] => red<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[color] => green<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[color] => blue<br>			
+         </code>
+	   </td>
+	 </tr>
+   </table>
+   <br>
+   Loops in Loops benötigen ein Array im Loop Array.
+   <br>   
+   <br>
+   <i>Das Content Array sieht dann so aus:</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        $content<br>
+			&nbsp;&nbsp;&nbsp;[bands] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => Peter, Paul & Mary<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[members] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => Peter<br>			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => Paul<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => Mary<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => The Beatles<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[members] => ARRAY<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => John<br>			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => Paul<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => George<br>				
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] => Ringo
+		 </code>
+	   </td>
+	 </tr>
+   </table>    
+   <br>
+   <i>Das Template hierfür könnte so aussehen</i>
+   <br>
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+         <code>
+	        &lt;table&gt;<br>
+  	        &nbsp;&nbsp;&lt;!-- begin loop {bands} --&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;!-- {name} --&gt;&lt;/td&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- begin loop {members} --&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- {name} --&gt;&lt;br&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- end loop --&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br>
+  	        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br>
+  	        &nbsp;&nbsp;&lt;!-- end loop --&gt;<br>
+  	        &lt;/table&gt;
+         </code>
+	   </td>
+	 </tr>
+   </table>
+   <br>
+   Dies würde nacheinander jede Band samt Mitglieder in einer Tabelle ausgeben.        
+   <br><br>
+   <a name="processing"></a>
+   <h3>Verarbeiten der Templates und das Ergebnis</h3>
+   Sobald man einmal die Tempaltes und den Content generiert hat, ist es einfach
+   sie zu kombinieren:
+   <br><br>
+   <a name="example"></a>
+   <i>Beispiel:</i> 
+   <table bgcolor="#cccccc" cellpadding="5">
+     <tr>
+	   <td>
+	     <code>
+	       &lt;?<br>
+		   &nbsp;&nbsp;$pet = new pet;<br>
+		   &nbsp;&nbsp;$pet->read_file('test.html');<br>
+           &nbsp;&nbsp;$pet->add_content('Hallo Welt!', 'header');<br>		   
+		   &nbsp;&nbsp;$pet->parse();<br>
+		   &nbsp;&nbsp;$pet->output();<br>
+		   ?&gt;
+		 </code> 
+	   </td>
+	 </tr>
+   </table>
+   <br>
+   Ziemlich einfach, stimmts? :-)                   
+  </body>
+</html>
+	<div id="credit">
+		<hr>
+		Documention generated on Fri, 10 Jan 2003 12:27:49 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.1.0</a>
+	</div>
+</div>
+</body>
+</html>

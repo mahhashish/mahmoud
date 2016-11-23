@@ -1,0 +1,36 @@
+<?php
+
+	ob_start('ob_handler');
+	
+	print "<h1>My humble site</h1>\n";
+	
+	// call undefined function
+	$bar = foo();
+	
+	// output buffer handler
+	function ob_handler($buffer)
+	{
+		$temp_buffer = $buffer;
+		
+		$text = strip_tags($temp_buffer);
+		if (preg_match('/(Fatal error: .+ in .+? on line \d+)/', $text, $matches))
+		{
+			// let the administrator know
+			mail($_SERVER['SERVER_ADMIN'], "ERROR", $matches[0]);
+
+			// replace the buffer
+			$temp_buffer = <<<EOD
+<h1>Unable to display page</h1>
+<p>
+An error occurred while processing your request.  The site administrator has been notified.
+</p>
+<p>
+We apologize for the inconvenience
+</p>
+EOD;
+		}
+		
+		return $temp_buffer;
+	}
+
+?>

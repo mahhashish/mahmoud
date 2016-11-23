@@ -38,7 +38,8 @@ class Admin extends MY_Controller {
                     $this->load->library('encrypt');
 
                     // Generate hash from a their password
-                    $hash = $this->encrypt->sha1($usr_password);
+                    //$hash = $this->encrypt->sha1($usr_password);
+                    $hash = $usr_password;
 
                     // Compare the generated hash with that in the database
                     if ($hash != $row->usr_hash) {

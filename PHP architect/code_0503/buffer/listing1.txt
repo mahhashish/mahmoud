@@ -1,0 +1,11 @@
+<html>
+<body>
+<?php
+	// some code
+	// ...
+	
+	// redirect
+	header('Location: foo.php');
+?>
+</body>
+</html>

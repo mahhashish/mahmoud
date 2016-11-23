@@ -1,0 +1,25 @@
+<!-- To be named section.php -->
+<html>
+<body bgcolor='#FFFFFF'>
+<?php
+	include_once("./mhash.php");
+	$user_id = $_GET['user_id'];
+	$section = $_GET['section'];
+	$hash = $_GET['hash'];
+
+	mhash_check("user_id=$user_id"."section=$section", $hash);
+
+	switch ( $section ) {
+		case '2':
+			echo "Welcome to finance ...";
+		break;
+		case '3':
+			echo "Welcome to sport ...";
+		break;
+		case '4':
+			echo "Welcome to news ...";
+		break;
+	}
+?>
+</body>
+</html>

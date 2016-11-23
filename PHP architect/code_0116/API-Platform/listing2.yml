@@ -1,0 +1,15 @@
+services:
+    resource.person:
+        parent:    "api.resource"
+        arguments: [ "AppBundle\\Entity\\Person" ]
+        tags:      [ { name: "api.resource" } ]
+
+    resource.corporation:
+        parent:    "api.resource"
+        arguments: [ "AppBundle\\Entity\\Corporation" ]
+        tags:      [ { name: "api.resource" } ]
+
+    resource.postal_address:
+        parent:    "api.resource"
+        arguments: [ "AppBundle\\Entity\\PostalAddress" ]
+        tags:      [ { name: "api.resource" } ]

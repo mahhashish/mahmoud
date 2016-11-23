@@ -1,0 +1,12 @@
+<?php
+
+	$greeting = "hello";
+	
+	ob_start();
+	print_r($greeting);
+	$buffer = ob_get_contents();
+	ob_end_clean();
+	
+	print "<pre>\nbuffer:\n $buffer\n</pre>";
+
+?>

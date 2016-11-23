@@ -1,0 +1,37 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Configuration for Apigility                             #
+# File: /etc/apache/vhosts/apigility.conf                 #
+#                                                         #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                         #
+# WARNING: THIS IS DEVELOPMENT CONFIGURATION, DO NOT USE  #
+#          IN A PRODUCTION ENVIRONMENT!!!                 #
+#                                                         #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# Define the listen directive to match the examples
+Listen 8888
+
+# Ensure Apache listens for named requests at port 8888
+NameVirtualHost *:8888
+
+# Define the virtual host configuration
+<VirtualHost *:8888>
+    ServerName apigility.local
+    ServerAlias www.apigility.local
+
+    DocumentRoot "/path/to/apigility/public"
+
+    <Directory "/path/to/apigility/public">
+        Options Indexes FollowSymlinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+        DirectoryIndex index.php
+    </Directory>
+
+    ErrorLevel Info
+    ErrorLog /var/log/apache/apigility-error_log
+    CustomLog /var/log/apache/apigility-access_log common
+</VirtualHost>
+
