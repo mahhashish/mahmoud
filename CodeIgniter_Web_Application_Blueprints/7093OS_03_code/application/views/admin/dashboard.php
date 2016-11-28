@@ -9,7 +9,7 @@
 	      <td>Actions</td>          
         </tr>          
     </thead>
-    <tbody>
+        <tbody>
     	<?php if ($discussion_query->num_rows() > 0) : ?>    	
 		<?php foreach ($discussion_query->result() as $row) : ?>
 		        <tr>
@@ -35,7 +35,7 @@
 	        <tr>
 	          <td colspan="4">No naughty forums here, horay!</td>
 	        </tr>			
-		<?php endif; ?>
+        <?php endif; ?>
 	</tbody>
 </table>
 
