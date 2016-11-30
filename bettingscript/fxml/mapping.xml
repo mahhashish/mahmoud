@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<team>
+		<db>Oeste</db>
+		<site>Nueva Chicago</site>
+	</team>
+	<team>
+		<db>Paris Saint-Germain</db>
+		<site>Paris Saint Germain</site>
+	</team>
+	<team>
+		<db>Oster</db>
+		<site>Oesters IF</site>
+	</team>
+	<team>
+		<db>Stoke</db>
+		<site>Stoke City</site>
+	</team>
+	<team>
+		<db>Newcastle</db>
+		<site>Newcastle United</site>
+	</team>
+	<team>
+		<db>Leicester</db>
+		<site>Leicester City</site>
+	</team>
+	<team>
+		<db>Tottenham</db>
+		<site>Tottenham Hotspur</site>
+	</team>
+	<team>
+		<db>Swansea</db>
+		<site>Swansea City</site>
+	</team>
+	<team>
+		<db>Hull</db>
+		<site>Hull City</site>
+	</team>
+	<team>
+		<db>Leeds</db>
+		<site>Leeds United</site>
+	</team>
+	<team>
+		<db>Birmingham</db>
+		<site>Birmingham City</site>
+	</team>
+	<team>
+		<db>Huddersfield</db>
+		<site>Huddersfield Town</site>
+	</team>
+	<team>
+		<db>Wolverhampton</db>
+		<site>Wolverhampton Wanderers</site>
+	</team>
+	<team>
+		<db>Ipswich</db>
+		<site>Ipswich Town</site>
+	</team>
+	<team>
+		<db>Rotherham</db>
+		<site>Rotherham United</site>
+	</team>
+	<team>
+		<db>Bolton</db>
+		<site>Bolton Wanderers</site>
+	</team>
+	<team>
+		<db>Cardiff</db>
+		<site>Cardiff City</site>
+	</team>
+	<team>
+		<db>QPR</db>
+		<site>Queens Park Rangers</site>
+	</team>
+	<team>
+		<db>Derby</db>
+		<site>Derby County</site>
+	</team>
+	<team>
+		<db>Coventry</db>
+		<site>Coventry City</site>
+	</team>
+	<team>
+		<db>Charlton</db>
+		<site>Charlton Athletic</site>
+	</team>
+	<team>
+		<db>Wexford</db>
+		<site>Wexford Youths</site>
+	</team>
+	<team>
+		<db>Bohemians Dublin</db>
+		<site>Bohemian FC</site>
+	</team>
+	<team>
+		<db>Waterford</db>
+		<site>Waterford United</site>
+	</team>
+	<team>
+		<db>Nautico RR</db>
+		<site>Nautico</site>
+	</team>
+	<team>
+		<db>Vitoria BA</db>
+		<site>Vitoria</site>
+	</team>
+	<team>
+		<db>Parana</db>
+		<site>Parana Clube</site>
+	</team>
+	<team>
+		<db>Santos</db>
+		<site>Santos FC</site>
+	</team>
+	<team>
+		<db>Botafogo</db>
+		<site>Botafogo RJ</site>
+	</team>
+	<team>
+		<db>United States</db>
+		<site>USA</site>
+	</team>
+</map>
