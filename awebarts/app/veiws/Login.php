@@ -21,11 +21,11 @@ and open the template in the editor.
                 <div class="regiter">
                     <form action="C_LoginController.php" method="post" novalidate="">
                         <h1>Register new user:</h1>
-                        <input required="required" name="name" class="input-lg" type="text" placeholder="Please write your name">
+                        <input required="required" name="name" class="form-control input-lg" type="text" placeholder="Please write your name">
                         <input required="required" name="email" class="input-lg" type="email" placeholder="Please write your email">
                         <input required="required" name="username" class="input-lg" type="text" placeholder="please enter a username">
                         <input required="required" name="password" class="input-lg" type="password" >                    
-                        <input class="btn-primary btn-lg" type="submit" name="submit" value="Register">
+                        <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Register">
 
                     </form>
                 </div>

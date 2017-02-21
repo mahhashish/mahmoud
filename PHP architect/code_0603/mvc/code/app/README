@@ -1,0 +1,19 @@
+Sometimes it is useful to
+ln -s links.php index.php
+
+so you can have the application run as default for the directory.
+
+You will need to make the following directories
+templates_c
+cache
+
+and these directories should be writable by the web user (i.e.
+chgrp apache templates_c/ cache/
+chmod g+w templates_c/ cache/
+)
+
+The contents of the lib directory from this code tarball can be placed into your PHP library path.  The application is coded to use a relative path to access these libraries, which can easily be modified to suit your environment by changing the defines at the top of links_setup.php.
+
+You will need to have PostgreSQL 7.3 running with the tables this application accesses.  These can be created using the scripts in the sql directory of this code tarball.  There is a more detailed README for the database setup in that directory.
+
+There is also a doc directory in the tarball which renders the source comments (docblocks) as an html site.  This was produced using PHPDocumentor (http://www.phpdoc.org/).

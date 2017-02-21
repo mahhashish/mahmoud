@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs for page Groups.php</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">Program_Root/models/Groups.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-classes">Classes</a>
+			|									<a href="#sec-constants">Constants</a>
+										</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Groups model class definition</p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 2003-04-28</li>
+				<li><span class="field">author:</span> Jason E. Sweat</li>
+			</ul>
+		
+			</div>
+</div>
+		
+	<a name="sec-classes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Classes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Classes</span>
+			|										<a href="#sec-constants">Constants</a>
+															</div>
+		<div class="info-box-body">	
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; vertical-align: top">
+						<a href="../../PHP_Architect_MVC_links_example/Models/Groups.html">Groups</a>
+					</td>
+					<td>
+											Groups class definition
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	
+	<a name="sec-constants"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-classes">Classes</a>
+				|									<span class="disabled">Constants</span>
+											</div>
+		<div class="info-box-body">	
+			<a name="defineGROUPS_ADD_SQL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_ADD_SQL</span> = 'SELECT add_link_group(?, ?)'
+			(line <span class="line-number">46</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group add sql</p>
+	
+		
+</div>
+<a name="defineGROUPS_DEL_SQL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_DEL_SQL</span> = 'SELECT del_link_group(?)'
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group delete sql</p>
+	
+		
+</div>
+<a name="defineGROUPS_DETAIL_SQL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_DETAIL_SQL</span> = &lt;&lt;&lt;EOS<br />SELECT *<br />FROM groups<br />EOS<br />
+			(line <span class="line-number">22</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group details (includes empty groups)</p>
+	
+		
+</div>
+<a name="defineGROUPS_INFO_SQL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_INFO_SQL</span> = &lt;&lt;&lt;EOS<br />SELECT *<br />FROM groups<br />WHERE link_cnt &gt; 0<br />EOS<br />
+			(line <span class="line-number">14</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group summary info</p>
+	
+		
+</div>
+<a name="defineGROUPS_ORD_SQL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_ORD_SQL</span> = 'SELECT ord_link_group(?, ?)'
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group change order sql</p>
+	
+		
+</div>
+<a name="defineGROUPS_SEL_ONE_SQL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_SEL_ONE_SQL</span> = &lt;&lt;&lt;EOS<br />SELECT *<br />FROM groups<br />WHERE link_group_id = ?<br />EOS<br />
+			(line <span class="line-number">29</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">single link group info</p>
+	
+		
+</div>
+<a name="defineGROUPS_SEL_OPTS_SQL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_SEL_OPTS_SQL</span> = &lt;&lt;&lt;EOS<br />SELECT <br />	 link_group_id<br />	,group_name<br />FROM groups<br />EOS<br />
+			(line <span class="line-number">37</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group options list</p>
+	
+		
+</div>
+<a name="defineGROUPS_UPD_SQL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">GROUPS_UPD_SQL</span> = 'SELECT upd_link_group(?, ?, ?)'
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">link group update sql</p>
+	
+		
+</div>
+		</div>
+	</div>
+	
+	
+	
+	<p class="notes" id="credit">
+		Documention generated on Mon, 12 May 2003 23:40:37 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.2.0rc2</a>
+	</p>
+	</div></body>
+</html>

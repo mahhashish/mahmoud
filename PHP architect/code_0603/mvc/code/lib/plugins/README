@@ -1,0 +1,1 @@
+This plugins directory contains two custom Smarty modifiers written for this application.  These files should be moved into the Smarty library plugins directory you use in the app.

@@ -125,7 +125,7 @@ function resizeText() {
       <div class="row">
         <div class="col-lg-4">
           <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa-flash"></i></span> </div>
+            <div class="service_icon delay-03s animated wow zoomIn"> <span><i class="fa-flash"></i></span> </div>
             <h3 class="animated fadeInUp wow">Quick TurnAround</h3>
             <p class="animated fadeInDown wow">Proin iaculis purus consequat sem cure digni. Donec porttitora entum suscipit  aenean rhoncus posuere odio in tincidunt.</p>
           </div>

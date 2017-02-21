@@ -67,6 +67,8 @@ function updateCartAjax($idlist){
 	$updated = 0;
 	$totalprice = $_SESSION['totalprice'];
 	//$this->session->userdata('totalprice');
+        //$result = count(false);
+        // $result == 1
 	if (count($records)){
 		foreach ($records as $record){
 			if (strlen($record)){

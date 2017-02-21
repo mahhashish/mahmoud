@@ -15,9 +15,10 @@
     for($i=0; $i< count($PagesDataDisplay); $i++)
     {
         echo ' 
-            <div class="project">
-                <img src="app/'.$PagesDataDisplay[$i]['page_image'].'" width="140" height="100" />
-                <h2>'.$PagesDataDisplay[$i]['page_name'].'</h2>
+            <div class="project">';
+                /*<img src="app/'.$PagesDataDisplay[$i]['page_image'].'" width="140" height="100" />*/
+        echo '<img src="site/images/proj.png" width="140" height="100" />';
+        echo '<h2>'.$PagesDataDisplay[$i]['page_name'].'</h2>
                 <p>'.substr($PagesDataDisplay[$i]['page_content'], 0, 100).'</p>
                 <a href="?page=page&id='.$PagesDataDisplay[$i]['id'].'">Read more »</a>
            </div>

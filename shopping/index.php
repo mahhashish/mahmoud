@@ -41,7 +41,7 @@
 | NO TRAILING SLASH!
 |
 */
-	$application_folder = "application";
+	$application_folder = "system/application";
 
 
 /*
@@ -100,7 +100,7 @@ else
 {
 	if ($application_folder == '')
 	{
-		$application_folder = 'application';
+		$application_folder = 'system/application';
 	}
 
 	define('APPPATH', BASEPATH.$application_folder.'/');

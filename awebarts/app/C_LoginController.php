@@ -26,7 +26,7 @@ if ($_POST) {
             echo $exc->getMessage();
             die();
         }
-
+        echo 'vv2';
 
         try {
             $login = new Login($username, $password);

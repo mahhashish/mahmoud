@@ -10,7 +10,7 @@ include '401.php';
 
 // user must have appropriate permissions to use this page
 $user = User::getById($_SESSION['userId']);
-if (~$user->permission & User::CREATE_FORUM)
+if (!($user->permission & User::CREATE_FORUM))
 {
     die('<p>Sorry, you do not have sufficient privileges to create new ' .
         'forums.</p>');

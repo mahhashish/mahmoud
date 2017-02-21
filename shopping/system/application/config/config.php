@@ -11,7 +11,7 @@
 |	http://www.your-site.com/
 |
 */
-$config['base_url']	= "http://yourdomain.name.com";
+$config['base_url']	= "http://localhost/shopping/";
 
 /*
 |--------------------------------------------------------------------------

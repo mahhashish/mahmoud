@@ -1,0 +1,47 @@
+Steps to get the Postgres database up and running:
+
+=====Steps as root=====
+
+1) install PostgreSQL 7.3 (or greater)
+
+2) login as the user you installed to, typically (as root)
+$ su - postgres
+
+=====Steps as postgres=====
+
+3) create the users for the application, in this case make two users for this application
+linkdbo who can create databases (but not users), and
+linkuser who can do neither
+$ createuser -e -d -A -i 26 linkdbo
+SET autocommit TO 'on';CREATE USER "linkdbo" WITH  SYSID 26 CREATEDB NOCREATEUSER
+CREATE USER
+$ createuser -e -D -A -P linkuser
+Enter password for user "linkuser":
+Enter it again:
+SET autocommit TO 'on';CREATE USER "linkuser" WITH  PASSWORD 'linkpass' NOCREATEDB NOCREATEUSER
+CREATE USER
+
+4) create the database for this application, owned by linkdbo
+$ createdb -e -U linkdbo links "link database for PHP|a article"
+SET autocommit TO 'on';CREATE DATABASE "links"
+CREATE DATABASE
+SET autocommit TO 'on';COMMENT ON DATABASE "links" IS 'link database for PHP|a article'
+COMMENT
+
+5) create the groups used for permisions in this example (this example show runing psql as postgres to create the groups)
+$ psql -d links -U postgres
+links=> CREATE GROUP links_admin WITH USER linkdbo, sweatje;
+links=> CREATE GROUP links_user WITH USER linkuser;
+
+5b) if you have never setup pplgsql, you can do it by executing the file plpgsql.ddl.sql (you must be postgres to run this command) (you might need to alter the path to the .so file)
+links=> \i plpgsql.ddl.sql;
+
+=====Steps as linkdbo=====
+
+6) complete the setup by running the rest of the files as linkdbo
+$ psql -d links -U linkdbo
+links=> \i link_group_ddl.sql;
+links=> \i link_ddl.sql;
+links=> \i link_views_ddl.sql;
+
+NOTE: the first time you run these scripts, it will show SQL errors when attempting to drop non-existant tables/views/functions.  These commands are in the script in case you would need to re-execute the scripts.

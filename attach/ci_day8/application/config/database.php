@@ -39,7 +39,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
 $db['default']['username'] = "root";
-$db['default']['password'] = "";
+$db['default']['password'] = "LOflower";
 $db['default']['database'] = "ci_series";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";

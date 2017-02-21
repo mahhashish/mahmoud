@@ -1,11 +1,45 @@
 <?php
+error_reporting(E_ALL);
+var_dump ($_POST);
+$d = $_GET['page'];
+?>
+<div class = "container">
+   <div class = "row" >
+   
+      <div class = "col-xs-6 col-sm-3" style = "background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+      
+      <div class = "col-xs-6 col-sm-3" style = "background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.</p>
+         
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut.</p>
+      </div>
 
-#$test=NULL;
-$_SESSION['foo'] = bar;
-var_dump($_SESSION);
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+      <div class = "clearfix visible-xs"></div>
+      
+      <div class = "col-xs-6 col-sm-3" style = "background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      
+      <div class = "col-xs-6 col-sm-3" style = "background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim</p>
+      </div>
+      
+   </div>
+</div>

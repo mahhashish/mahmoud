@@ -47,7 +47,7 @@ class Database {
         $this->close();
     }
 
-    private function close() {
+    public function close() {
         unset($this->cxn);
         $this->cxn = null;
     }

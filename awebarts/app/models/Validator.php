@@ -169,5 +169,8 @@ class Validator {
             return false;
         }
     }
+    public function __call($name, $arguments) {
+        echo 'The method ' . $name . ' does not exist';
+    }
 
 }

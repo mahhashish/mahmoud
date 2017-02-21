@@ -41,8 +41,8 @@ class Display extends Awebarts {
         $sql = "SELECT * FROM `$this->tablename` WHERE `id`= $id";
         $query = $this->cxn->cxn->prepare($sql);
         $query->execute();
-        $this->recData = $query->fetch();
-        return $this->recData;
+        $data = $query->fetch();
+        return $data;
     }
 
     function getAllDataByID($id, $column = "id") {  // (5 , "sectionID")

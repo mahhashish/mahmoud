@@ -1,0 +1,84 @@
+body {
+	text-align:		center;
+}
+
+img {
+	border: 		0px;
+}
+
+h1 {
+	font-family:		verdana,arial,sans-serif;
+	font-size:			24pt;
+	text-align:			center;
+	color:				rgb(0, 0, 255);
+	background-color:	rgb(255, 255, 255);
+}
+
+table {
+	margin-left:		auto;
+	margin-right:		auto;
+	border-color: 		rgb(210, 210, 210);
+	border-style:		solid;
+	border-width:		3px;
+	padding:			15px;
+	border-spacing:		0px;
+	font-family:		verdana,arial,sans-serif;
+	font-size:			10pt;
+}
+
+th {
+	background-color:	rgb(210, 210, 210);
+	color:				rgb(0, 0, 0);
+	padding:			5px;
+	border-spacing:		0px;
+}
+
+td {
+	border-width:		1px 0px 1px 0px;
+	border-style:		solid hidden solid hidden;
+	padding:			3px;
+	border-spacing:		0px;
+}
+
+.fineprint {
+	font-family:		verdana,arial,sans-serif;
+	font-size:			8pt;
+}
+
+
+hr {
+	height: 5px;
+	width:	75%;
+	color:	rgb(0, 0, 255);
+}
+
+th hr {
+	height: 2px;
+	width:	98%;
+	color:	rgb(0, 0, 0);
+}
+
+td hr {
+	height: 2px;
+	width:	98%;
+	color:	rgb(210, 210, 210);
+}
+
+.layout	{
+	border:			white solid 0;
+	padding:		5px;
+	border-spacing:		0px;
+}
+
+div.errormsg {	
+	background-color: rgb(255, 255, 0);
+	color: rgb(255, 0, 0);
+	border-color: 		rgb(255, 0, 0);
+	border-style:		dotted;
+	border-width:		3px;
+	width: 60%;
+}
+
+div.errormsg li {
+	text-align: 	left;
+}
