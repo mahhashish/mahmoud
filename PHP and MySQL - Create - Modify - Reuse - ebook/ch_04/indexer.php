@@ -47,7 +47,7 @@ while ($row = mysql_fetch_array($result))
     curl_setopt($ch, CURLOPT_URL, $row['DOCUMENT_URL']);
     $file = curl_exec($ch);
 
-    $file = tidy_repair_string($file);
+    //$file = tidy_repair_string($file);
     $html = simplexml_load_string($file);
 
     // or: $html = @simplexml_load_string($file);

@@ -26,7 +26,12 @@ class LinksMap extends MappingManager
  		$this->_AddForm('links', 'ActionForm');
 		$this->_AddForm('updgroup', 'GroupForm');
 		$this->_AddForm('updlinks', 'LinkForm');
-		 		
+		/*AddMapping(mapname, mapclass, actiondefloc, formmap):
+                 * the name of the mapping,
+                 * the class that implements the mapping,
+                 * the default location where the action is called and,
+                 * lastly, the form mapping associated with this action.*/
+                
 		//default action to show views
 		// no forwards are required becuase this action displays HTML pages
  		$this->_AddMapping('ShowView', 'ShowViewAction', APPL_ACTN, 'links');

@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'LOflower');
-define('DB_SCHEMA', 'php_and_my-sql');
+define('DB_SCHEMA', 'mail_list');
 define('DB_TBL_PREFIX', 'WROX_');
 
 // establish a connection to the database server

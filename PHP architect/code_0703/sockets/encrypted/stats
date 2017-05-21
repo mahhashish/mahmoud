@@ -1,0 +1,16 @@
+# default: off
+# description: The rsync server is a good addition to an ftp server, as it \
+#	allows crc checksumming etc.
+service stats
+{
+	type 		= UNLISTED
+	disable		= no
+	socket_type     = stream
+	protocol	= tcp
+	wait            = no
+	user            = root
+	server          = /usr/local/bin/php
+	server_args     = /home/tabo/docs/sockets/code/server.php
+	log_on_failure  += USERID
+	port		= 2134
+}

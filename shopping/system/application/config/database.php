@@ -33,10 +33,10 @@
 $active_record = TRUE;
 $active_group = "default";
 
-$db['default']['hostname'] = "your-db-hostname";
-$db['default']['username'] = "your-username";
-$db['default']['password'] = "your-password";
-$db['default']['database'] = "your-database-name";
+$db['default']['hostname'] = "localhost";
+$db['default']['username'] = "root";
+$db['default']['password'] = "LOflower";
+$db['default']['database'] = "claudias_kids";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;

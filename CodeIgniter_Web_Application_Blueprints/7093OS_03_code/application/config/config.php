@@ -26,7 +26,7 @@ $config['base_url']	= 'http://localhost/CodeIgniter_Web_Application_Blueprints/7
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

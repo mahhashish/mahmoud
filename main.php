@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(0);
 $appservlang = $_GET['appservlang'];
 switch ($appservlang) {

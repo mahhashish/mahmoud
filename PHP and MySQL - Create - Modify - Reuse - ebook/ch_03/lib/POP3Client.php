@@ -20,14 +20,17 @@ class POP3Client
     // open a connection to the POP3 server
     public function connect($server, $port = 110)
     {
-        if (!$this->server = @fsockopen('tcp://' . $server, 110))
+        if (!$this->server = fsockopen('ssl://' . $server, $port))
         {
+            echo '-fsock';
             return false;
         }
-
+        #print_r($this->server);
         $this->response = trim(fgets($this->server, 512));
+        #print_r($this->response);
         if (!$this->isOk())
         {
+            echo '-isOK';
             fclose($this->server);
             return false;
         }
@@ -63,7 +66,9 @@ class POP3Client
     public function _stat()
     {
         fwrite($this->server, 'STAT' . "\r\n");
-        $this->response = trim(fgets($this->server, 512));
+        $this->response = trim(fgets($this->server));
+        print_r($this->response);
+        echo '+_stat' . '<br>';
         return $this->isOk();
     }
 
