@@ -1,0 +1,10 @@
+service loadwatch
+{
+        disable = no
+        port            = 64402
+        socket_type     = stream
+        protocol        = tcp
+        wait            = no
+        user            = root
+        server          = /path/to/load_server.php
+}

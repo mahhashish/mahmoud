@@ -1,0 +1,31 @@
+Root
+|  ChortenW.jpg		# background picture
+|  index.php		# starting place for the test web
+|  indexFull.php        # copy of index.php
+|  indexUnit.php        # test the unitTest include
+|  PHParchitect.css	# css for the test web
+|  unitTest.inc		# only used for testing purposes
+|---Classes
+|   |  Constants.inc		# List of constants used
+|   |  Error.inc		# Severe Error class
+|   |---Logger
+|   |   |  Logger.inc			# Error Log class
+|---Display
+|   |  Display.php		# display point for the test web
+|   |  ErrorMsg.inc             # a list of error messages
+|   |  Person.inc		# personDisplay static class
+|---Installer
+|   |  Create.sql		# SQL to create the tables needed
+|   |  ErrorMsg.inc             # a list of error messages
+|   |  DB.inc			# file explaining what has been created
+|   |  display.inc		# Install Display class
+|   |  Install.inc		# Install class
+|   |  Populate.sql		# sample test data
+
+If you are having problems with the install ensure that the web server has read and write access to the Installer folder. You may wish to delete the DB.inc file, this is created by the installer
+
+If you are encountering errors this may be because the web server doesn't have read and write access to the root folder and the Display folder. In these two folders it will create a folder called log in which it will create the log files, one for the install process and the other for the test web.
+
+Cheers,
+
+graeme@druknet.bt

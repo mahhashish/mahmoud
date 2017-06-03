@@ -1,0 +1,72 @@
+/* Sherubtse College external style sheet */
+/* Date    - 1st May 2000                 */
+/* Version - 1.00                         */
+/* Author  - Graeme Foster                */
+
+Body {background-color:#FFFFFF; /* white background */
+      background-image: url("ChortenW.jpg");
+      background-position: center;
+      background-attachment: fixed;
+			background-repeat: no-repeat}
+      
+H1, H2, H3, H4, H5
+{
+	font-weight:bold;
+	font-family:sans-serif;
+	color: #330099;
+}
+
+H1
+{
+	font-size: 28pt;
+}
+
+H2
+{
+	font-size: 20pt;
+}
+
+H3
+{
+	font-size: 16pt;
+}
+
+H4
+{
+	font-size: 14pt;
+}
+H5
+{
+	font-size: 12pt;
+}
+
+.logon
+{
+   font-weight:bold;
+   color: #CC3366;
+   font-family:sans-serif;
+   font-size:13;
+}
+
+.title
+{
+   font-weight:bold;
+   color: #330099;
+   font-family:sans-serif;
+   font-size:13;
+}
+
+.body
+{
+   color: #330099;
+   font-family:sans-serif;
+   font-size:12;
+}
+
+.hilite
+{
+   color: #FF3333;
+   font-family:sans-serif;
+   font-size:12;
+}
+

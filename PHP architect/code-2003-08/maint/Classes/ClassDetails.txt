@@ -1,0 +1,17 @@
+cSevereError
+============
+
+Purpose
+
+Used to alert the web admin on severe and unrecoverable errors. It will attempt to write to the system log and send an email to the addresses held in the constants file. If both these actions fail then it will report the error to the browser asking the user to contact the web administrator. All three actions are controlled by constants.
+
+Include File
+
+Error.inc
+
+Properties
+
+
+Methods
+
+alert ($msg)

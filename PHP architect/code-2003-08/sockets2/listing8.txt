@@ -1,0 +1,11 @@
+[root@ns1 root]# telnet 127.0.0.1 64401
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+PHP|ARCH
+phparch.com
+Corporate
+info@phparch.com
+testuser
+testpw
+Account created successfully!

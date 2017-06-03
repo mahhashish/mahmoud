@@ -1,0 +1,10 @@
+CREATE TABLE customers (
+  Domain varchar(255) NOT NULL default '',
+  ServicePlan varchar(32) NOT NULL default '',
+  Email varchar(255) NOT NULL default '',
+  Username varchar(32) NOT NULL default '',
+  Password varchar(32) NOT NULL default '',
+  id int(5) NOT NULL auto_increment,
+  PRIMARY KEY  (id),
+  KEY id (id)
+) TYPE=MyISAM;

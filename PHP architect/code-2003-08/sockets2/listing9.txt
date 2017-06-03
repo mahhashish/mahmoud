@@ -1,0 +1,4 @@
+CREATE TABLE systemlog (
+  ServerName varchar(200) NOT NULL default '',
+  Load varchar(10) NOT NULL default ''
+) TYPE=MyISAM;

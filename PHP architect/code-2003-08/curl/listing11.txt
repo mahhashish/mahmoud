@@ -1,0 +1,39 @@
+petej@www $ php -f listing10.php
+CURL OUTPUT:
+Error: No files found.
+
+* About to connect() to www.shaman.ca:21
+* Connected to www.shaman.ca (192.168.2.100) port 21
+< 220 www.shaman.ca FTP server (Version 6.00LS) ready.
+> USER petej
+< 331 Password required for petej.
+> PASS password
+< 230 User petej logged in.
+* We have successfully logged in
+> PWD
+< 257 "/usr/home/petej" is current directory.
+* Entry path is '/usr/home/petej'
+> CWD ftp
+< 250 CWD command successful.
+> EPSV
+< 229 Entering Extended Passive Mode (|||49293|)
+* About to connect() to www.shaman.ca:49293
+* Connecting to www.shaman.ca (192.168.2.100) port 49293
+* Connected the data stream with PASV!
+> TYPE I
+< 200 Type set to I.
+> STOR listing10.php
+< 150 Opening BINARY mode data connection for 'listing10.php'.
+< 226 Transfer complete.
+* Connection #0 left intact
+* Closing connection #0
+CURL OUTPUT:
+File listing10.php was successfully uploaded
+
+CURL OUTPUT:
+listing10.php
+
+
+CURL OUTPUT:
+Error: No files found.
+

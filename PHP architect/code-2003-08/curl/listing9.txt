@@ -1,0 +1,26 @@
+petej@www $ php -f listing8.php
+CURL OUTPUT:
+220 pan.alephnull.com dictd 1.8.0/rf on Linux 2.4.18-14 <auth.mime> <405406.7329.1059468335@pan.alephnull.com>
+250 ok
+150 1 definitions retrieved
+151 "Mitigate" web1913 "Webster's Revised Unabridged Dictionary (1913)"
+Mitigate \Mit"i*gate\, v. t. [imp. & p. p. {Mitigated}; p. pr. &
+   vb. n. {Mitigating}.] [L. mitigatus, p. p. of mitigare to
+   soften, mitigate; mitis mild, soft + the root of agere to do,
+   drive.]
+   1. To make less severe, intense, harsh, rigorous, painful,
+      etc.; to soften; to meliorate; to alleviate; to diminish;
+      to lessen; as, to mitigate heat or cold; to mitigate
+      grief.
+
+   2. To make mild and accessible; to mollify; -- applied to
+      persons. [Obs.]
+
+            This opinion . . . mitigated kings into companions.
+                                                  --Burke.
+
+   Syn: To alleviate; assuage; allay. See {Alleviate}.
+.
+250 ok [d/m/c = 1/0/20; 0.000r 0.000u 0.000s]
+221 bye [d/m/c = 0/0/0; 0.000r 0.000u 0.000s]
+

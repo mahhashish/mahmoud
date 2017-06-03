@@ -1,0 +1,49 @@
+cwd: /usr/local/www/data/php.shaman.ca/curl
+petej@www $ php -f listing2.php
+* About to connect() to php.shaman.ca:80
+* Connected to php.shaman.ca (192.168.2.100) port 80
+> GET /curl HTTP/1.1
+Host: php.shaman.ca
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*
+
+< HTTP/1.1 301 Moved Permanently
+< Date: Mon, 28 Jul 2003 05:34:23 GMT
+< Server: Apache/1.3.27 (Unix) PHP/4.3.3RC1
+< Location: http://php.shaman.ca/curl/
+< Transfer-Encoding: chunked
+< Content-Type: text/html; charset=iso-8859-1
+* Follow to new URL: http://php.shaman.ca/curl/
+* Connection #0 left intact
+* Follows Location: to new URL: 'http://php.shaman.ca/curl/'
+* Re-using existing connection! (#0)
+* Connected to php.shaman.ca (192.168.2.100) port 80
+> GET /curl/ HTTP/1.1
+Host: php.shaman.ca
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*
+
+< HTTP/1.1 200 OK
+< Date: Mon, 28 Jul 2003 05:34:23 GMT
+< Server: Apache/1.3.27 (Unix) PHP/4.3.3RC1
+< X-Powered-By: PHP/4.3.3RC1
+< Transfer-Encoding: chunked
+< Content-Type: text/html
+* Connection #0 left intact
+* Closing connection #0
+CURL OUTPUT:
+HTTP/1.1 301 Moved Permanently
+Date: Mon, 28 Jul 2003 05:34:23 GMT
+Server: Apache/1.3.27 (Unix) PHP/4.3.3RC1
+Location: http://php.shaman.ca/curl/
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=iso-8859-1
+
+HTTP/1.1 200 OK
+Date: Mon, 28 Jul 2003 05:34:23 GMT
+Server: Apache/1.3.27 (Unix) PHP/4.3.3RC1
+X-Powered-By: PHP/4.3.3RC1
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+Hello, 192.168.2.100

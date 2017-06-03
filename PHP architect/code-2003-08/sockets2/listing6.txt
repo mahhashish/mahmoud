@@ -1,0 +1,8 @@
+[root@ns1 root]# ./server.php
+PHP|ARCH
+phparch.com
+Corporate
+info@phparch.com
+testuser
+testpw
+Account created successfully!

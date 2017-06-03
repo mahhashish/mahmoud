@@ -1,0 +1,9 @@
+service my_php_server
+{
+	port			= 64401
+	server			= /path/to/server.php
+	user			= root
+	socket_type		= stream
+	protocol		= tcp
+	#only_from		= 10.0.0.4
+}

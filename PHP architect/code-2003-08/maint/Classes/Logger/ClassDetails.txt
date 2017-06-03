@@ -1,0 +1,45 @@
+cErrorLog
+=========
+
+Purpose
+
+Used to write out error messages the destination is dependent upon values held in a preferences object. This class inherits from the cLogging class. When writing out to a file it will write to a file with the extention log and to a file with the extention ctr which is a counter of the log number
+
+Include File
+
+Logger.inc
+
+Extends
+
+cFileHandler
+
+Properties
+
+ouch         an instance of the cSevereError class
+errorStatus  Current error status
+locking      is file locking to be used (true or fasle)
+retry        maximum number of attempts to access a file that is locked
+pause        time in micro seconds to waith between locked attempts
+LogFileName  The generic name of the log file
+Display   Whether to show the log on the screen
+PreError  What is to be added to the start of any html display
+PostError What is to be added after the display of any html
+File      Whether to write the log to a file
+Path      The directory path of the file
+
+Methods
+
+cErrorLog ($pref, $fileName  = "ErrorLog")
+cFileHandler ($locking = true, $retry = 5, $pause = 1000)
+AppendLine($file, $msg)
+OpenFile ($file, $mode = 'a', $force = true)
+ReadFormat ($handle, $format= "%s\n")
+WriteToFile ($handle, $details)
+logMsg ($msg, break=true)
+pDisplay ($msg, $break=true)
+pWrite ($msg)
+pReadCount()
+pWriteCount($count)
+pErrorLog()
+
+
