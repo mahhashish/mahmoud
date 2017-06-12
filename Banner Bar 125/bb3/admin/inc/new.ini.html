@@ -1,0 +1,158 @@
+<?php
+session_start();
+$imagepop = $_SESSION['upload'];
+  $error1 = "";
+  $error2 = "";
+  $error3 = "";
+  if (empty($_POST['alt'])) {
+      $error3 = "errorB";
+  }
+  if (empty($_POST['link'])) {
+      $error2 = "errorB";
+  }
+  if (empty($_POST['imagepop'])) {
+      $error1 = "errorB";
+  }
+include('inc/config.ini.php');
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>New Banner</title>
+<script type="text/javascript" src="<?php echo $jQueryjs; ?>"></script>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<style>
+#container {
+margin-left: auto;
+margin-right: auto;
+width: 1004;text-align: left;
+}
+#ore {
+font-size:medium;	clear:both;float:left;	
+
+}
+</style>
+</head>
+<body id="new">
+<div id="container">
+<div id="top">
+<?php 
+echo"<span class=\"left\"><a href=\"index.php\" class=\"button style1\"><b class=\"gradient\"></b><span>Control Panel</span></a></span>
+<span class=\"right\"><a href=\"login/L-logout.php\" class=\"button style1\"><b class=\"gradient\"></b><span>Logout</span></a></span></div>";
+?>
+</div>
+<div id="load" style="display:none;">
+	<img src="img/ajax-loader.gif" alt="Loading..." />
+</div>
+<form enctype="multipart/form-data" action="upload.php" method="post" id="newBan">
+	<fieldset>
+		<legend>Upload Banner</legend><br/><br/>
+		<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+		<input type="hidden" name="submitted" value="yes">
+		<label for="duration">Upload Banner <span>(Select image)</span></label><input name="image" size="11" type="file" id="image"/>
+	</fieldset>
+</form>
+
+<?php
+ if(isset($_SESSION['upload']))
+{
+      $url = $imagepop;
+     
+$curl = curl_init();
+curl_setopt_array( $curl, array(
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_URL => $url ) );
+curl_exec( $curl );
+$header_response = curl_getinfo( $curl, CURLINFO_HTTP_CODE );
+curl_close( $curl );
+
+if (strpos($header_response[0], "404") !== false) {
+          $msg = "<span class=\"redText\">file upload failed</span>";
+      } else {
+          $msg = "<span class=\"greenText\">file successfully uploaded</span>";
+      }
+  }
+  echo "<p class=\"center\">" . $msg . "</p>";
+  // if there are any errors, display them
+  if ($error != '') {
+      echo '<div class="errorM">' . $error . '</div><br />';
+  }
+?>
+
+ <form action="" method="post" id="newBan2">
+<fieldset>
+<legend>Banner Details</legend><br /><br />
+<label for="imagepop">Image URL <span>(image to use)</span></label> 
+<input type="text" name="imagepop" id="imagepop" value="<?php echo $imagepop; ?>" class="<?php echo $error1; ?>" />
+<label for="link">Link <span>(Your Link)</span></label> 
+<input type="text" name="link" id="link" value="<?php echo $link; ?>" class="<?php echo $error2; ?>" />
+<label for="alt">Alt Text <span>(Just incase)</span></label> 
+<input type="text" name="alt" id="alt" value="<?php echo $alt; ?>" class="<?php echo $error3; ?>" />
+<hr />
+
+<label for="timer">Timer <span>(Time to display Banner?)</span></label> 
+<select name="timer" id="timer">
+		<option value="10:year">Unlimited</option>
+<option value="12:hour">12 hours</option>
+<option value="1:day">1 day</option>
+<option value="2:day">2 days</option>
+<option value="3:day">3 days</option>
+<option value="4:day">4 days</option>
+<option value="5:day">5 days</option>
+<option value="6:day">6 days</option>
+<option value="7:day">1 week</option>
+<option value="1:month">1 Month</option>
+<option value="2:month">2 Months</option>
+<option value="3:month">3 Months</option>
+<option value="4:month">4 Months</option>
+<option value="5:month">5 Months</option>
+<option value="6:month">6 Months</option>
+<option value="7:month">7 Months</option>
+<option value="8:month">8 Months</option>
+<option value="9:month">9 Months</option>
+<option value="10:month">10 Months</option>
+<option value="11:month">11 Months</option>
+<option value="1:year">1 Year</option>
+</select>
+<div id="ore">Or</div>
+<br /><br />
+
+<label for="xClick">xClicks<span>(Pause after x Clicks)</span></label> 
+<input type="text" name="xClick" id="xClick" value="<?php echo $xClick; ?>" />
+</fieldset>
+<div class="submitB"><input type="submit" name="submit" id="submit" value="Submit" class="button style1" /></div>
+</form>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+         f_img = document.getElementById('image');
+         var AllowedExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+         $("#image").change(function () {
+             if ($.inArray($(this).val().split('.').pop().toLowerCase(), AllowedExtension) == -1) {
+                 alert("Only \'jpeg\', \'jpg\', \'png\', \'gif\', \'bmp\' are allowed.");
+                 f_img.focus();
+             } else {
+                 $("#image").text("");
+this.form.submit();
+ray.ajax();
+             }
+         });
+     });
+
+var ray={
+ajax:function(st)
+	{
+		this.show('load');
+	},
+show:function(el)
+	{
+		this.getID(el).style.display='';
+	},
+getID:function(el)
+	{
+		return document.getElementById(el);
+	}
+}
+</script>

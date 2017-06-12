@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Edit Banner</title>
+
+<style type="text/css">
+
+#container {
+margin-left: auto;
+margin-right: auto;
+width: 1004;text-align: left;
+}
+body {
+
+background:#C5EFFD;
+}
+/* top,bottom bars */ 
+#top {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	width:1000px;
+	background:#f5f5f5;
+	padding:3px;
+	text-align:left;
+margin-left:auto;
+	margin-right:auto;	
+border:1px solid #ccc;
+	border-width:1px;
+}
+#top div {
+	display:inline !important;
+}
+#bottom {
+	position:fixed;
+	z-index:1000;
+	bottom:0;
+	left:0;
+	width:100%;
+	background:#f5f5f5;
+	padding:3px;
+	
+	text-align:left;
+	margin:auto;
+	border:1px solid #ccc;
+	border-width:1px 0 1px 0;
+}
+#bottom div {
+	display:inline !important;
+}
+#top .left,#bottom .left {
+	padding-left:10px;
+	float:left;
+}
+#top .right,#bottom .right {
+	padding-right:10px;
+	float:right;
+}
+.push-right {
+	padding-right: 25px
+}
+/* top,bottom bars */
+#container
+{
+	width:1004px;padding-top:20px;padding-bottom:75px;
+}
+.right
+{
+	float:right
+}
+td.top
+{
+	vertical-align:top
+}
+td.middle
+{
+	text-align:center
+}
+th
+{
+	color:#fff
+}
+#T2 {
+
+border: 1px solid #ccc;background:#ccc;
+
+}
+#T2 tr:nth-child(even)
+{
+	background:#fffccd;
+	color:#000
+}
+#T2 tr:nth-child(odd)
+{
+	color:#000;
+	background:#fffccd
+}
+
+#T2 tr:nth-child(odd):hover td, tbody tr.odd:hover td {background:#f2f9fe;}
+#T2 tr:nth-child(even):hover td, tbody tr.even:hover td {background:#f2f9fe;}
+
+
+
+th
+{
+	background-color:#f5f5f5;
+color:#6D6968
+}
+
+input {
+	border:1px solid #989898;
+
+}
+img {
+	border:0px
+}
+
+#ad
+{
+	background:#FFC;
+	background:#FBFBDA;
+	margin:auto;
+	border:#D21F07 4px dashed;
+	text-align:center;
+	width:400px;
+	margin-top:6px;
+}
+#new {
+background-color:#fff;
+}
+/* buttons */
+
+a, button, input { margin:0; }
+a { color:#369; }
+button::-moz-focus-inner {  border:0; padding:0; }
+.button {
+	font:normal 14px sans-serif;
+	text-decoration:none;
+	padding:2px 12px 3px 12px;
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+	vertical-align:middle;
+	margin:0 8px;
+}
+a.button { display:inline-block; padding:3px 14px 4px 14px; }
+.button span { position:relative; }
+
+.style1 {
+	color:#fff;
+	border:1px solid #96cbf8;
+	background:#448ed4;
+	background:-moz-linear-gradient(top, #70b6f2, #448ed4 50%, #1a62db 51%, #3f8de1);
+	background:-webkit-gradient(linear, left top, left bottom, from(#70b6f2), color-stop(50%, #448ed4), color-stop(51%, #1a62db), to(#3f8de1));
+	text-decoration:none;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-box-shadow:#777 0 0 0 1px;
+	-webkit-box-shadow:#777 0 0 0 1px;
+	text-shadow:rgba(0,0,0,.4) 0 -1px 0;
+}
+.style1 .gradient {
+	display:block;
+	width:100%; height:200%;
+	position:absolute;
+	bottom:-100%; left:0;
+	background:-moz-radial-gradient(center center, ellipse closest-side, rgba(126,233,248,.6), rgba(126,233,248,0));
+	background:-webkit-gradient(radial, center bottom, 20, center bottom, 60, from(rgba(126,233,248,.6)), to(rgba(126,233,248,0)));
+}
+button.style1 .gradient {
+	background:-moz-radial-gradient(40% center, ellipse closest-side, rgba(126,233,248,.6), rgba(126,233,248,0));
+}
+.style1:hover, .style1:focus {
+	border-color:#fff1c9;
+	background:#f4c63f;
+	background:-moz-linear-gradient(top, #ffe495, #f4c63f 50%, #ecb207 51%, #ffd456);
+	background:-webkit-gradient(linear, left top, left bottom, from(#ffe495), color-stop(50%, #f4c63f), color-stop(51%, #ecb207), to(#ffd456));
+	color:#444;
+	text-shadow:none;
+}
+.style1:hover .gradient, .style1:focus .gradient {
+	background:-moz-radial-gradient(center center, ellipse closest-side, rgba(255,255,102,.6), rgba(255,255,102,0));
+	background:-webkit-gradient(radial, center bottom, 20, center bottom, 60, from(rgba(255,255,102,.6)), to(rgba(255,255,102,0)));
+}
+button.style1:hover .gradient, button.style1:focus .gradient {
+	background:-moz-radial-gradient(center center, ellipse closest-side, rgba(255,255,102,.6), rgba(255,255,102,0));
+}
+
+/* Page Numbers */
+.pages {
+ font: 83%/1.4 arial, helvetica, sans-serif;
+    padding: 1em;
+    margin: 1em 0;
+    clear: left;
+    font-size: 85%;
+}
+
+.pages a, .pages span {
+	color:#003366;
+    display: block;
+    float: left;
+    padding: 0.2em 0.5em;
+    margin-right: 0.1em;
+    border: 1px solid #fff;
+    background: #fff;
+}
+
+.pages span.current {
+    border: 1px solid #2E6AB1;
+    font-weight: bold;
+    background: #2E6AB1;
+    color: #fff;
+}
+
+.pages a {
+    border: 1px solid #9AAFE5;
+    text-decoration: none;
+}
+
+.pages a:hover {
+    border-color: #2E6AB1;
+}
+
+.pages a.nextprev {
+    font-weight: bold;
+}
+
+.pages span.nextprev {
+    color: #666;
+}
+
+.pages span.nextprev {
+    border: 1px solid #ddd;
+    color: #999;
+}
+
+.pages .nextprev-next {
+    float: right;
+}
+/* New window image */
+.external
+{
+  background:url(../img/extLink.gif) no-repeat right top;
+  padding-right:15px
+}
+
+body {
+	//margin:30px;
+	//font-size:62.5%;
+	background-color:#fff;
+	font-family:Arial,Helvetica,sans-serif;
+}
+input,form,fieldset,label,textarea,select,legend {
+	margin:0;
+	padding:0;
+}
+#newBan,#newBan2,#setForm {
+	//font-size:1.2em;
+	width:440px;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:62.5%;
+	background-color:#fff;
+	font-family:Arial,Helvetica,sans-serif;
+}
+#newBan,#newBan2 {
+	margin-top:50px;
+}
+#newBan fieldset,#newBan2 fieldset,#setForm fieldset {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	margin:0 0 20px 0;
+	background-color:#f2f9fe;
+	border:solid 1px #aedcf5;
+	padding:20px 15px 10px 15px;
+	position:relative;
+}
+#newBan fieldset:hover,#newBan2 fieldset:hover,#setForm fieldset:hover {
+	background-color:#fffccd;
+	border:solid 1px #ffdb60;
+}
+#newBan fieldset:hover input,#newBan2 fieldset:hover input,#setForm fieldset:hover input {
+	background-color:#fff;
+	border:solid 1px #ffdb60;
+}
+#newBan fieldset:hover input,#newBan2 fieldset:hover .errorB {
+	border:2px solid red;
+}
+#newBan fieldset:hover textarea,#newBan2 fieldset:hover textarea {
+	background-color:#fff;
+	border:solid 1px #ffdb60;
+}
+#newBan fieldset:hover select,#newBan2 fieldset:hover select,#setForm fieldset:hover select {
+	background-color:#fff;
+	border:solid 1px #ffdb60;
+}
+#newBan fieldset:hover .narrow,#setForm fieldset:hover .narrow {
+	border:none;
+	background-color:#fffccd;
+}
+#newBan legend,#newBan2 legend,#setForm legend {
+	position:absolute;
+	top:-8px;
+	color:#fd8f00;
+	font-family:Georgia,"Times New Roman",Times,serif;
+	font-style:italic;
+	font-size:1.2em;
+	position:absolute;
+	left:10px;
+}
+#newBan fieldset:hover legend,#newBan2 fieldset:hover legend,#setForm fieldset:hover legend {
+	color:#3f87e9;
+}
+#newBan label,#newBan2 label,#setForm label {
+	width:190px;
+	display:block;
+	float:left;
+	font-weight:bold;
+	padding:0;
+	text-align:right;
+	margin:0 10px 8px 0;
+	color:#000;
+}
+#newBan span,#newBan2 span,#setForm span {
+	font-size:.8em;
+	display:block;
+	width:190px;
+	text-align:right;
+	font-weight:normal;
+	color:#656565;
+}
+#newBan em,#newBan2 em,#setForm em {
+	font-size:.8em;
+	font-style:normal;
+	font-weight:normal;
+	color:#007bae;
+	position:relative;
+	top:-7px;
+}
+#newBan input,#newBan2 input,#setForm input {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	width:180px;
+	height:20px;
+	border:solid 1px #aedcf5;
+	margin:0 0 13px 0;
+	color:#3f87e9;
+	font-size:1.2em;
+	padding:5px 3px 3px 3px;
+}
+#newBan2 .errorB {
+	border:2px solid red;
+}
+#newBan2 .errorB:hover {
+	border:2px solid red;
+}
+#newBan input:hover,#newBan2 input:hover,#setForm input:hover {
+	border:solid 1px #41a9d8;
+}
+#newBan #image {
+	height:23px;
+}
+#newBan textarea {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	width:180px;
+	height:20px;
+	border:solid 1px #aedcf5;
+	margin:0 0 13px 0;
+	color:#3f87e9;
+	font-size:1.2em;
+	padding:5px 3px 3px 3px;
+	font-family:Arial,Helvetica,sans-serif;
+}
+#newBan .narrow,#setForm .narrow {
+	width:13px;
+	margin:0 0 0 15px;
+	border:none;
+}
+#newBan .narrow:hover,#setForm .narrow:hover {
+	border:none;
+}
+#newBan select,#newBan2 select,#setForm select {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	width:190px;
+	height:29px;
+	border:solid 1px #aedcf5;
+	margin:0 0 13px 0;
+	color:#3f87e9;
+	font-size:1.2em;
+	padding:4px 3px 2px 3px;
+}
+#newBan select:hover,#newBan2 select:hover,#setForm select:hover {
+	border:solid 1px #41a9d8;
+}
+
+.submitB {
+	margin-left:auto;
+	margin-right:auto;
+	width:100px;
+}
+#newBan2 #submit,#setForm #submit  {
+font:normal 14px sans-serif;
+	text-decoration:none;
+	padding:2px 12px 3px 12px;
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+	vertical-align:middle;
+	margin:0 8px;
+height:25px;
+width:100px;
+color:#fff;
+	border:1px solid #96cbf8;
+	background:#448ed4;
+	background:-moz-linear-gradient(top, #70b6f2, #448ed4 50%, #1a62db 51%, #3f8de1);
+	background:-webkit-gradient(linear, left top, left bottom, from(#70b6f2), color-stop(50%, #448ed4), color-stop(51%, #1a62db), to(#3f8de1));
+	text-decoration:none;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-box-shadow:#777 0 0 0 1px;
+	-webkit-box-shadow:#777 0 0 0 1px;
+	text-shadow:rgba(0,0,0,.4) 0 -1px 0;
+	
+}
+
+
+#newBan2 #submit:hover, #submit:focus {
+	border-color:#fff1c9;
+	background:#f4c63f;
+	background:-moz-linear-gradient(top, #ffe495, #f4c63f 50%, #ecb207 51%, #ffd456);
+	background:-webkit-gradient(linear, left top, left bottom, from(#ffe495), color-stop(50%, #f4c63f), color-stop(51%, #ecb207), to(#ffd456));
+	color:#444;
+	text-shadow:none;
+}
+#setForm #submit:hover, #submit:focus {
+	border-color:#fff1c9;
+	background:#f4c63f;
+	background:-moz-linear-gradient(top, #ffe495, #f4c63f 50%, #ecb207 51%, #ffd456);
+	background:-webkit-gradient(linear, left top, left bottom, from(#ffe495), color-stop(50%, #f4c63f), color-stop(51%, #ecb207), to(#ffd456));
+	color:#444;
+	text-shadow:none;
+}
+
+
+#comments {
+	height:100px !important;
+}
+.errorM {
+	font-size:16px;
+	margin:0 auto;
+	padding:4px;
+	border:1px solid red;
+	color:red;
+	text-align:center;
+	width:500px;
+}
+#load {
+	position:absolute;
+	z-index:1;
+	border:3px double #999;
+	background:#f7f7f7;
+	width:300px;
+	height:300px;
+	margin-top:-150px;
+	margin-left:-150px;
+	top:50%;
+	left:50%;
+	text-align:center;
+	line-height:300px;
+	font-family:"Trebuchet MS",verdana,arial,tahoma;
+	font-size:18pt;
+}
+.center {
+	text-align:center;
+}
+.redText {
+	color:red;
+}
+.greenText {
+	color:green;
+}
+.modal {
+	display:none;
+	width:450px;
+}
+#setForm {
+	background:#ebecff;
+}
+
+#setForm .close {
+	background:url(../img/close.png) no-repeat;
+	width:28px;
+	height:28px;
+	z-index:3200;
+	position:absolute;
+	top:-28px;
+	right:-28px;
+	cursor:pointer;
+}
+#setForm .close .closeimg,#myform2 .close .closeimg {
+	display: none
+}
+#ore {
+font-size:medium;	
+}
+</style></head>
+<body id="new">
+<div id="container">
+
+<div id="top">
+<?php 
+echo"<span class=\"left\"><a href=\"index.php\" class=\"button style1\"><b class=\"gradient\"></b><span>Control Panel</span></a></span>
+<span class=\"right\"><a href=\"login/L-logout.php\" class=\"button style1\"><b class=\"gradient\"></b><span>Logout</span></a></span></div>";
+ 
+ // if there are any errors, display them
+ if ($error != '')
+ {
+ echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div>';
+ }
+?>
+
+<form id="newBan2" method="post" action="">
+
+    <fieldset>
+
+        <legend>Edit Banner</legend>
+
+        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+ <label><strong>ID: <?php echo $id; ?></strong></label><br /><br />
+<label for="image">Image URL<span>(image to use)</span></label> <input type="text" name="image" value="<?php echo $image; ?>" id="image" />
+<label for="link">Link <span>(Your Link)</span></label> <input type="text" id="link" name="link" value="<?php echo $link; ?>" />
+<label for="alt">Alt Text <span>(Just incase)</span></label> <input type="text" id="alt" name="alt" value="<?php echo $alt; ?>"/>
+<hr />
+<label for="timer">Timer <span>(Time to display Banner?)</span></label> 
+<select name="timer" id="timer" onchange="alert('Changing this field will reset Clicks and Impressions for that Banner.\nUnlimited Banners will not be Reset');">
+<?php
+$choice = explode (' ', $timer);
+$left = $choice[0];
+$right = $choice[1];
+
+if(($left == "7") && ($right == "day")){
+$left = "7";
+$right = "day";
+$sTime = "1 week";
+}
+
+elseif($left == "12"){
+$sTime = "12 hours";
+$left = "12";
+$right = "hour";
+}
+
+elseif(($left =="1")&&($right =="day")){
+$left = $left;
+
+$right = "day";
+$sTime = $left." day";
+
+}
+
+elseif(($left >="2" && $left <="6")&&($right =="day")){
+$left = $left;
+
+$right = "day";
+$sTime = $left." days";
+
+}
+elseif(($left =="1")&&($right =="month")){
+$left = $left;
+
+$right = "month";
+$sTime = $left." month";
+
+}
+elseif($left >="2" && $left <="11" && $right =="month"){
+$sTime = $left." months";
+}
+
+elseif($left =="1" && $right =="year"){
+$sTime = $left." year";
+}
+
+
+elseif($left =="Not" && $right =="Set"){
+$sTime = "unlimited";
+$left = "10";
+$right = "year";}
+
+
+?>
+<option value="<?php echo $left.":".$right; ?>" selected="selected"><?php echo $timer; ?></option>
+<option value="10:year">Unlimited</option>
+<option value="12:hour">12 hours</option>
+<option value="1:day">1 day</option>
+<option value="2:day">2 days</option>
+<option value="3:day">3 days</option>
+<option value="4:day">4 days</option>
+<option value="5:day">5 days</option>
+<option value="6:day">6 days</option>
+<option value="7:day">1 week</option>
+<option value="1:month">1 Month</option>
+<option value="2:month">2 Months</option>
+<option value="3:month">3 Months</option>
+<option value="4:month">4 Months</option>
+<option value="5:month">5 Months</option>
+<option value="6:month">6 Months</option>
+<option value="7:month">7 Months</option>
+<option value="8:month">8 Months</option>
+<option value="9:month">9 Months</option>
+<option value="10:month">10 Months</option>
+<option value="11:month">11 Months</option>
+<option value="1:year">1 Year</option>
+</select>
+<div class"center" id="ore">Or</div>
+<label for="xClick">xClicks<span>(Pause after x Clicks)</span></label> 
+<input type="text" name="xClick" id="xClick" value="<?php echo $xClick; ?>" />
+</fieldset>
+
+<div class="submitB"><input type="submit" name="submit" id="submit" value="Submit" class="button style1" onclick="return confirm('Are you sure you want to save these settings?');" /></div>
+</form>
+</div>

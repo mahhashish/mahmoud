@@ -1,12 +1,10 @@
 <?php
 session_start();
-if(!isset($_SESSION['username']))
-{
+if (!isset($_SESSION['username'])) {
     include 'C_LoginController.php';
     die();
 }
 //session_destroy();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,11 +25,10 @@ if(!isset($_SESSION['username']))
             <header>
                 <img src="resources/images/logo.png" alt="logo">
                 <h2>Welcome 
-<?php if(isset($_SESSION['username']))
-{
-     echo $_SESSION['username']."   <a href='?page=logout'>Logout</a>";
+<?php
+if (isset($_SESSION['username'])) {
+    echo $_SESSION['username'] . "   <a href='?page=logout'>Logout</a>";
 }
-
 ?>
                 </h2>
             </header>
@@ -49,18 +46,18 @@ if(!isset($_SESSION['username']))
                     </nav>
                 </aside>
                 <section id="page">
-                    <?php
-                    if (@$_GET['page']) {
-                        $url = "controllers/C_".$_GET['page'] . ".php";
-                        if (is_file($url)) {
-                            include $url;
-                        } else {
-                            echo 'requested file is not found !';
-                        }
-                    } else {
-                        include './main.php';
-                    }
-                    ?>
+<?php
+if (@$_GET['page']) {
+    $url = "controllers/C_" . $_GET['page'] . ".php";
+    if (is_file($url)) {
+        include $url;
+    } else {
+        echo 'requested file is not found !';
+    }
+} else {
+    include './main.php';
+}
+?>
                 </section>
             </div>
             <div class="clear"></div>

@@ -1,7 +1,7 @@
 <?php
 
-require_once '..\Constants.inc';
-require_once '..\Error.inc';
+require_once 'Classes\Constants.inc';
+require_once 'Classes\Error.inc';
 
 class cErrorLog
 {

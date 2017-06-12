@@ -120,13 +120,14 @@ function &load_class($class, $instantiate = TRUE)
 	if ($is_subclass == TRUE)
 	{
 		$name = config_item('subclass_prefix').$class;
-		$objects[$class] =& new $name();
+		$mh1 = new $name();
+                $objects[$class] =& $mh1;
 		return $objects[$class];
 	}
 
 	$name = ($class != 'Controller') ? 'CI_'.$class : $class;
-	
-	$objects[$class] =& new $name();
+	$mh2 = new $name();
+	$objects[$class] =& $mh2;
 	return $objects[$class];
 }
 

@@ -1,7 +1,7 @@
 <?php
 $classPath = "Classes/Logger/";
 require_once $classPath.'Logger.inc';
-require_once "DB.php";
+require_once "Installer/DB.inc";
 require_once 'Installer/display.inc';
 require_once 'Installer/Install.inc';
 require_once 'Display/Person.inc';

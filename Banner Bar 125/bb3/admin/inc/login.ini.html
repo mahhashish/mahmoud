@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=iso-8859-1' />
+<title>Banner Bar Login</title>
+<link rel="stylesheet" type="text/css" href="../inc/login.css" />
+</head>
+<body>
+<p><br/><br/><br/></p>
+
+<div id="bannerBar_login" class="myform">
+<form id="form1" action="L-login.php" method="post">
+
+
+<?php
+
+
+        
+
+
+
+  // connect to the database
+require_once('../inc/connect.ini.php');
+require_once('../inc/functions.ini.php');
+
+  $query   = "SELECT * FROM $t_settings";
+        $result1 = $conn->query($query);
+    if ($result1 != false) {
+        while ($row = $result1->fetch(PDO::FETCH_ASSOC)) {
+           
+     
+
+
+  $failed_logins = $row['failed_logins'];
+  $email = $row['email'];
+ // $website = $row['website'];
+  $auto_lock = $row['auto_lock'];
+  $attempts = $row['attempts'];
+  $count = $attempts;
+ $email = $row['email'];
+    }
+    }
+//
+$pUname = isset( $_POST['username'] )? $_POST['username']: false;
+
+//
+  if ($failed_logins == '0')
+      $email = "";
+  else
+
+  $key = md5(uniqid(rand(), true));
+
+  $formtitle = "Banner Bar Login";
+  if (($error) && ($pUname))
+      $formtitle = "<span class=\"error\">Incorrect Login Details!</span>";
+  if ($error)
+      $count = $count + 1;
+  if (($failed_logins == '1') && ($pUname)) {
+
+ //mysql_query("UPDATE settings SET attempts=" . $count) or die(mysql_error());
+$conn->query("UPDATE $t_settings SET attempts='$count', keylock='$key'");
+      
+      $attempts = $attempts + 1;
+      $to = $email;
+$from = "BannerBar@noreply.com";
+      $subject = "Unlock code for Banner Bar";
+      $ip = getenv("REMOTE_ADDR");
+      
+       $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
+        $headers .= "From: $from";
+
+      if (($attempts == $auto_lock) && ($email != "")) {
+$message = "Hello! <br />Your 'Banner Bar' login page unlock link as requested<br /> <a href=\"".$website."/".$location."/admin/login/locked.php?email=$email&amp;key=$key\">Click Here</a> to reset your login page";
+ 
+          mail($to, $subject, $message, $headers);
+      } elseif (($attempts < $auto_lock) && ($email != "")) {
+      $subject = "Invalid Login Attempt on Banner Bar";
+          $message = "Hello! <br />Someone from $ip Just made an Invalid Login Attempt on the 'Banner Bar' login page which is set to lock after $auto_lock failed attempts and so far there have been $attempts failed attempt(s).";
+        
+          mail($to, $subject, $message, $headers);
+  } 
+
+}
+  if (($failed_logins == '1') && ($attempts >= $auto_lock)) {
+      include("locked.php");
+      exit();
+  }
+
+?>
+<h1><?php echo $formtitle;  ?></h1>
+
+<p id="loginmsg">All invalid login attempts are emailed to the site administrator</p>
+<p id="form"><label for="username">Username</label>
+<input type="text" name="username" id="username" size="20" />
+<label for="password">Password</label>
+<input type="password" name="password" id="password" size="20" />
+<button  type="submit" name="login" value=" Login ">Login</button>
+</p>
+<div class="spacer"></div>
+</form>
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <?php
-  require_once "DB.php";
+  require_once "Installer/DB.inc";
   @include_once '../Classes/Logger/Logger.inc';  
   @include_once 'Classes/Logger/Logger.inc';  
   include_once 'ErrorMsg.inc';

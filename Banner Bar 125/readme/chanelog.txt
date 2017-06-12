@@ -1,0 +1,22 @@
+07/06/2011 - Added new table to database ('settings') to hold website url, email address, banners to display per page, failed login attempts before locking the login page and autolock on or off.
+09/06/2011 - Fixed banner impression recording error
+10/06/2011 - Changed design to include top and bottom fixed bars for navigation
+11/06/2011 - Added Advertise here link
+06/07/2011 - Added Upload function to enable uploading of Banners directly to Banner Bar
+18/07/2011 - Removed settings.html, added better error handlers and tidied up the look and feel overall
+19/07/2011 - Added version info and update notifier
+20/07/2011 - Fixed bug that was causing auto lock not to work properly
+01/08/2011 - Added banner pause.  Click on banner to pause click again to un-pause
+22/11/2011 - Fixed install file to run with register_globals off
+28/11/2011 - New installer released, removed update notifier and ad on bottom of control panel, and fixed some bugs.
+28/11/2011 - Added new column to settings table to hold unique key used to unlock login page and modified lock system so now user gets email and unique id sent in order to unlock login page.
+12/12/2011 - Released version 2 which has been re-designed and offers lots more options as well as a timer for the banners, database backup, choice to show banner bar on top or bottom of page and more including click to close.
+15/12/2011 - Extended timer options from 1 week to 1 year.
+18/01/2013 - Updated Front End design to a new look and made it responsive so the width adjusts based on the number of banners displayed.
+23/01/2013 - Added lastClick column to banner bar table to display date of last click
+23/01/2013 - Added option to except Client banners from paying guests using PayPal IPN along with integrated form which takes the details, gets payment, inserts into the database then emails you and you can approve or deny the banner,  If approved client gets usinque link where they can view there stats else one saying banners been declined and refund will be processed shorty.  (<-- Refund is not automatic yet)
+08/02/2013 - Added wrapper div to demo and updated bannerbar.css to keep bar at bottom on mobile devices
+21/11/2013 - Converted all MySQL code to PDO (Data Objects) for database access making it quicker and more secure as well as easier to code.  Re-wrote nearly from the ground giving a tidier directory structure and making it quicker. More use of ajax for updating database on the fly and Write Less Do More approach so now uses more functions to avoid duplication of code and Alerts you when a new Version becomes available.  Also added sandbox mode for making testing the paypal IPN easier.
+13/12/2013 - Fixed issue with keylock emails 
+17/12/2013 - Replaced modal window so now is scrollable for smaller screens and fixed delete so deletes banners from folder when deleting entry from database
+20/12/2013 - Fixed issue with select all
