@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel='stylesheet' href='styles.css' type='text/css'>
+</head>
+<body bgcolor='#FFFFFF'>
+<table border=0 width=200 cellpadding=0 cellspacing=0>
+<tr>
+<td><img src='images/lborder.gif'></td>
+<td align=center width=100% background='images/backing.gif' nowrap>
+<span class='main_heading'>{$heading}</span> 
+</td>
+<td><img src='images/rborder.gif'></td>
+</tr>
+</table>
+<table id='view' border=0 width=200 cellpadding=0 cellspacing=0>
+
+{counter start=-1 print=false}
+{foreach from=$xml key=key item=curr}
+	<tr>
+	<td width=20 id='c2' align=center><img src='images/cross.gif'></td>
+	<td width=180 id='r' align=left><a href='{$smarty.get.page}?click={counter}&{$click}'><span class='heading'>{$key}</span></a></td>
+	</tr>
+	{foreach from=$curr key=k item=v}
+		{if $v.display}
+		<tr>
+		<td width=20 id='c2' align=center><img src='images/spacer.gif'></td>
+		<td width=180 id='r' align=left><img align=top src='{$v.image}'><a href='{$v.href}' target='info'><span class='item'>{$v.name}</span></a></td>
+		</tr>
+		{/if}
+	{/foreach}
+{/foreach}
+
+<tr>
+<td id='b_c2'><img src='images/spacer.gif'></td>
+<td id='rb'><img src='images/spacer.gif' width=1 height=1></td>
+</tr>
+
+</table>
+</body>
+</html>

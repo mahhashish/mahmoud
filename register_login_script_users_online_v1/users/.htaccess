@@ -1,0 +1,5 @@
+# Blocks external access to admin.php
+<files admin.php>
+ order allow,deny
+ deny from all
+</files>

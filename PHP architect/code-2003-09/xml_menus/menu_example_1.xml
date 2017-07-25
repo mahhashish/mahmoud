@@ -1,0 +1,28 @@
+<menu>
+    <heading>php|a</heading>
+    <state>closed</state>
+    <section id='Company Management'>
+        <item>
+            <name>Add a new company</name>
+            <href>action.php?function=add_company</href>
+            <image>images/arrow.gif</image>
+        </item>
+        <item>
+            <name>Delete a company</name>
+            <href>action.php?function=del_company</href>
+            <image>images/arrow.gif</image>
+        </item>
+    </section>
+    <section id='User Management'>
+        <item>
+            <name>Add a new user</name>
+            <href>action.php?function=add_user</href>
+            <image>images/arrow.gif</image>
+        </item>
+        <item>
+            <name>Delete a user</name>
+            <href>action.php?function=del_user</href>
+            <image>images/cross.gif</image>
+        </item>
+    </section>
+</menu>

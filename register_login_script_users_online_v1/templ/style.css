@@ -1,0 +1,231 @@
+@charset "utf-8";
+body {
+ background-color:#f7f8fe;
+ margin:1px auto;
+}
+h2#titlusr {
+ font-family:"Georgia", "Lucida Sans", "Arial", sans-serif;
+ color:#0101da;
+}
+
+/* "Loading..." notification and errors */
+#lgw {
+ margin:1px auto;
+ background-color:#f7f8fe;
+ font-size:18px;
+ color:#01cd01;
+}
+#logeror, #rerror, #usreror {
+ border:1px solid #da0708;
+ background-color:#f7f8fe;
+ padding:3px;
+ font-size:15px;
+ color:red;
+}
+
+/* Login Form */
+#log_form, #logat {
+ position:relative;
+ margin:1px auto;
+ max-width:233px;
+ border:2px ridge #a3a3fe;
+ -moz-border-radius:11px;
+ -webkit-border-radius:11px;
+ -khtml-border-radius:11px;
+ border-radius:11px;
+ background-color:#c7c8fe;
+ padding:4px 0px 4px 2px;
+ font-family:"Arial", sans-serif;
+ font-size:12px;
+}
+#log_form label { font-weight:bold;}
+#log_form #lrem {font-size:10px;}
+#log_form a {
+ margin:auto 20px auto 15px;
+ background-color:#e7e8fe;
+ padding:2px 5px;
+ font-size:13px;
+ color:#0101ed;
+}
+#log_form a:hover, #logat a:hover {background-color:#fefe01;}
+#log_form button {margin:0px 20px; font-weight:bold;}
+#logat #idpp {font-size:14px;}
+
+/* Registration Form */
+#form_re, #usrform1, #usrform2 {
+ margin:3% auto;
+ width:440px;
+ background-color:#efeffe;
+ border:2px solid #c7c8fe;
+ padding:4px 6px;
+}
+#form_re label { font-weight:bold; }
+#form_re h2 {
+ font-size:22px;
+ text-decoration:underline;
+ letter-spacing:1px;
+ color:blue;
+}
+#form_re h3 {
+ position:absolute;
+ top:28px;
+ left:38%;
+ font-family:"Georgia", "Lucida Sans", "Arial", sans-serif;
+ font-size:14px;
+ text-decoration:underline;
+ letter-spacing:1px;
+ color:#01da08;
+}
+
+.clos_re { /* close button */
+ position:absolute;
+ bottom:-5px; right:-5px;
+ background-color:yellow;
+ border:2px solid red;
+ padding:2px;
+ font-family:Arial;
+ font-size:15px;
+ color:red;
+ -moz-border-radius:7px;
+ -webkit-border-radius:7px;
+ -khtml-border-radius:7px;
+ border-radius:7px;
+}
+
+/* For adBox (JS) */
+#el_box {
+ position:fixed;
+ z-index:9990;
+ top:0px; left:0px;
+ margin:0px;
+ width:100%;
+ height:100%;
+ padding:0px;
+}
+#el_box #transp_box {
+ position:absolute;
+ top:0; right:0; bottom:0; left:0;
+ width:100%;
+ height:100%;
+ background-color:green;
+ filter:alpha(opacity=75);
+ -moz-opacity:0.75;
+ -khtml-opacity:0.75;
+ opacity:0.75;
+}
+#el_box #in_box {
+ position:relative;
+ z-index:9992;
+ top:8px;
+ margin:0px auto;
+ width:80%; height:85%;
+ border:2px solid silver;
+ padding:10px 4px 30px 4px;
+ background-color:#e8e8fe;
+}
+
+/* User page */
+#center {
+ position:relative;
+ width:98%;
+ max-width:1000px;
+ min-width:750px;
+ margin:5px auto;
+ background:#f3f3fe;
+ padding:0px 2px 8px 2px;
+}
+#usrdat {
+ position:relative;
+ width:99%;
+ margin:5px auto;
+ padding:4px 0px;
+ font-family:"Georgia", "Arial", sans-serif;
+ font-size:15px;
+}
+#usrdat .fl {float:left; margin:0px 4px 5px 10px;}
+#usrdat .fr {float:right; width:45%; margin:0px 4px 5px 10px;}
+#usrdat #imgusr { margin:1px auto; max-width:340px; max-height:210px; }
+#usrdat #usrupimg, #usrdat #forupimg { margin:-8px auto 3px 11px; }
+#usrdat #usrupimg i {font-size:12px;}
+#usrdat #datusr {
+ position:relative;
+ min-width:580px;
+ margin:8px auto 8px 358px;
+ background:#dafeda;
+ -moz-border-radius:12px;
+ -webkit-border-radius:12px;
+ -khtml-border-radius:12px;
+ border-radius:12px;
+ padding:8px 2px 8px 12px;
+ line-height:125%;
+}
+#usrdat .spndat {
+ padding-left:10px;
+ font-family:"Calibri", "Arial", sans-serif;
+ font-weight:bold;
+}
+#usrdat h5 { margin:18px auto 5px 15px }
+#usrdat ul { margin:1px 0px 0px auto; }
+#usrdat .clr { clear:both;}
+#dateopt { margin:5px 230px 5px 10%; }
+#dateopt .usrh3 {
+ margin:10px auto 2px auto;
+ padding:2px 5px 2px 48px;
+ font-family:"Calibri", "Arial", sans-serif;
+ font-size:17px;
+}
+#dateopt .usropt {
+ margin:5px auto 12px auto;
+ background:#fefeda;
+ padding:3px 5px;
+}
+/* Total /Online Users */
+#userss {
+ float:right;
+ width:200px;
+ margin-right:8px;
+ border:2px ridge #a8a9fe;
+ padding:2px 4px;
+ font-family:"Calibri", "Arial", sans-serif;
+ font-size:14px;
+}
+#userss h5 { margin:4px auto; }
+#userss a:hover {
+ text-decoration:none;
+ color:#01d801;
+}
+/* Tab Effect */
+#ultabs li {
+ display:inline;
+ border:1px solid #adadda;
+ background:#dddefe;
+ padding:5px 8px;
+ font-size:16px;
+ font-weight:bold;
+}
+#ultabs li:hover { background-color:#f9f9b8; font-style:italic; text-decoration:underline; }
+/* Forms User page */
+#usrform1 h4, #usrform2 h4 {
+ background:#f9f9fe;
+ margin:3px auto;
+ padding:2px 5px 2px 48px;
+}
+#usrform1 input, #usrform2 input { margin:2px auto; }
+#usrform1 input, #usrform2 textarea { margin-bottom:15px; }
+#usrform2 fieldset { margin:10px auto 1px auto; background-color:#dadafe; }
+#usrform2 fieldset legend {
+ font-sze:16px;
+ font-weight:bold;
+}
+
+/* Footer page */
+#footer {
+ margin:23px auto 5px auto;
+ font-style:italic;
+ color:#a7a8a9;
+}
+
+#usrdat #forupimg, #usrdat #sendimg, #ultabs, #usreror { display:none; }
+#logare button, #ultabs li , #usrdat #imgusr, #forupimg, .clos_re {cursor:pointer;}
+#log_form, #logat, #usrdat, #usrform1 h4, #usrform2 h4, #dateopt .usropt {text-align:left;}
+body, #logat, #logeror, #form_re, #el_box, .clos_re {text-align:center;}

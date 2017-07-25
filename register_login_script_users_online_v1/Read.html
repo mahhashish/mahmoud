@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+   <title>Script users register, login - coursesweb.net</title>
+  </head>
+<body>
+
+<center>
+<h2>Script users register, login</h2>
+</center>
+This is a PHP script to Register and Log users in a website, it's created with the method based on classes and objects (OOP). It uses PHP, MySQL and Ajax / JavaScript (<i>but also it works with browsers which has no activated JavaScript</i>).<br />
+The script includes button "Remember" that gives the posibility to automaticaly login the users in the next visits.<br />
+If the user forgot the name or the password, the script can send these data to his e-mail.<br />
+By default, this script is set to send a message to the user's e-mail, after the registration, with a link to confirm the registration, but this setting can easily be reset to let the user to log in imediately after registration, without any confirmation.<br/>
+Each user has a personal page that contains: an image uploaded by the user, the registration date, the last visit date, the number of visits /logins, and other personal data (name, pronoun, birthday, personal website, occupation, hobby).<br/>
+In his personal page, the user can modify the password and the e-mail address added to registration, then he/she will receive an email with the new data.<br/>
+The script displays the total number of users, the last registered user and the Online users (updated with Ajax every 2 minutes) with link to their page.
+<h4>Security features</h4>
+<ul>
+ <li>Not allow two accounts with the same name or e-mail.</li>
+ <li>Allow only one account with the same IP, or registered from the same browser.</li>
+ <li>Not allow two visitors to log in with the same name (on different browsers). If there are two logged users with the same name, the first will be logged out and will alert a message that he/she can re-log in.</li>
+ <li>Each user has a "<b>rank</b>" stored in database (a number). Then, the value of this rank is sored in Session and can be used to display content in the website according to the user's rank.</li>
+ <li>The e-mail address, and the minimum and maximum number of characters added in form fields are validated both on the client side (with JavaScript) and server-side (with PHP).</li>
+ <li>It allows up to 4 failed login attempts (incorrect password or username), then the visitor can try a new authentication after 10 minutes. This is a protection against bots.</li>
+</ul>
+<h3>Installation and usage</h3>
+<blockquote>
+1. After you have unzipped the archive "register_login_script_users_online.zip", open the "admin.php" file (in the "users/" folder) and change the following data for connecting to MySQL database, with your data.
+<blockquote>
+- <i>$mysql['host'] = "localhost";</i> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>localhost</b> add your MySQL server address.<br />
+- <i>$mysql['user'] = "user_bd";</i> &nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>user_bd</b> write your username for database.<br />
+- <i>$mysql['pass'] = "password";</i> &nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>password</b> write your password for database<br />
+- <i>$mysql['bdname'] = "db_name";</i> &nbsp; &nbsp; &nbsp; &nbsp; - instead of <b>db_name</b> add the name of your database.<br /><br />
+- If you want the user to confirm the registration to his e-mail address, let the value '<b>0</b>' at the <b style="color:blue"><i>$rank = 0;</i></b>, so, after registration, a message will be sent to his e-mail with a link through which the user can confirm the registration. He can log in only after confirmation. <br />
+- If you want to remove the requirement of registration confirmation, replace the '<b>0</b>' with '<b>1</b>' (or other positive number) at the variable: <b style="color:blue"><i>$rank = 0;</i></b><br /><br />
+- The sender email address which appears in registration confirmation message or in the email for recovery password, can be set in the "<b style="color:blue">class.LogareReg.php</b> file (in "users/" folder) at line 5 at the property: <b style="color:blue"><i>$from = 'From: contact@domain.net';</i></b>. Change "<i>contact@domain.net</i>" (keep "From: ") with the e-mail of your website.<br /><br />
+- The elements of the Array variable: <b style="color:blue"><i>$imgup = array();</i></b> define the allowed values for the image that can be uploaded by user in his page (<i>directory name in which the images are saved ["usersimg"], allowed file extension, maximum size in kilobytes and the maximum dimensions allowed</i>).
+</blockquote>
+2. After you have added and saved your data for MySQL connection, copy on your server the "test.php" file (<i>which can be used for test</i>), the directory "users" with all its contents. (<i>if your server not allow ".htaccess", you can delete this file from the folder "users"</i>), the directories "templ" and "usersimg".<br/>
+ - The "usersimg" stores the images uploaded by the user, PHP must have write permissions in this directory. Sets CHMOD 0777 (or 0755).<br /><br />
+3. Access in your browser the file "<b style="color:blue">create_table.php</b>" (in "users/" folder) to create the tables in your database (fo example, access in your browser - <i>http://domain/users/create_table.php</i> ). If the tables are successfully created, you'll see a confirmation text.<br /><br />
+4. Then add the following code in the PHP file in which you want to use this script:
+<ul><li>At the beginning of the PHP file add the following code:<br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<b style="color:blue">&lt;?php include('users/index.php'); ?&gt;</b></li></ul>
+- In that file, where you want to appear the login form, add the following code:
+<blockquote style="background-color:#eaeafe;"><b>
+&lt;?php echo $logare; ?&gt;
+</b></blockquote>
+- In the place you want to appear the Total number of users, Newest user, and Online users, add:
+<blockquote style="background-color:#eaeafe;"><b>
+&lt;?php<br/>
+echo $objLogare-&gt;users['total'];<br/>
+echo $objLogare-&gt;users['last'];<br/>
+echo $objLogare-&gt;users['online'];<br/>
+?&gt;
+</b></blockquote><br />
+- <i><u>You can see how this code is added in the file "test.php".</u></i>
+</blockquote><br />
+The script contains detailed explanations about the code in the comments to each function.<br />
+<h3>Script structure</h3>
+<h4>Tables in database</h4>
+This script uses 4 tables in a MySQL database (<i>the connection is made with MySQLi</i>):
+<ul>
+ <li><b>users</b> - has the following columns:
+ <ul>
+  <li><b>nume</b> - store the user names for login</li>
+  <li><b>id</b> - adds an unique ID to each user, in the registration order (<i>after login, this ID is stored in the <b style="color:blue">$_SESSION['idusr']</b></i>)</li>
+  <li><b>parola</b> - the password for authentication, encrypted with MD5.</li>
+  <li><b>email</b> - the e-mail address used at registration.</li>
+  <li><b>rank</b> - a number that sets a Rank that can be used to create options or to dispay content in the website according to the rank of each user. This number /rank is stored in <b style="color:blue">$_SESSION['rank']</b>. If its value is 0, the user must confirm the registration by acceessing a link which is sent to its e-mail address, than the rank is set to 1.<br/>
+  - <i>See below (also in the code of the file "test.php") an example of how to use the rank.</i></li>
+  <li><b>ip_reg</b> - stores the IP that the visitor has when he registers.</li>
+  <li><b>ip_visit</b> - the IP that the user has when he logs in (this IP is stored in Cookie, if the user has a variable IP, the script gets it from Cookie).<br/>
+  - "ip_reg" and "ip_visit" are checked every time a user registers, to prevent two different accounts from the same IP or browser. If you want to remove this restriction, modify the value 1 of the property <b style="color:blue">$nr_count = 1</b>, at line 7 in the file "<b style="color:blue">class.LogareReg.php</b>" (in "users/" folder).</li>
+  <li><b>datereg</b> - the registration date.</li>
+  <li><b>datevisit</b> -  last login date.</li>
+  <li><b>visits</b> - the number of visits /logins.</li>
+  <li><b>pass</b> - the password, unencrypted.</li>
+ </ul></li>
+ <li><b>user_temp</b> - used to limit the number of failed login attempts (stores the name, the number of login attempts, the user IP, and date). The attempts older than 10 minutes are deleted.</li>
+ <li><b>usersdat</b> - stores the optional user's data (name, pronoun, address, birthday, occupation, hobby, ...), in the following columns: <i>nume, pronoun, country, city, bday, ym, msn, site, img (image's path and name), ocupation, interes, transmit</i>.</li>
+ <li><b>useron</b> - stores the online users. Updated with Ajax every 2 minutes.</li>
+</ul>
+
+<h4>Directories and files</h4>
+<ul>
+ <li><b>users</b> - contains the "admin.php", script classes and the files with JavaScript code.
+ <ul>
+  <li><b>index.php</b> - the instances of the classes are created in this file.</li>
+  <li><b>.htaccess</b> - blocks the external access to "admin.php".</li>
+  <li><b>class.Logare.php</b> - the class with the form and PHP code for Login and Online users.</li>
+  <li><b>class.LogareReg.php</b> - contains the functions and the form for registration.</li>
+  <li><b>class.LogareReCon.php</b> - contains functions and the form for recovery username / password and re-sending confirmation link.</li>
+  <li><b>class.LogareUser.php</b> - processes data for user page (taken in "usrbody.php", in "templ/").</li>
+  <li><b>create_table.php</b> - code to create tables in database.</li>
+  <li><b>logare.js si usrloged.js</b> - contains the JavaScript / Ajax funcions.</li>
+ </ul></li>
+ <li><b>templ</b> - this directory contains the files with the HTML code for the user's page template, and the CSS styles.</li>
+ <li><b>usersimg</b> - the images uploaded by the user are saved in this folder, you must set CHMOD 0766 (or 0777). The images are saved with the name of the user.</li>
+</ul><br/>
+
+&bull; How to display in your web page a content for visitors and another content for logged users:
+<ul><li>It can be made by checking the existence of the variable: <b style="color:blue">$_SESSION['nume']</b>.
+<pre style="background-color:#eaeafe; font-weight:bold;">
+&lt;?php
+if(isset($_SESSION['nume'])) {
+  echo 'Execute some code for logged users';
+}
+else {
+  echo 'Add another code for visitors';
+}
+?&gt;
+</pre></li></ul><br/>
+&bull; How to display a content in your web page according to the user's rank.
+<ul><li>It can be made by checking the value of the variable: <b style="color:blue">$_SESSION['rank']</b>.
+<pre style="background-color:#eaeafe; font-weight:bold;">
+&lt;?php
+if(isset($_SESSION['rank']) &amp;&amp; $_SESSION['rank']&gt;2) {
+  echo 'Content for users with rank greater than 2.';
+}
+else if(isset($_SESSION['rank']) &amp;&amp; $_SESSION['rank']==2) {
+  echo 'Another content, for users with rank 2.';
+}
+else if(isset($_SESSION['rank'])) {
+  echo 'Ccode for logged users with rank 1.';
+}
+?&gt;
+</pre></li></ul><br/>
+
+<span style="font-weight:bold;">- This script is free (<u>does not provide support or personal modifications</u>).</span><br/><br/>
+It was successfully tested for a general configuration on localhost with XAMPP, and also on the server of the website <i>coursesweb.net</i>. If on other systems does not work properly, depends on their configuration. Problems can appear especially on free hostings which have restrictions on the "session", or not support MySQLi.<br /><br />
+<i>Respectfully, Marius</i><br />
+&nbsp; &nbsp; <i><a href="http://coursesweb.net/php-mysql/">coursesweb.net</a></i>
+<br />
+</body>
+</html>
