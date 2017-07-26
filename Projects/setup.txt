@@ -1,0 +1,12 @@
+ÈÇáäÓÈå á (CMS project)
+ÇáãÓÇÑ ÇáÇÓÇÓì åæ:
+http://localhost/cms/
+ãÓÇÑ áæÍÉ ÇáÊÍßã åæ:
+http://localhost/cms/App
+username:mahhashish
+password:WOflower987654
+'hostname' => '******',
+'username' => '******',
+'password' => '******',
+'database' => 'cms',
+'dbdriver' => 'mysql
