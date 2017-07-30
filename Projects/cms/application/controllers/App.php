@@ -15,7 +15,6 @@ class App extends CI_Controller {
 
     public function index() {
         if (!isset($_SESSION['username'])) {
-            if ($this->input->post()) {
                 if ($this->input->post('submit', TRUE) && $this->input->post('submit', TRUE) == 'Login') {
                     $this->form_validation->set_rules('username', 'Username', 'required|max_length[50]|min_length[6]', array(
                         'required' => 'You must provide a %s',
@@ -71,9 +70,6 @@ class App extends CI_Controller {
             } else {
                 $this->load->view('app/login_view');
             }
-        } else {
-            $this->load->view('app/main_view');
-        }
     }
 
 }

@@ -5,10 +5,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
     <head>
         <title>Successful submission</title>
+        <style>
+           #center-alignment{
+               text-align: center;
+           } 
+        </style>
     </head>
-    <body>
+</head>
+<body>
 
-        <p>Your data had been successfully submitted</p>
+    <p id="center-alignment">Your data had been successfully submitted</p>
 
-    </body>
+</body>
 </html>

@@ -1,7 +1,31 @@
 <?php
 error_reporting(E_ALL);
-var_dump ($_POST);
-$d = $_GET['page'];
+print_r($_POST);
+echo 'FFF';
+print_r($_POST['']);
+echo 'FFF';
+print_r($_POST['i']);
+echo 'FFF';
+print_r(isset($_POST));
+echo 'FFF';
+print_r(isset($_POST['']));
+echo 'FFF';
+print_r(isset($_POST['i']));
+echo 'FFF';
+print_r($_SESSION);
+echo 'FFF';
+print_r($_SESSION['']);
+echo 'FFF';
+print_r($_SESSION['kk']);
+echo 'FFF';
+print_r(isset($_SESSION));
+echo 'FFF';
+print_r(isset($_SESSION['']));
+echo 'FFF';
+print_r(isset($_SESSION['kk']));
+echo 'FFF';
+
+echo 'FFF';
 ?>
 <div class = "container">
    <div class = "row" >
