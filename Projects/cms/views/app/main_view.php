@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<?php
             $attributes = array('id' => 'myform');
-            echo form_open('app', $attributes);
+            echo form_open('Setdata', $attributes);
 			?>
 
 			<h2>Setting Data</h2>

@@ -1,31 +1,206 @@
 <?php
+
+session_start();
 error_reporting(E_ALL);
-print_r($_POST);
+$test=$_GET['d'];
+var_dump($test);
+echo '55';
+if(var_dump($test)){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r($_POST['']);
+if(var_dump($_GET[''])){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r($_POST['i']);
+if(var_dump($_GET['i'])){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r(isset($_POST));
+if(var_dump(isset($_GET))){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r(isset($_POST['']));
+if(var_dump(isset($_GET['']))){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r(isset($_POST['i']));
+if(var_dump(isset($_GET['i']))){
+    echo 'y8765678y';
+}
+echo 'FFFend get';
+if(var_dump($_POST)){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r($_SESSION);
+if(var_dump($_POST[''])){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r($_SESSION['']);
+if(var_dump($_POST['i'])){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r($_SESSION['kk']);
+if(var_dump(isset($_POST))){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r(isset($_SESSION));
+if(var_dump(isset($_POST['']))){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r(isset($_SESSION['']));
+if(var_dump(isset($_POST['i']))){
+    echo 'y8765678y';
+}
+echo 'FFFnd post';
+if(var_dump($_SESSION)){
+    echo 'y8765678y';
+}
 echo 'FFF';
-print_r(isset($_SESSION['kk']));
+if(var_dump($_SESSION[''])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump($_SESSION['kk'])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(isset($_SESSION))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(isset($_SESSION['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(isset($_SESSION['kk']))){
+    echo 'y8765678y';
+}
+echo 'FFF end session';
+if(var_dump(empty($_GET))){
+    echo 'y8765678y';
+}//true
+echo 'FFF';
+if(var_dump(empty($_GET['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(empty($_GET['i']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(empty($_POST))){
+    echo 'y8765678y';
+}//true
+echo 'FFF';
+if(var_dump(empty($_POST['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(empty($_POST['i']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(empty($_SESSION))){
+    echo 'y8765678y';
+}//true
+echo 'FFF';
+if(var_dump(empty($_SESSION['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(var_dump(empty($_SESSION['kk']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+echo 'FFFend empty';
+
+echo "<br>gtgtt";
+
+if(print_r($_GET)){
+    echo 'y8765678y22';
+}//array
+echo 'FFF';
+if(print_r($_GET[''])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r($_GET['i'])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r(isset($_GET))){
+    echo 'y8765678y';
+}//true
+echo 'FFF';
+if(print_r(isset($_GET['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r(isset($_GET['i']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r($_POST)){
+    echo 'y8765678y';
+}//array
+echo 'FFF';
+if(print_r($_POST[''])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r($_POST['i'])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r(isset($_POST))){
+    echo 'y8765678y';
+}//true
+echo 'FFF';
+if(print_r(isset($_POST['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r(isset($_POST['i']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r($_SESSION)){
+    echo 'y8765678y';
+}//array
+echo 'FFF';
+if(print_r($_SESSION[''])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r($_SESSION['kk'])){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r(isset($_SESSION))){
+    echo 'y8765678y';
+}//true
+echo 'FFF';
+if(print_r(isset($_SESSION['']))){
+    echo 'y8765678y';
+}
+echo 'FFF';
+if(print_r(isset($_SESSION['kk']))){
+    echo 'y8765678y';
+}
 echo 'FFF';
 
-echo 'FFF';
+
+
+
+echo 'vvvFFF';
+
+$ddff= $_SESSION;
+
+
+$ddfj= $_POST;
+var_dump($ddfj);
+
 ?>
 <div class = "container">
    <div class = "row" >

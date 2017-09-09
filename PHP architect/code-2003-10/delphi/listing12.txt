@@ -1,0 +1,3 @@
+<STYLE>
+    BR.page { page-break-after: always }
+</STYLE>

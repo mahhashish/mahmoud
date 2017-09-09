@@ -1,0 +1,18 @@
+LISTING 2: Reading in a simple events list
+<?php
+
+$filename = "events.csv";
+$eventlist = file($filename); // read into an array
+foreach($eventlist as $num => $event) {
+	// 2452884, 28800, "location", "description"
+	if(preg_match('|^(\d+)\s*,\s*(\d+)\s*,\s*"(.*)"\s*,\s*"(.*)"|', $event, $matches)) {
+		// This is a valid event
+		print_r($matches);
+	}
+	else {
+		// This event does not appear valid
+		echo "no match\n";
+	}
+}
+
+?>

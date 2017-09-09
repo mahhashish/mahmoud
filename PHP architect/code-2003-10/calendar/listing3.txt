@@ -1,0 +1,25 @@
+LISTING 3: Creating an array tree of events
+<?php
+$events = array(); // will store all events
+$filename = "events.csv";
+$eventlist = file($filename);
+
+// Loop through the events list
+foreach($eventlist as $num => $event) {
+	// 2452884, 28800, "location", "description"
+	if(preg_match('|^(\d+)\s*,\s*(\d+)\s*,\s*"(.*)"\s*,\s*"(.*)"|', $event, $matches)) {
+		// This is a valid event
+		list($fullmatch, $jdcount, $timeoffset, $location, $description) = $matches;
+		// Add it to the tree structure
+		$events[$jdcount][] = array($timeoffset, $location, $description);
+	}
+	else {
+		// This event does not appear valid
+		echo "Event #{$num} does not appear as a valid event. Aborting.";
+		exit;
+	}
+}
+echo '<pre>';
+print_r($events);
+
+?>

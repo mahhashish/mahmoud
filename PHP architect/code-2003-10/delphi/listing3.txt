@@ -1,0 +1,28 @@
+procedure TForm1.Button2Click(Sender: TObject);
+var
+    phpVar : TPHPVariable;
+    SL : TStringList;
+begin
+    with psvPHP1 do
+    begin
+        phpVar := Variables.Add;
+        phpvar.Name := 'username';
+        phpvar.Value := 'Toby';
+
+        FileName := ExtractFilePath(Application.ExeName ) + '\myphptesthtmlfile.php';
+
+        SL := TStringList.Create;
+        try
+
+	    //Assign result to Stringlist.	
+            SL.Text := Execute;
+            
+            //Load html in stringlist into webbrowser.
+            EmbeddedWB1.LoadFromStrings(SL);
+        finally
+            SL.free;
+        end;
+
+    end;
+
+end;

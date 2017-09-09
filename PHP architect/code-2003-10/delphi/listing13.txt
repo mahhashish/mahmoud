@@ -1,0 +1,23 @@
+ <TABLE>
+   <tr> 
+     <th>Lotno</th>
+     <th>Stock No</th>
+     <TH>Title</TH>
+     <TH>Hammer Price</TH>
+     {if $Show.Commisson eq "Yes"} 
+     <TH>Commisson Rate</TH>
+     <TH>Commisson Amount</TH>
+     {/if} 
+   </TR>
+   {foreach from=$Lots item=Lot key=id} 
+   <TR> 
+     <td><b>{$Lot.LotNo}</b></td>
+     <td>{$Lot.StockID}</td>
+     <TD>{$Lot.Title}</TD>
+     <TD align=right>&euro;{$Lot.HammerPrice|currency_format}</TD>
+     {if $Show.Commisson eq "Yes"} 
+     <TD align=right>{$Lot.BidderCommisson|currency_format}</TD>
+     <TD align=right>&euro;{$Lot.BidderCommissonAmount|currency_format}</TD>
+     {/if} </TR>
+   {/foreach} 
+</TABLE>

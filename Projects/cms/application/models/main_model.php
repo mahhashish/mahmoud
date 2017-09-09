@@ -32,6 +32,8 @@ class main_model extends CI_Model {
     }
 
     public function check_auth($username, $password) {
+        $this->db->where('username',$username);
+        $this->db->where('password',$password);
         $this->db->select('username,password');
         $query = $this->db->get('auth');
         if ($query->num_rows() > 0) {

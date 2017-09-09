@@ -1,0 +1,16 @@
+LISTING 1: Example converting current Gregorian date to Hebrew
+<?php
+
+// Get the current date
+$date = date('m/d/Y');
+
+// Split it into Month, Day, & Year
+list($m, $d, $y) = explode('/', $date);
+
+// Get the Julian Day Count
+$jd = cal_to_jd(CAL_GREGORIAN, $m, $d, $y);
+
+// Convert to Hebrew
+$hebrew = cal_from_jd($jd, CAL_JEWISH);
+
+?>

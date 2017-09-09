@@ -1,0 +1,20 @@
+procedure TForm1.Button1Click(Sender: TObject);
+var
+    phpVar : TPHPVariable;
+begin
+    with psvPHP1 do
+    begin
+    	//Add a variable.
+        phpVar := Variables.Add;
+        
+        //Give the variable values.
+        phpvar.Name := 'username';
+        phpvar.Value := 'Toby';
+
+        FileName := ExtractFilePath(Application.ExeName ) + 'myphptestfile.php';
+        
+        //Execute php script and display generated text in memo.
+        memo1.Text := Execute;
+
+    end;
+end;

@@ -55,11 +55,11 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'chapter1',
+			'database'  => 'Database: laravel application development blueprints - chapter1',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'LOflower',
 			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
+			'collation' => 'utf8_general_ci',
 			'prefix'    => '',
 		),
 
