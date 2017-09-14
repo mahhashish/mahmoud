@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Coding Cage : Sign In</title>
+		<link href="<?php echo base_url('views/assets/css/style.css'); ?>" rel="stylesheet" media="screen">
 		<link href="<?php echo base_url('views/assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" media="screen">
 		<!--<link href="<?php echo base_url('views/assets/bootstrap/css/bootstrap-theme.min.css'); ?>" rel="stylesheet" media="screen"-->
 	</head>
@@ -48,9 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<?php
             echo form_close();
 			?>
-		</div>
-		</div>
-
 		</div>
 
 	</body>

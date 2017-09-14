@@ -54,4 +54,5 @@ $route['404_override'] = '';
 $route['app'] = 'app/Login';
 $route['Login'] = 'app/Login';
 $route['Setdata'] = 'app/Setdata';
+$route['Logout'] = 'app/Logout';
 $route['translate_uri_dashes'] = FALSE;

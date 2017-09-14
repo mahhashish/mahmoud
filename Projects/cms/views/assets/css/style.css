@@ -1640,3 +1640,5 @@ div.mc-image {
 	display: inherit;
 	padding: 0;
 }
+
+.container {margin: 0px auto; width:300px !important;}

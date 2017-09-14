@@ -6,13 +6,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Coding Cage : Data Setting</title>
+		<link href="<?php echo base_url('views/assets/css/style.css'); ?>" rel="stylesheet" media="screen">
 		<link href="<?php echo base_url('views/assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" media="screen">
 		<!--<link href="<?php echo base_url('views/assets/bootstrap/css/bootstrap-theme.min.css'); ?>" rel="stylesheet" media="screen">-->
 	</head>
 	<body>
 
+
 		<div class="container">
 			<?php
+			echo anchor('app/logout','Logout');
             $attributes = array('id' => 'myform');
             echo form_open('Setdata', $attributes);
 			?>
@@ -46,9 +49,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo form_close();
 			?>
 		</div>
-		</div>
-
-		</div>
-
 	</body>
 </html>
